@@ -122,6 +122,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'ads_labels' => 'string[]',
         'ads_redirect' => 'string',
         'product_types' => 'string[]',
+        'product_type_keys' => 'string[]',
         'age_group' => 'string',
         'availability' => 'string',
         'condition' => 'string',
@@ -212,6 +213,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'ads_labels' => null,
         'ads_redirect' => null,
         'product_types' => null,
+        'product_type_keys' => null,
         'age_group' => null,
         'availability' => null,
         'condition' => null,
@@ -300,6 +302,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
 		'ads_labels' => true,
 		'ads_redirect' => true,
 		'product_types' => true,
+		'product_type_keys' => true,
 		'age_group' => true,
 		'availability' => true,
 		'condition' => true,
@@ -468,6 +471,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'ads_labels' => 'adsLabels',
         'ads_redirect' => 'adsRedirect',
         'product_types' => 'productTypes',
+        'product_type_keys' => 'productTypeKeys',
         'age_group' => 'ageGroup',
         'availability' => 'availability',
         'condition' => 'condition',
@@ -556,6 +560,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'ads_labels' => 'setAdsLabels',
         'ads_redirect' => 'setAdsRedirect',
         'product_types' => 'setProductTypes',
+        'product_type_keys' => 'setProductTypeKeys',
         'age_group' => 'setAgeGroup',
         'availability' => 'setAvailability',
         'condition' => 'setCondition',
@@ -644,6 +649,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'ads_labels' => 'getAdsLabels',
         'ads_redirect' => 'getAdsRedirect',
         'product_types' => 'getProductTypes',
+        'product_type_keys' => 'getProductTypeKeys',
         'age_group' => 'getAgeGroup',
         'availability' => 'getAvailability',
         'condition' => 'getCondition',
@@ -796,6 +802,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('ads_labels', $data ?? [], null);
         $this->setIfExists('ads_redirect', $data ?? [], null);
         $this->setIfExists('product_types', $data ?? [], null);
+        $this->setIfExists('product_type_keys', $data ?? [], null);
         $this->setIfExists('age_group', $data ?? [], null);
         $this->setIfExists('availability', $data ?? [], null);
         $this->setIfExists('condition', $data ?? [], null);
@@ -893,7 +900,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string $id A unique identifier for the item. Aka Product ID.
+     * @param string $id A unique identifier for the item. Aka Product ID. Don’t use casing to make IDs unique.
      *
      * @return self
      */
@@ -1446,7 +1453,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_group_id
      *
-     * @param string|null $item_group_id Shared identifier for all variants of the same product. RECOMMENDED.
+     * @param string|null $item_group_id Shared identifier for all variants of the same product. RECOMMENDED. Don’t use casing to make IDs unique. (50 characters max)
      *
      * @return self
      */
@@ -2955,6 +2962,40 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets product_type_keys
+     *
+     * @return string[]|null
+     */
+    public function getProductTypeKeys()
+    {
+        return $this->container['product_type_keys'];
+    }
+
+    /**
+     * Sets product_type_keys
+     *
+     * @param string[]|null $product_type_keys Category keys of the item (formatted as in productTypes).
+     *
+     * @return self
+     */
+    public function setProductTypeKeys($product_type_keys)
+    {
+        if (is_null($product_type_keys)) {
+            array_push($this->openAPINullablesSetToNull, 'product_type_keys');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('product_type_keys', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['product_type_keys'] = $product_type_keys;
+
+        return $this;
+    }
+
+    /**
      * Gets age_group
      *
      * @return string|null
@@ -3341,7 +3382,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets seller_id
      *
-     * @param string|null $seller_id Deprecated field. It should be replaced by externalSellerId. The external ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.
+     * @param string|null $seller_id (Deprecated Field) The external ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.
      *
      * @return self
      */
@@ -3409,7 +3450,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets external_seller_name
      *
-     * @param string|null $external_seller_name The external name of the seller (case sensitive and 750 UTF8 characters max). This information is required by the Criteo Offsite Ads.
+     * @param string|null $external_seller_name The external name of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.
      *
      * @return self
      */
@@ -3443,7 +3484,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets number_of_reviews
      *
-     * @param int|null $number_of_reviews The number of reviews for the product. This information is required by the Criteo Offsite Ads.
+     * @param int|null $number_of_reviews The number of customer reviews for the product
      *
      * @return self
      */
@@ -3477,7 +3518,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product_rating
      *
-     * @param string|null $product_rating The rating of the product. This information is required by the Criteo Offsite Ads.
+     * @param string|null $product_rating The product rating for the product
      *
      * @return self
      */

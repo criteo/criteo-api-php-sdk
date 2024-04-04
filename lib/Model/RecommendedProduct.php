@@ -60,6 +60,7 @@ class RecommendedProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'product_external_id' => 'string',
         'click_url' => 'string',
+        'alternative_click_url' => 'string',
         'image_url' => 'string',
         'name' => 'string',
         'description' => 'string',
@@ -78,6 +79,7 @@ class RecommendedProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPIFormats = [
         'product_external_id' => null,
         'click_url' => null,
+        'alternative_click_url' => null,
         'image_url' => null,
         'name' => null,
         'description' => null,
@@ -94,6 +96,7 @@ class RecommendedProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static array $openAPINullables = [
         'product_external_id' => true,
 		'click_url' => true,
+		'alternative_click_url' => true,
 		'image_url' => true,
 		'name' => true,
 		'description' => true,
@@ -190,6 +193,7 @@ class RecommendedProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $attributeMap = [
         'product_external_id' => 'productExternalId',
         'click_url' => 'clickUrl',
+        'alternative_click_url' => 'alternativeClickUrl',
         'image_url' => 'imageUrl',
         'name' => 'name',
         'description' => 'description',
@@ -206,6 +210,7 @@ class RecommendedProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $setters = [
         'product_external_id' => 'setProductExternalId',
         'click_url' => 'setClickUrl',
+        'alternative_click_url' => 'setAlternativeClickUrl',
         'image_url' => 'setImageUrl',
         'name' => 'setName',
         'description' => 'setDescription',
@@ -222,6 +227,7 @@ class RecommendedProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $getters = [
         'product_external_id' => 'getProductExternalId',
         'click_url' => 'getClickUrl',
+        'alternative_click_url' => 'getAlternativeClickUrl',
         'image_url' => 'getImageUrl',
         'name' => 'getName',
         'description' => 'getDescription',
@@ -289,6 +295,7 @@ class RecommendedProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $this->setIfExists('product_external_id', $data ?? [], null);
         $this->setIfExists('click_url', $data ?? [], null);
+        $this->setIfExists('alternative_click_url', $data ?? [], null);
         $this->setIfExists('image_url', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
@@ -386,7 +393,7 @@ class RecommendedProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets click_url
      *
-     * @param string|null $click_url Url leading to product details page and also used to track user click.
+     * @param string|null $click_url Url leading to product details page and also used to track user click. It's relying on the default product URL field in the catalog.
      *
      * @return self
      */
@@ -403,6 +410,40 @@ class RecommendedProduct implements ModelInterface, ArrayAccess, \JsonSerializab
             }
         }
         $this->container['click_url'] = $click_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets alternative_click_url
+     *
+     * @return string|null
+     */
+    public function getAlternativeClickUrl()
+    {
+        return $this->container['alternative_click_url'];
+    }
+
+    /**
+     * Sets alternative_click_url
+     *
+     * @param string|null $alternative_click_url Url leading to product details page and also used to track user click. It's relying on a custom product URL field in the catalog.
+     *
+     * @return self
+     */
+    public function setAlternativeClickUrl($alternative_click_url)
+    {
+        if (is_null($alternative_click_url)) {
+            array_push($this->openAPINullablesSetToNull, 'alternative_click_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('alternative_click_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['alternative_click_url'] = $alternative_click_url;
 
         return $this;
     }

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | A unique identifier for the item. Aka Product ID. |
+**id** | **string** | A unique identifier for the item. Aka Product ID. Don’t use casing to make IDs unique. |
 **offer_id** | **string** | Not used by Criteo. | [optional]
 **title** | **string** | Title of the item. (500 UTF8 characters max). |
 **description** | **string** | Description of the item. RECOMMENDED. (5000 UTF8 characters max). | [optional]
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **color** | **string** | Color of the item. | [optional]
 **google_product_category** | **string** | Google&#39;s category of the item (see Google product taxonomy). RECOMMENDED. | [optional]
 **gtin** | **string** | Global Trade Item Number (GTIN) of the item. RECOMMENDED. | [optional]
-**item_group_id** | **string** | Shared identifier for all variants of the same product. RECOMMENDED. | [optional]
+**item_group_id** | **string** | Shared identifier for all variants of the same product. RECOMMENDED. Don’t use casing to make IDs unique. (50 characters max) | [optional]
 **material** | **string** | The material of which the item is made. | [optional]
 **mpn** | **string** | Manufacturer Part Number (MPN) of the item. RECOMMENDED. | [optional]
 **pattern** | **string** | The item&#39;s pattern (e.g. polka dots). | [optional]
@@ -68,6 +68,7 @@ Name | Type | Description | Notes
 **ads_labels** | **string[]** | Similar to adsGrouping, but only works on CPC. | [optional]
 **ads_redirect** | **string** | Allows advertisers to override the item URL when the product is shown within the context of Product Ads. | [optional]
 **product_types** | **string[]** | Categories of the item (formatted as in products data specification). | [optional]
+**product_type_keys** | **string[]** | Category keys of the item (formatted as in productTypes). | [optional]
 **age_group** | **string** | Target age group of the item. | [optional]
 **availability** | **string** | Availability status of the item. RECOMMENDED. | [optional]
 **condition** | **string** | Condition or state of the item. | [optional]
@@ -79,10 +80,10 @@ Name | Type | Description | Notes
 **max_energy_efficiency_class** | **string** | The energy efficiency class as defined in EU directive 2010/30/EU. | [optional]
 **tax_category** | **string** | The tax category of the product, used to configure detailed tax nexus in account-level tax settings. | [optional]
 **transit_time_label** | **string** | The transit time label of the product, used to group product in account-level transit time tables. | [optional]
-**seller_id** | **string** | Deprecated field. It should be replaced by externalSellerId. The external ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads. | [optional]
+**seller_id** | **string** | (Deprecated Field) The external ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads. | [optional]
 **external_seller_id** | **string** | The external id of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads. | [optional]
-**external_seller_name** | **string** | The external name of the seller (case sensitive and 750 UTF8 characters max). This information is required by the Criteo Offsite Ads. | [optional]
-**number_of_reviews** | **int** | The number of reviews for the product. This information is required by the Criteo Offsite Ads. | [optional]
-**product_rating** | **string** | The rating of the product. This information is required by the Criteo Offsite Ads. | [optional]
+**external_seller_name** | **string** | The external name of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads. | [optional]
+**number_of_reviews** | **int** | The number of customer reviews for the product | [optional]
+**product_rating** | **string** | The product rating for the product | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

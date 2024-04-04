@@ -62,7 +62,7 @@ class ReadAdSetBudgetV24Q1 implements ModelInterface, ArrayAccess, \JsonSerializ
         'budget_renewal' => 'string',
         'budget_delivery_smoothing' => 'string',
         'budget_delivery_week' => 'string',
-        'budget_amount' => '\criteo\api\marketingsolutions\preview\Model\NillableDecimal'
+        'budget_amount' => 'float'
     ];
 
     /**
@@ -77,7 +77,7 @@ class ReadAdSetBudgetV24Q1 implements ModelInterface, ArrayAccess, \JsonSerializ
         'budget_renewal' => null,
         'budget_delivery_smoothing' => null,
         'budget_delivery_week' => null,
-        'budget_amount' => null
+        'budget_amount' => 'double'
     ];
 
     /**
@@ -611,7 +611,7 @@ class ReadAdSetBudgetV24Q1 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets budget_amount
      *
-     * @return \criteo\api\marketingsolutions\preview\Model\NillableDecimal|null
+     * @return float|null
      */
     public function getBudgetAmount()
     {
@@ -621,7 +621,7 @@ class ReadAdSetBudgetV24Q1 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets budget_amount
      *
-     * @param \criteo\api\marketingsolutions\preview\Model\NillableDecimal|null $budget_amount budget_amount
+     * @param float|null $budget_amount budget_amount
      *
      * @return self
      */

@@ -71,7 +71,7 @@ class ImageAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'urls' => null,
-        'landing_page_url' => 'uri'
+        'landing_page_url' => null
     ];
 
     /**

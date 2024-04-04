@@ -507,7 +507,7 @@ class ProductsCustomBatchRequestEntry implements ModelInterface, ArrayAccess, \J
     /**
      * Sets item_group_id
      *
-     * @param string|null $item_group_id The itemGroupId of the product to delete. To be defined when the method is delete and the product is a variant.
+     * @param string|null $item_group_id Deprecated (providing this information is no more needed, this field will be removed in next release). The itemGroupId of the product to delete. To be defined when the method is delete and the product is a variant.
      *
      * @return self
      */
