@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **html_tag** | **string** | Html tag | [optional]
-**size** | [**\criteo\api\marketingsolutions\preview\Model\Size**](Size.md) |  | [optional]
+**size** | [**\criteo\api\marketingsolutions\v2024_04\Model\Size**](Size.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

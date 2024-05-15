@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**logos** | [**\criteo\api\marketingsolutions\preview\Model\ImageShape[]**](ImageShape.md) | Logo images uploaded on demostatic.criteo.com when deploying and then static.criteo.net | [optional]
+**logos** | [**\criteo\api\marketingsolutions\v2024_04\Model\ImageShape[]**](ImageShape.md) | Logo images uploaded on demostatic.criteo.com when deploying and then static.criteo.net | [optional]
 **creative_background_color** | **string** | Color of the creative&#39;s background  Valid hexadecimal color (e.g. \&quot;AB00FF\&quot;) | [optional]
 **body_text_color** | **string** | Color of the creative&#39;s body text  Valid hexadecimal color (e.g. \&quot;AB00FF\&quot;) | [optional]
 **prices_color** | **string** | Color of the creative&#39;s prices  Valid hexadecimal color (e.g. \&quot;AB00FF\&quot;) | [optional]

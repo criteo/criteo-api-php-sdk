@@ -1,32 +1,32 @@
-# criteo\api\marketingsolutions\preview\CreativeApi
+# criteo\api\marketingsolutions\v2024_04\CreativeApi
 
 All URIs are relative to https://api.criteo.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**createAdvertiserAd()**](CreativeApi.md#createAdvertiserAd) | **POST** /preview/advertisers/{advertiser-id}/ads |  |
-| [**createAdvertiserCoupon()**](CreativeApi.md#createAdvertiserCoupon) | **POST** /preview/advertisers/{advertiser-id}/coupons |  |
-| [**createAdvertiserCreative()**](CreativeApi.md#createAdvertiserCreative) | **POST** /preview/advertisers/{advertiser-id}/creatives |  |
-| [**deleteAd()**](CreativeApi.md#deleteAd) | **DELETE** /preview/ads/{id} |  |
-| [**deleteAdvertiserCoupon()**](CreativeApi.md#deleteAdvertiserCoupon) | **DELETE** /preview/advertisers/{advertiser-id}/coupons/{id} |  |
-| [**deleteCreative()**](CreativeApi.md#deleteCreative) | **DELETE** /preview/creatives/{id} |  |
-| [**editAdvertiserCoupon()**](CreativeApi.md#editAdvertiserCoupon) | **PUT** /preview/advertisers/{advertiser-id}/coupons/{id} |  |
-| [**editCreative()**](CreativeApi.md#editCreative) | **PUT** /preview/creatives/{id} |  |
-| [**generateCreativePreview()**](CreativeApi.md#generateCreativePreview) | **POST** /preview/creatives/{id}/preview |  |
-| [**getAd()**](CreativeApi.md#getAd) | **GET** /preview/ads/{id} |  |
-| [**getAdvertiserAds()**](CreativeApi.md#getAdvertiserAds) | **GET** /preview/advertisers/{advertiser-id}/ads |  |
-| [**getAdvertiserCoupon()**](CreativeApi.md#getAdvertiserCoupon) | **GET** /preview/advertisers/{advertiser-id}/coupons/{id} |  |
-| [**getAdvertiserCouponPreview()**](CreativeApi.md#getAdvertiserCouponPreview) | **GET** /preview/advertisers/{advertiser-id}/coupons/{id}/preview |  |
-| [**getAdvertiserCouponSupportedSizes()**](CreativeApi.md#getAdvertiserCouponSupportedSizes) | **GET** /preview/advertisers/{advertiser-id}/coupons-supported-sizes |  |
-| [**getAdvertiserCoupons()**](CreativeApi.md#getAdvertiserCoupons) | **GET** /preview/advertisers/{advertiser-id}/coupons |  |
-| [**getAdvertiserCreatives()**](CreativeApi.md#getAdvertiserCreatives) | **GET** /preview/advertisers/{advertiser-id}/creatives |  |
-| [**getCreative()**](CreativeApi.md#getCreative) | **GET** /preview/creatives/{id} |  |
+| [**createAdvertiserAd()**](CreativeApi.md#createAdvertiserAd) | **POST** /2024-04/marketing-solutions/advertisers/{advertiser-id}/ads |  |
+| [**createAdvertiserCoupon()**](CreativeApi.md#createAdvertiserCoupon) | **POST** /2024-04/marketing-solutions/advertisers/{advertiser-id}/coupons |  |
+| [**createAdvertiserCreative()**](CreativeApi.md#createAdvertiserCreative) | **POST** /2024-04/marketing-solutions/advertisers/{advertiser-id}/creatives |  |
+| [**deleteAd()**](CreativeApi.md#deleteAd) | **DELETE** /2024-04/marketing-solutions/ads/{id} |  |
+| [**deleteAdvertiserCoupon()**](CreativeApi.md#deleteAdvertiserCoupon) | **DELETE** /2024-04/marketing-solutions/advertisers/{advertiser-id}/coupons/{id} |  |
+| [**deleteCreative()**](CreativeApi.md#deleteCreative) | **DELETE** /2024-04/marketing-solutions/creatives/{id} |  |
+| [**editAdvertiserCoupon()**](CreativeApi.md#editAdvertiserCoupon) | **PUT** /2024-04/marketing-solutions/advertisers/{advertiser-id}/coupons/{id} |  |
+| [**editCreative()**](CreativeApi.md#editCreative) | **PUT** /2024-04/marketing-solutions/creatives/{id} |  |
+| [**generateCreativePreview()**](CreativeApi.md#generateCreativePreview) | **POST** /2024-04/marketing-solutions/creatives/{id}/preview |  |
+| [**getAd()**](CreativeApi.md#getAd) | **GET** /2024-04/marketing-solutions/ads/{id} |  |
+| [**getAdvertiserAds()**](CreativeApi.md#getAdvertiserAds) | **GET** /2024-04/marketing-solutions/advertisers/{advertiser-id}/ads |  |
+| [**getAdvertiserCoupon()**](CreativeApi.md#getAdvertiserCoupon) | **GET** /2024-04/marketing-solutions/advertisers/{advertiser-id}/coupons/{id} |  |
+| [**getAdvertiserCouponPreview()**](CreativeApi.md#getAdvertiserCouponPreview) | **GET** /2024-04/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}/preview |  |
+| [**getAdvertiserCouponSupportedSizes()**](CreativeApi.md#getAdvertiserCouponSupportedSizes) | **GET** /2024-04/marketing-solutions/advertisers/{advertiser-id}/coupons-supported-sizes |  |
+| [**getAdvertiserCoupons()**](CreativeApi.md#getAdvertiserCoupons) | **GET** /2024-04/marketing-solutions/advertisers/{advertiser-id}/coupons |  |
+| [**getAdvertiserCreatives()**](CreativeApi.md#getAdvertiserCreatives) | **GET** /2024-04/marketing-solutions/advertisers/{advertiser-id}/creatives |  |
+| [**getCreative()**](CreativeApi.md#getCreative) | **GET** /2024-04/marketing-solutions/creatives/{id} |  |
 
 
 ## `createAdvertiserAd()`
 
 ```php
-createAdvertiserAd($advertiser_id, $ad_write_request): \criteo\api\marketingsolutions\preview\Model\AdResponse
+createAdvertiserAd($advertiser_id, $ad_write_request): \criteo\api\marketingsolutions\v2024_04\Model\AdResponse
 ```
 
 
@@ -41,20 +41,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $advertiser_id = 'advertiser_id_example'; // string | The advertiser identifier.
-$ad_write_request = new \criteo\api\marketingsolutions\preview\Model\AdWriteRequest(); // \criteo\api\marketingsolutions\preview\Model\AdWriteRequest
+$ad_write_request = new \criteo\api\marketingsolutions\v2024_04\Model\AdWriteRequest(); // \criteo\api\marketingsolutions\v2024_04\Model\AdWriteRequest
 
 try {
     $result = $apiInstance->createAdvertiserAd($advertiser_id, $ad_write_request);
@@ -69,11 +69,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **advertiser_id** | **string**| The advertiser identifier. | |
-| **ad_write_request** | [**\criteo\api\marketingsolutions\preview\Model\AdWriteRequest**](../Model/AdWriteRequest.md)|  | |
+| **ad_write_request** | [**\criteo\api\marketingsolutions\v2024_04\Model\AdWriteRequest**](../Model/AdWriteRequest.md)|  | |
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\preview\Model\AdResponse**](../Model/AdResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\AdResponse**](../Model/AdResponse.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ try {
 ## `createAdvertiserCoupon()`
 
 ```php
-createAdvertiserCoupon($advertiser_id, $create_coupon_request): \criteo\api\marketingsolutions\preview\Model\CouponResponse
+createAdvertiserCoupon($advertiser_id, $create_coupon_request): \criteo\api\marketingsolutions\v2024_04\Model\CouponResponse
 ```
 
 
@@ -106,20 +106,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $advertiser_id = 'advertiser_id_example'; // string | The advertiser identifier.
-$create_coupon_request = new \criteo\api\marketingsolutions\preview\Model\CreateCouponRequest(); // \criteo\api\marketingsolutions\preview\Model\CreateCouponRequest
+$create_coupon_request = new \criteo\api\marketingsolutions\v2024_04\Model\CreateCouponRequest(); // \criteo\api\marketingsolutions\v2024_04\Model\CreateCouponRequest
 
 try {
     $result = $apiInstance->createAdvertiserCoupon($advertiser_id, $create_coupon_request);
@@ -134,11 +134,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **advertiser_id** | **string**| The advertiser identifier. | |
-| **create_coupon_request** | [**\criteo\api\marketingsolutions\preview\Model\CreateCouponRequest**](../Model/CreateCouponRequest.md)|  | |
+| **create_coupon_request** | [**\criteo\api\marketingsolutions\v2024_04\Model\CreateCouponRequest**](../Model/CreateCouponRequest.md)|  | |
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\preview\Model\CouponResponse**](../Model/CouponResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\CouponResponse**](../Model/CouponResponse.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ try {
 ## `createAdvertiserCreative()`
 
 ```php
-createAdvertiserCreative($advertiser_id, $creative_write_request): \criteo\api\marketingsolutions\preview\Model\CreativeResponse
+createAdvertiserCreative($advertiser_id, $creative_write_request): \criteo\api\marketingsolutions\v2024_04\Model\CreativeResponse
 ```
 
 
@@ -171,20 +171,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $advertiser_id = 'advertiser_id_example'; // string | The advertiser identifier.
-$creative_write_request = new \criteo\api\marketingsolutions\preview\Model\CreativeWriteRequest(); // \criteo\api\marketingsolutions\preview\Model\CreativeWriteRequest
+$creative_write_request = new \criteo\api\marketingsolutions\v2024_04\Model\CreativeWriteRequest(); // \criteo\api\marketingsolutions\v2024_04\Model\CreativeWriteRequest
 
 try {
     $result = $apiInstance->createAdvertiserCreative($advertiser_id, $creative_write_request);
@@ -199,11 +199,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **advertiser_id** | **string**| The advertiser identifier. | |
-| **creative_write_request** | [**\criteo\api\marketingsolutions\preview\Model\CreativeWriteRequest**](../Model/CreativeWriteRequest.md)|  | |
+| **creative_write_request** | [**\criteo\api\marketingsolutions\v2024_04\Model\CreativeWriteRequest**](../Model/CreativeWriteRequest.md)|  | |
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\preview\Model\CreativeResponse**](../Model/CreativeResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\CreativeResponse**](../Model/CreativeResponse.md)
 
 ### Authorization
 
@@ -236,13 +236,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -298,13 +298,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -362,13 +362,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -409,7 +409,7 @@ void (empty response body)
 ## `editAdvertiserCoupon()`
 
 ```php
-editAdvertiserCoupon($advertiser_id, $id, $update_coupon_request): \criteo\api\marketingsolutions\preview\Model\CouponResponse
+editAdvertiserCoupon($advertiser_id, $id, $update_coupon_request): \criteo\api\marketingsolutions\v2024_04\Model\CouponResponse
 ```
 
 
@@ -424,13 +424,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -438,7 +438,7 @@ $apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
 );
 $advertiser_id = 'advertiser_id_example'; // string | The advertiser identifier.
 $id = 'id_example'; // string | The Coupon identifier to edit.
-$update_coupon_request = new \criteo\api\marketingsolutions\preview\Model\UpdateCouponRequest(); // \criteo\api\marketingsolutions\preview\Model\UpdateCouponRequest
+$update_coupon_request = new \criteo\api\marketingsolutions\v2024_04\Model\UpdateCouponRequest(); // \criteo\api\marketingsolutions\v2024_04\Model\UpdateCouponRequest
 
 try {
     $result = $apiInstance->editAdvertiserCoupon($advertiser_id, $id, $update_coupon_request);
@@ -454,11 +454,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **advertiser_id** | **string**| The advertiser identifier. | |
 | **id** | **string**| The Coupon identifier to edit. | |
-| **update_coupon_request** | [**\criteo\api\marketingsolutions\preview\Model\UpdateCouponRequest**](../Model/UpdateCouponRequest.md)|  | |
+| **update_coupon_request** | [**\criteo\api\marketingsolutions\v2024_04\Model\UpdateCouponRequest**](../Model/UpdateCouponRequest.md)|  | |
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\preview\Model\CouponResponse**](../Model/CouponResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\CouponResponse**](../Model/CouponResponse.md)
 
 ### Authorization
 
@@ -476,7 +476,7 @@ try {
 ## `editCreative()`
 
 ```php
-editCreative($id, $creative_write_request): \criteo\api\marketingsolutions\preview\Model\CreativeResponse
+editCreative($id, $creative_write_request): \criteo\api\marketingsolutions\v2024_04\Model\CreativeResponse
 ```
 
 
@@ -491,20 +491,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | The creative identifier to edit.
-$creative_write_request = new \criteo\api\marketingsolutions\preview\Model\CreativeWriteRequest(); // \criteo\api\marketingsolutions\preview\Model\CreativeWriteRequest
+$creative_write_request = new \criteo\api\marketingsolutions\v2024_04\Model\CreativeWriteRequest(); // \criteo\api\marketingsolutions\v2024_04\Model\CreativeWriteRequest
 
 try {
     $result = $apiInstance->editCreative($id, $creative_write_request);
@@ -519,11 +519,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| The creative identifier to edit. | |
-| **creative_write_request** | [**\criteo\api\marketingsolutions\preview\Model\CreativeWriteRequest**](../Model/CreativeWriteRequest.md)|  | |
+| **creative_write_request** | [**\criteo\api\marketingsolutions\v2024_04\Model\CreativeWriteRequest**](../Model/CreativeWriteRequest.md)|  | |
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\preview\Model\CreativeResponse**](../Model/CreativeResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\CreativeResponse**](../Model/CreativeResponse.md)
 
 ### Authorization
 
@@ -556,13 +556,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -608,7 +608,7 @@ try {
 ## `getAd()`
 
 ```php
-getAd($id): \criteo\api\marketingsolutions\preview\Model\AdResponse
+getAd($id): \criteo\api\marketingsolutions\v2024_04\Model\AdResponse
 ```
 
 
@@ -623,13 +623,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -653,7 +653,7 @@ try {
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\preview\Model\AdResponse**](../Model/AdResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\AdResponse**](../Model/AdResponse.md)
 
 ### Authorization
 
@@ -671,7 +671,7 @@ try {
 ## `getAdvertiserAds()`
 
 ```php
-getAdvertiserAds($advertiser_id, $limit, $offset): \criteo\api\marketingsolutions\preview\Model\AdListResponse
+getAdvertiserAds($advertiser_id, $limit, $offset): \criteo\api\marketingsolutions\v2024_04\Model\AdListResponse
 ```
 
 
@@ -686,13 +686,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -720,7 +720,7 @@ try {
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\preview\Model\AdListResponse**](../Model/AdListResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\AdListResponse**](../Model/AdListResponse.md)
 
 ### Authorization
 
@@ -738,7 +738,7 @@ try {
 ## `getAdvertiserCoupon()`
 
 ```php
-getAdvertiserCoupon($advertiser_id, $id): \criteo\api\marketingsolutions\preview\Model\CouponResponse
+getAdvertiserCoupon($advertiser_id, $id): \criteo\api\marketingsolutions\v2024_04\Model\CouponResponse
 ```
 
 
@@ -753,13 +753,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -785,7 +785,7 @@ try {
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\preview\Model\CouponResponse**](../Model/CouponResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\CouponResponse**](../Model/CouponResponse.md)
 
 ### Authorization
 
@@ -818,13 +818,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -872,7 +872,7 @@ try {
 ## `getAdvertiserCouponSupportedSizes()`
 
 ```php
-getAdvertiserCouponSupportedSizes($advertiser_id, $ad_set_id): \criteo\api\marketingsolutions\preview\Model\CouponSupportedSizesResponse
+getAdvertiserCouponSupportedSizes($advertiser_id, $ad_set_id): \criteo\api\marketingsolutions\v2024_04\Model\CouponSupportedSizesResponse
 ```
 
 
@@ -887,13 +887,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -919,7 +919,7 @@ try {
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\preview\Model\CouponSupportedSizesResponse**](../Model/CouponSupportedSizesResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\CouponSupportedSizesResponse**](../Model/CouponSupportedSizesResponse.md)
 
 ### Authorization
 
@@ -937,7 +937,7 @@ try {
 ## `getAdvertiserCoupons()`
 
 ```php
-getAdvertiserCoupons($advertiser_id, $limit, $offset): \criteo\api\marketingsolutions\preview\Model\CouponListResponse
+getAdvertiserCoupons($advertiser_id, $limit, $offset): \criteo\api\marketingsolutions\v2024_04\Model\CouponListResponse
 ```
 
 
@@ -952,13 +952,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -986,7 +986,7 @@ try {
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\preview\Model\CouponListResponse**](../Model/CouponListResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\CouponListResponse**](../Model/CouponListResponse.md)
 
 ### Authorization
 
@@ -1004,7 +1004,7 @@ try {
 ## `getAdvertiserCreatives()`
 
 ```php
-getAdvertiserCreatives($advertiser_id, $limit, $offset): \criteo\api\marketingsolutions\preview\Model\CreativeListResponse
+getAdvertiserCreatives($advertiser_id, $limit, $offset): \criteo\api\marketingsolutions\v2024_04\Model\CreativeListResponse
 ```
 
 
@@ -1019,13 +1019,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1053,7 +1053,7 @@ try {
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\preview\Model\CreativeListResponse**](../Model/CreativeListResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\CreativeListResponse**](../Model/CreativeListResponse.md)
 
 ### Authorization
 
@@ -1071,7 +1071,7 @@ try {
 ## `getCreative()`
 
 ```php
-getCreative($id): \criteo\api\marketingsolutions\preview\Model\CreativeResponse
+getCreative($id): \criteo\api\marketingsolutions\v2024_04\Model\CreativeResponse
 ```
 
 
@@ -1086,13 +1086,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\CreativeApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1116,7 +1116,7 @@ try {
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\preview\Model\CreativeResponse**](../Model/CreativeResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\CreativeResponse**](../Model/CreativeResponse.md)
 
 ### Authorization
 

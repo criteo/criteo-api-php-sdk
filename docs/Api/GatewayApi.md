@@ -1,16 +1,16 @@
-# criteo\api\marketingsolutions\preview\GatewayApi
+# criteo\api\marketingsolutions\v2024_04\GatewayApi
 
 All URIs are relative to https://api.criteo.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getCurrentApplication()**](GatewayApi.md#getCurrentApplication) | **GET** /preview/marketing-solutions/me |  |
+| [**getCurrentApplication()**](GatewayApi.md#getCurrentApplication) | **GET** /2024-04/marketing-solutions/me |  |
 
 
 ## `getCurrentApplication()`
 
 ```php
-getCurrentApplication(): \criteo\api\marketingsolutions\preview\Model\ApplicationSummaryModelResponse
+getCurrentApplication(): \criteo\api\marketingsolutions\v2024_04\Model\ApplicationSummaryModelResponse
 ```
 
 
@@ -25,13 +25,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2024_04\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\GatewayApi(
+$apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\GatewayApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -52,7 +52,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\preview\Model\ApplicationSummaryModelResponse**](../Model/ApplicationSummaryModelResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\ApplicationSummaryModelResponse**](../Model/ApplicationSummaryModelResponse.md)
 
 ### Authorization
 

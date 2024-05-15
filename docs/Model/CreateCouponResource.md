@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**\criteo\api\marketingsolutions\preview\Model\CreateCoupon**](CreateCoupon.md) |  | [optional]
+**attributes** | [**\criteo\api\marketingsolutions\v2024_04\Model\CreateCoupon**](CreateCoupon.md) |  | [optional]
 **id** | **string** |  | [optional]
 **type** | **string** |  | [optional]
 
