@@ -254,6 +254,7 @@ class ContactlistAmendmentAttributes implements ModelInterface, ArrayAccess, \Js
     public const IDENTIFIER_TYPE_IDENTITY_LINK = 'identityLink';
     public const IDENTIFIER_TYPE_GUM = 'gum';
     public const IDENTIFIER_TYPE_CUSTOMERID = 'customerid';
+    public const IDENTIFIER_TYPE_PHONE_NUMBER = 'phoneNumber';
 
     /**
      * Gets allowable values of the enum
@@ -281,6 +282,7 @@ class ContactlistAmendmentAttributes implements ModelInterface, ArrayAccess, \Js
             self::IDENTIFIER_TYPE_IDENTITY_LINK,
             self::IDENTIFIER_TYPE_GUM,
             self::IDENTIFIER_TYPE_CUSTOMERID,
+            self::IDENTIFIER_TYPE_PHONE_NUMBER,
         ];
     }
 

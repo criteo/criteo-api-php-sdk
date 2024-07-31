@@ -173,6 +173,7 @@ docs/Model/CreateCoupon.md
 docs/Model/CreateCouponRequest.md
 docs/Model/CreateCouponResource.md
 docs/Model/CreateImageSlide.md
+docs/Model/CreateProductFilterRequest.md
 docs/Model/CreateProductSetRequest.md
 docs/Model/Creative.md
 docs/Model/CreativeListResponse.md
@@ -301,6 +302,7 @@ docs/Model/Price.md
 docs/Model/ProblemDetails.md
 docs/Model/ProblemsDetails.md
 docs/Model/Product.md
+docs/Model/ProductFilterConfig.md
 docs/Model/ProductImporterError.md
 docs/Model/ProductImporterWarning.md
 docs/Model/ProductSet.md
@@ -379,9 +381,14 @@ docs/Model/UpdateCouponResource.md
 docs/Model/UserDef.md
 docs/Model/UserProfileAttributeModel.md
 docs/Model/UserProfileIdentifierModel.md
+docs/Model/ValueResourceCollectionOutcomeOfProductFilterConfig.md
+docs/Model/ValueResourceInputOfCreateProductFilterRequest.md
 docs/Model/ValueResourceInputOfCreateProductSetRequest.md
 docs/Model/ValueResourceOfAdvertiserCreationInput.md
+docs/Model/ValueResourceOfCreateProductFilterRequest.md
 docs/Model/ValueResourceOfCreateProductSetRequest.md
+docs/Model/ValueResourceOfProductFilterConfig.md
+docs/Model/ValueResourceOutcomeOfProductFilterConfig.md
 docs/Model/VideoDetail.md
 docs/Model/WriteModelAdSetId.md
 docs/Model/WriteModelPatchAdSetV24Q1.md
@@ -560,6 +567,7 @@ lib/Model/CreateCoupon.php
 lib/Model/CreateCouponRequest.php
 lib/Model/CreateCouponResource.php
 lib/Model/CreateImageSlide.php
+lib/Model/CreateProductFilterRequest.php
 lib/Model/CreateProductSetRequest.php
 lib/Model/Creative.php
 lib/Model/CreativeListResponse.php
@@ -689,6 +697,7 @@ lib/Model/Price.php
 lib/Model/ProblemDetails.php
 lib/Model/ProblemsDetails.php
 lib/Model/Product.php
+lib/Model/ProductFilterConfig.php
 lib/Model/ProductImporterError.php
 lib/Model/ProductImporterWarning.php
 lib/Model/ProductSet.php
@@ -767,9 +776,14 @@ lib/Model/UpdateCouponResource.php
 lib/Model/UserDef.php
 lib/Model/UserProfileAttributeModel.php
 lib/Model/UserProfileIdentifierModel.php
+lib/Model/ValueResourceCollectionOutcomeOfProductFilterConfig.php
+lib/Model/ValueResourceInputOfCreateProductFilterRequest.php
 lib/Model/ValueResourceInputOfCreateProductSetRequest.php
 lib/Model/ValueResourceOfAdvertiserCreationInput.php
+lib/Model/ValueResourceOfCreateProductFilterRequest.php
 lib/Model/ValueResourceOfCreateProductSetRequest.php
+lib/Model/ValueResourceOfProductFilterConfig.php
+lib/Model/ValueResourceOutcomeOfProductFilterConfig.php
 lib/Model/VideoDetail.php
 lib/Model/WriteModelAdSetId.php
 lib/Model/WriteModelPatchAdSetV24Q1.php

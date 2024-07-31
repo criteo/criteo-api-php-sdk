@@ -1,6 +1,6 @@
 <?php
 /**
- * ContactlistWithAttributesAmendmentAttributes
+ * ValueResourceOfCreateProductFilterRequest
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\preview\ObjectSerializer;
 
 /**
- * ContactlistWithAttributesAmendmentAttributes Class Doc Comment
+ * ValueResourceOfCreateProductFilterRequest Class Doc Comment
  *
  * @category Class
- * @description the name of the entity type
+ * @description A top-level object that encapsulates a Criteo API response for a single value.
  * @package  criteo\api\marketingsolutions\preview
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ContactlistWithAttributesAmendmentAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
+class ValueResourceOfCreateProductFilterRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ContactlistWithAttributesAmendmentAttributes implements ModelInterface, Ar
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ContactlistWithAttributesAmendment_attributes';
+    protected static $openAPIModelName = 'ValueResourceOfCreateProductFilterRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,10 +58,8 @@ class ContactlistWithAttributesAmendmentAttributes implements ModelInterface, Ar
       * @var string[]
       */
     protected static $openAPITypes = [
-        'operation' => 'string',
-        'identifier_type' => 'string',
-        'identifiers' => '\criteo\api\marketingsolutions\preview\Model\UserDef[]',
-        'gum_caller_id' => 'object'
+        'type' => 'string',
+        'attributes' => '\criteo\api\marketingsolutions\preview\Model\CreateProductFilterRequest'
     ];
 
     /**
@@ -72,10 +70,8 @@ class ContactlistWithAttributesAmendmentAttributes implements ModelInterface, Ar
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'operation' => null,
-        'identifier_type' => null,
-        'identifiers' => null,
-        'gum_caller_id' => null
+        'type' => null,
+        'attributes' => null
     ];
 
     /**
@@ -84,10 +80,8 @@ class ContactlistWithAttributesAmendmentAttributes implements ModelInterface, Ar
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'operation' => false,
-		'identifier_type' => false,
-		'identifiers' => false,
-		'gum_caller_id' => true
+        'type' => true,
+		'attributes' => false
     ];
 
     /**
@@ -176,10 +170,8 @@ class ContactlistWithAttributesAmendmentAttributes implements ModelInterface, Ar
      * @var string[]
      */
     protected static $attributeMap = [
-        'operation' => 'operation',
-        'identifier_type' => 'identifierType',
-        'identifiers' => 'identifiers',
-        'gum_caller_id' => 'gumCallerId'
+        'type' => 'type',
+        'attributes' => 'attributes'
     ];
 
     /**
@@ -188,10 +180,8 @@ class ContactlistWithAttributesAmendmentAttributes implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-        'operation' => 'setOperation',
-        'identifier_type' => 'setIdentifierType',
-        'identifiers' => 'setIdentifiers',
-        'gum_caller_id' => 'setGumCallerId'
+        'type' => 'setType',
+        'attributes' => 'setAttributes'
     ];
 
     /**
@@ -200,10 +190,8 @@ class ContactlistWithAttributesAmendmentAttributes implements ModelInterface, Ar
      * @var string[]
      */
     protected static $getters = [
-        'operation' => 'getOperation',
-        'identifier_type' => 'getIdentifierType',
-        'identifiers' => 'getIdentifiers',
-        'gum_caller_id' => 'getGumCallerId'
+        'type' => 'getType',
+        'attributes' => 'getAttributes'
     ];
 
     /**
@@ -247,44 +235,6 @@ class ContactlistWithAttributesAmendmentAttributes implements ModelInterface, Ar
         return self::$openAPIModelName;
     }
 
-    public const OPERATION_ADD = 'add';
-    public const OPERATION_REMOVE = 'remove';
-    public const IDENTIFIER_TYPE_EMAIL = 'email';
-    public const IDENTIFIER_TYPE_MADID = 'madid';
-    public const IDENTIFIER_TYPE_IDENTITY_LINK = 'identityLink';
-    public const IDENTIFIER_TYPE_GUM = 'gum';
-    public const IDENTIFIER_TYPE_CUSTOMERID = 'customerid';
-    public const IDENTIFIER_TYPE_PHONE_NUMBER = 'phoneNumber';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getOperationAllowableValues()
-    {
-        return [
-            self::OPERATION_ADD,
-            self::OPERATION_REMOVE,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getIdentifierTypeAllowableValues()
-    {
-        return [
-            self::IDENTIFIER_TYPE_EMAIL,
-            self::IDENTIFIER_TYPE_MADID,
-            self::IDENTIFIER_TYPE_IDENTITY_LINK,
-            self::IDENTIFIER_TYPE_GUM,
-            self::IDENTIFIER_TYPE_CUSTOMERID,
-            self::IDENTIFIER_TYPE_PHONE_NUMBER,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -301,10 +251,8 @@ class ContactlistWithAttributesAmendmentAttributes implements ModelInterface, Ar
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('operation', $data ?? [], null);
-        $this->setIfExists('identifier_type', $data ?? [], null);
-        $this->setIfExists('identifiers', $data ?? [], null);
-        $this->setIfExists('gum_caller_id', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('attributes', $data ?? [], null);
     }
 
     /**
@@ -334,33 +282,6 @@ class ContactlistWithAttributesAmendmentAttributes implements ModelInterface, Ar
     {
         $invalidProperties = [];
 
-        if ($this->container['operation'] === null) {
-            $invalidProperties[] = "'operation' can't be null";
-        }
-        $allowedValues = $this->getOperationAllowableValues();
-        if (!is_null($this->container['operation']) && !in_array($this->container['operation'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'operation', must be one of '%s'",
-                $this->container['operation'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['identifier_type'] === null) {
-            $invalidProperties[] = "'identifier_type' can't be null";
-        }
-        $allowedValues = $this->getIdentifierTypeAllowableValues();
-        if (!is_null($this->container['identifier_type']) && !in_array($this->container['identifier_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'identifier_type', must be one of '%s'",
-                $this->container['identifier_type'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['identifiers'] === null) {
-            $invalidProperties[] = "'identifiers' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -377,136 +298,62 @@ class ContactlistWithAttributesAmendmentAttributes implements ModelInterface, Ar
 
 
     /**
-     * Gets operation
+     * Gets type
      *
-     * @return string
+     * @return string|null
      */
-    public function getOperation()
+    public function getType()
     {
-        return $this->container['operation'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets operation
+     * Sets type
      *
-     * @param string $operation Whether to add or remove users
+     * @param string|null $type type
      *
      * @return self
      */
-    public function setOperation($operation)
+    public function setType($type)
     {
-        if (is_null($operation)) {
-            throw new \InvalidArgumentException('non-nullable operation cannot be null');
-        }
-        $allowedValues = $this->getOperationAllowableValues();
-        if (!in_array($operation, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'operation', must be one of '%s'",
-                    $operation,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['operation'] = $operation;
-
-        return $this;
-    }
-
-    /**
-     * Gets identifier_type
-     *
-     * @return string
-     */
-    public function getIdentifierType()
-    {
-        return $this->container['identifier_type'];
-    }
-
-    /**
-     * Sets identifier_type
-     *
-     * @param string $identifier_type What type of identifiers are used
-     *
-     * @return self
-     */
-    public function setIdentifierType($identifier_type)
-    {
-        if (is_null($identifier_type)) {
-            throw new \InvalidArgumentException('non-nullable identifier_type cannot be null');
-        }
-        $allowedValues = $this->getIdentifierTypeAllowableValues();
-        if (!in_array($identifier_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'identifier_type', must be one of '%s'",
-                    $identifier_type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['identifier_type'] = $identifier_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets identifiers
-     *
-     * @return \criteo\api\marketingsolutions\preview\Model\UserDef[]
-     */
-    public function getIdentifiers()
-    {
-        return $this->container['identifiers'];
-    }
-
-    /**
-     * Sets identifiers
-     *
-     * @param \criteo\api\marketingsolutions\preview\Model\UserDef[] $identifiers The users to add or remove, each in the schema specified, defined with attributes
-     *
-     * @return self
-     */
-    public function setIdentifiers($identifiers)
-    {
-        if (is_null($identifiers)) {
-            throw new \InvalidArgumentException('non-nullable identifiers cannot be null');
-        }
-        $this->container['identifiers'] = $identifiers;
-
-        return $this;
-    }
-
-    /**
-     * Gets gum_caller_id
-     *
-     * @return object|null
-     */
-    public function getGumCallerId()
-    {
-        return $this->container['gum_caller_id'];
-    }
-
-    /**
-     * Sets gum_caller_id
-     *
-     * @param object|null $gum_caller_id The Gum caller id of the advertiser patching identifiers of type Gum
-     *
-     * @return self
-     */
-    public function setGumCallerId($gum_caller_id)
-    {
-        if (is_null($gum_caller_id)) {
-            array_push($this->openAPINullablesSetToNull, 'gum_caller_id');
+        if (is_null($type)) {
+            array_push($this->openAPINullablesSetToNull, 'type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('gum_caller_id', $nullablesSetToNull);
+            $index = array_search('type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['gum_caller_id'] = $gum_caller_id;
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets attributes
+     *
+     * @return \criteo\api\marketingsolutions\preview\Model\CreateProductFilterRequest|null
+     */
+    public function getAttributes()
+    {
+        return $this->container['attributes'];
+    }
+
+    /**
+     * Sets attributes
+     *
+     * @param \criteo\api\marketingsolutions\preview\Model\CreateProductFilterRequest|null $attributes attributes
+     *
+     * @return self
+     */
+    public function setAttributes($attributes)
+    {
+        if (is_null($attributes)) {
+            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
+        }
+        $this->container['attributes'] = $attributes;
 
         return $this;
     }
