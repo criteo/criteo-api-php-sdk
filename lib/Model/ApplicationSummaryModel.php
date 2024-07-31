@@ -35,7 +35,7 @@ use \criteo\api\marketingsolutions\v2024_04\ObjectSerializer;
  * ApplicationSummaryModel Class Doc Comment
  *
  * @category Class
- * @description Model of ApplicationSummary
+ * @description Used for the /me endpoint. Contains information about the currently authenticated application that we accept to give to our clients
  * @package  criteo\api\marketingsolutions\v2024_04
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
