@@ -35,7 +35,7 @@ use \criteo\api\marketingsolutions\v2024_01\ObjectSerializer;
  * ApplicationSummaryModelResource Class Doc Comment
  *
  * @category Class
- * @description A class that represents a ValueType in a guild compliant way
+ * @description A top-level object that encapsulates a Criteo API response for a single value
  * @package  criteo\api\marketingsolutions\v2024_01
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
