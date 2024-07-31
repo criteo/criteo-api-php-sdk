@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\criteo\api\marketingsolutions\preview\Model\PatchAdSetCategoryBidResource[]**](PatchAdSetCategoryBidResource.md) |  | [optional]
+**data** | [**\criteo\api\marketingsolutions\v2024_07\Model\PatchAdSetCategoryBidResource[]**](PatchAdSetCategoryBidResource.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

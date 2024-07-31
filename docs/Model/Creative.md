@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **format** | **string** | The format of the creative | [optional]
 **advertiser_id** | **string** | Advertiser linked to the Creative |
 **dataset_id** | **string** | Data set id linked to the Creative | [optional]
-**image_attributes** | [**\criteo\api\marketingsolutions\preview\Model\ImageAttributes**](ImageAttributes.md) |  | [optional]
-**html_tag_attributes** | [**\criteo\api\marketingsolutions\preview\Model\HtmlTagAttributes**](HtmlTagAttributes.md) |  | [optional]
-**dynamic_attributes** | [**\criteo\api\marketingsolutions\preview\Model\DynamicAttributes**](DynamicAttributes.md) |  | [optional]
-**adaptive_attributes** | [**\criteo\api\marketingsolutions\preview\Model\AdaptiveAttributes**](AdaptiveAttributes.md) |  | [optional]
+**image_attributes** | [**\criteo\api\marketingsolutions\v2024_07\Model\ImageAttributes**](ImageAttributes.md) |  | [optional]
+**html_tag_attributes** | [**\criteo\api\marketingsolutions\v2024_07\Model\HtmlTagAttributes**](HtmlTagAttributes.md) |  | [optional]
+**dynamic_attributes** | [**\criteo\api\marketingsolutions\v2024_07\Model\DynamicAttributes**](DynamicAttributes.md) |  | [optional]
+**adaptive_attributes** | [**\criteo\api\marketingsolutions\v2024_07\Model\AdaptiveAttributes**](AdaptiveAttributes.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

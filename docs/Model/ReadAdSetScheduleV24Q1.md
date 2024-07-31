@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**start_date** | [**\criteo\api\marketingsolutions\preview\Model\NillableDateTime**](NillableDateTime.md) |  | [optional]
-**end_date** | [**\criteo\api\marketingsolutions\preview\Model\NillableDateTime**](NillableDateTime.md) |  | [optional]
+**start_date** | [**\criteo\api\marketingsolutions\v2024_07\Model\NillableDateTime**](NillableDateTime.md) |  | [optional]
+**end_date** | [**\criteo\api\marketingsolutions\v2024_07\Model\NillableDateTime**](NillableDateTime.md) |  | [optional]
 **activation_status** | **string** |  | [optional]
 **delivery_status** | **string** |  | [optional]
 

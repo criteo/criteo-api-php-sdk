@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**\criteo\api\marketingsolutions\preview\Model\CouponSupportedSizes**](CouponSupportedSizes.md) |  | [optional]
+**attributes** | [**\criteo\api\marketingsolutions\v2024_07\Model\CouponSupportedSizes**](CouponSupportedSizes.md) |  | [optional]
 **id** | **string** |  | [optional]
 **type** | **string** |  | [optional]
 
