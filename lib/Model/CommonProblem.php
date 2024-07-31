@@ -35,7 +35,7 @@ use \criteo\api\marketingsolutions\v2023_07\ObjectSerializer;
  * CommonProblem Class Doc Comment
  *
  * @category Class
- * @description Common problem object. Can be specialized as needed.
+ * @description Common problem object.
  * @package  criteo\api\marketingsolutions\v2023_07
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -507,7 +507,7 @@ class CommonProblem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets code
      *
-     * @param string|null $code A machine-readable  error code, expressed as a string value.
+     * @param string|null $code A machine-readable error code, expressed as a string value.
      *
      * @return self
      */
