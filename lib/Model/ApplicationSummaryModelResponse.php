@@ -35,7 +35,7 @@ use \criteo\api\marketingsolutions\v2023_10\ObjectSerializer;
  * ApplicationSummaryModelResponse Class Doc Comment
  *
  * @category Class
- * @description Response of ApplicationSummaryModel
+ * @description A top-level object that encapsulates a Criteo API response for a single value
  * @package  criteo\api\marketingsolutions\v2023_10
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -360,8 +360,6 @@ class ApplicationSummaryModelResponse implements ModelInterface, ArrayAccess, \J
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['warnings'] = $warnings;
 
         return $this;
@@ -396,8 +394,6 @@ class ApplicationSummaryModelResponse implements ModelInterface, ArrayAccess, \J
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['errors'] = $errors;
 
         return $this;
