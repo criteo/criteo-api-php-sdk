@@ -206,6 +206,7 @@ class CampaignApi
      * @throws \criteo\api\marketingsolutions\v2023_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \criteo\api\marketingsolutions\v2023_07\Model\ResponseReadAdSet
+     * @deprecated
      */
     public function createAdSet($create_ad_set_request, string $contentType = self::contentTypes['createAdSet'][0])
     {
@@ -222,6 +223,7 @@ class CampaignApi
      * @throws \criteo\api\marketingsolutions\v2023_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \criteo\api\marketingsolutions\v2023_07\Model\ResponseReadAdSet, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function createAdSetWithHttpInfo($create_ad_set_request, string $contentType = self::contentTypes['createAdSet'][0])
     {
@@ -319,6 +321,7 @@ class CampaignApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function createAdSetAsync($create_ad_set_request, string $contentType = self::contentTypes['createAdSet'][0])
     {
@@ -338,6 +341,7 @@ class CampaignApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function createAdSetAsyncWithHttpInfo($create_ad_set_request, string $contentType = self::contentTypes['createAdSet'][0])
     {
@@ -388,6 +392,7 @@ class CampaignApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function createAdSetRequest($create_ad_set_request, string $contentType = self::contentTypes['createAdSet'][0])
     {
@@ -1912,6 +1917,7 @@ class CampaignApi
      * @throws \criteo\api\marketingsolutions\v2023_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \criteo\api\marketingsolutions\v2023_07\Model\ResponsesAdSetId
+     * @deprecated
      */
     public function patchAdSets($requests_patch_ad_set = null, string $contentType = self::contentTypes['patchAdSets'][0])
     {
@@ -1928,6 +1934,7 @@ class CampaignApi
      * @throws \criteo\api\marketingsolutions\v2023_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \criteo\api\marketingsolutions\v2023_07\Model\ResponsesAdSetId, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function patchAdSetsWithHttpInfo($requests_patch_ad_set = null, string $contentType = self::contentTypes['patchAdSets'][0])
     {
@@ -2025,6 +2032,7 @@ class CampaignApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function patchAdSetsAsync($requests_patch_ad_set = null, string $contentType = self::contentTypes['patchAdSets'][0])
     {
@@ -2044,6 +2052,7 @@ class CampaignApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function patchAdSetsAsyncWithHttpInfo($requests_patch_ad_set = null, string $contentType = self::contentTypes['patchAdSets'][0])
     {
@@ -2094,6 +2103,7 @@ class CampaignApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function patchAdSetsRequest($requests_patch_ad_set = null, string $contentType = self::contentTypes['patchAdSets'][0])
     {

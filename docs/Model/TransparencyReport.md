@@ -1,4 +1,4 @@
-# # TransparencyReportAttributes
+# # TransparencyReport
 
 ## Properties
 

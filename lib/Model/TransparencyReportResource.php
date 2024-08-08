@@ -1,6 +1,6 @@
 <?php
 /**
- * TransparencyReportEntityMessage
+ * TransparencyReportResource
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2023_07\ObjectSerializer;
 
 /**
- * TransparencyReportEntityMessage Class Doc Comment
+ * TransparencyReportResource Class Doc Comment
  *
  * @category Class
- * @description This is the message defining the entity response for Transparency report
+ * @description A value resource exposed by the API.
  * @package  criteo\api\marketingsolutions\v2023_07
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \JsonSerializable
+class TransparencyReportResource implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TransparencyReportEntityMessage';
+    protected static $openAPIModelName = 'TransparencyReportResource';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPITypes = [
         'type' => 'string',
-        'attributes' => '\criteo\api\marketingsolutions\v2023_07\Model\TransparencyReportAttributes'
+        'attributes' => '\criteo\api\marketingsolutions\v2023_07\Model\TransparencyReport'
     ];
 
     /**
@@ -80,7 +80,7 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'type' => false,
+        'type' => true,
 		'attributes' => false
     ];
 
@@ -282,12 +282,6 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
     {
         $invalidProperties = [];
 
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        if ($this->container['attributes'] === null) {
-            $invalidProperties[] = "'attributes' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
     /**
      * Gets type
      *
-     * @return string
+     * @return string|null
      */
     public function getType()
     {
@@ -316,14 +310,21 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
     /**
      * Sets type
      *
-     * @param string $type type
+     * @param string|null $type Type of the resource.
      *
      * @return self
      */
     public function setType($type)
     {
         if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['type'] = $type;
 
@@ -333,7 +334,7 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
     /**
      * Gets attributes
      *
-     * @return \criteo\api\marketingsolutions\v2023_07\Model\TransparencyReportAttributes
+     * @return \criteo\api\marketingsolutions\v2023_07\Model\TransparencyReport|null
      */
     public function getAttributes()
     {
@@ -343,7 +344,7 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
     /**
      * Sets attributes
      *
-     * @param \criteo\api\marketingsolutions\v2023_07\Model\TransparencyReportAttributes $attributes attributes
+     * @param \criteo\api\marketingsolutions\v2023_07\Model\TransparencyReport|null $attributes attributes
      *
      * @return self
      */

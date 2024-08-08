@@ -1,10 +1,9 @@
-# # TransparencyReportEntityMessage
+# # PlacementsReportQueryMessageListRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [readonly]
-**attributes** | [**\criteo\api\marketingsolutions\v2023_07\Model\TransparencyReportAttributes**](TransparencyReportAttributes.md) |  |
+**data** | [**\criteo\api\marketingsolutions\v2023_07\Model\PlacementsReportQueryMessageResource[]**](PlacementsReportQueryMessageResource.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

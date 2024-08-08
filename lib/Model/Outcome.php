@@ -1,6 +1,6 @@
 <?php
 /**
- * TransparencyReportAttributes
+ * Outcome
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2023_07\ObjectSerializer;
 
 /**
- * TransparencyReportAttributes Class Doc Comment
+ * Outcome Class Doc Comment
  *
  * @category Class
- * @description This is the message defining the attribute response for Transparency report
+ * @description The outcome of an API call.
  * @package  criteo\api\marketingsolutions\v2023_07
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TransparencyReportAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
+class Outcome implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class TransparencyReportAttributes implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TransparencyReportAttributes';
+    protected static $openAPIModelName = 'Outcome';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,8 @@ class TransparencyReportAttributes implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'advertiser_id' => 'string',
-        'token_valid_until' => '\DateTime',
-        'files' => '\criteo\api\marketingsolutions\v2023_07\Model\TransparencyReportFile[]'
+        'warnings' => '\criteo\api\marketingsolutions\v2023_07\Model\CommonProblem[]',
+        'errors' => '\criteo\api\marketingsolutions\v2023_07\Model\CommonProblem[]'
     ];
 
     /**
@@ -71,9 +70,8 @@ class TransparencyReportAttributes implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'advertiser_id' => null,
-        'token_valid_until' => 'date-time',
-        'files' => null
+        'warnings' => null,
+        'errors' => null
     ];
 
     /**
@@ -82,9 +80,8 @@ class TransparencyReportAttributes implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'advertiser_id' => false,
-		'token_valid_until' => false,
-		'files' => false
+        'warnings' => true,
+		'errors' => true
     ];
 
     /**
@@ -173,9 +170,8 @@ class TransparencyReportAttributes implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'advertiser_id' => 'advertiserId',
-        'token_valid_until' => 'tokenValidUntil',
-        'files' => 'files'
+        'warnings' => 'warnings',
+        'errors' => 'errors'
     ];
 
     /**
@@ -184,9 +180,8 @@ class TransparencyReportAttributes implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'advertiser_id' => 'setAdvertiserId',
-        'token_valid_until' => 'setTokenValidUntil',
-        'files' => 'setFiles'
+        'warnings' => 'setWarnings',
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -195,9 +190,8 @@ class TransparencyReportAttributes implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'advertiser_id' => 'getAdvertiserId',
-        'token_valid_until' => 'getTokenValidUntil',
-        'files' => 'getFiles'
+        'warnings' => 'getWarnings',
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -257,9 +251,8 @@ class TransparencyReportAttributes implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('advertiser_id', $data ?? [], null);
-        $this->setIfExists('token_valid_until', $data ?? [], null);
-        $this->setIfExists('files', $data ?? [], null);
+        $this->setIfExists('warnings', $data ?? [], null);
+        $this->setIfExists('errors', $data ?? [], null);
     }
 
     /**
@@ -289,15 +282,6 @@ class TransparencyReportAttributes implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['advertiser_id'] === null) {
-            $invalidProperties[] = "'advertiser_id' can't be null";
-        }
-        if ($this->container['token_valid_until'] === null) {
-            $invalidProperties[] = "'token_valid_until' can't be null";
-        }
-        if ($this->container['files'] === null) {
-            $invalidProperties[] = "'files' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -314,84 +298,69 @@ class TransparencyReportAttributes implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets advertiser_id
+     * Gets warnings
      *
-     * @return string
+     * @return \criteo\api\marketingsolutions\v2023_07\Model\CommonProblem[]|null
      */
-    public function getAdvertiserId()
+    public function getWarnings()
     {
-        return $this->container['advertiser_id'];
+        return $this->container['warnings'];
     }
 
     /**
-     * Sets advertiser_id
+     * Sets warnings
      *
-     * @param string $advertiser_id advertiser_id
+     * @param \criteo\api\marketingsolutions\v2023_07\Model\CommonProblem[]|null $warnings Warnings that occured during this call.
      *
      * @return self
      */
-    public function setAdvertiserId($advertiser_id)
+    public function setWarnings($warnings)
     {
-        if (is_null($advertiser_id)) {
-            throw new \InvalidArgumentException('non-nullable advertiser_id cannot be null');
+        if (is_null($warnings)) {
+            array_push($this->openAPINullablesSetToNull, 'warnings');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('warnings', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['advertiser_id'] = $advertiser_id;
+        $this->container['warnings'] = $warnings;
 
         return $this;
     }
 
     /**
-     * Gets token_valid_until
+     * Gets errors
      *
-     * @return \DateTime
+     * @return \criteo\api\marketingsolutions\v2023_07\Model\CommonProblem[]|null
      */
-    public function getTokenValidUntil()
+    public function getErrors()
     {
-        return $this->container['token_valid_until'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets token_valid_until
+     * Sets errors
      *
-     * @param \DateTime $token_valid_until token_valid_until
+     * @param \criteo\api\marketingsolutions\v2023_07\Model\CommonProblem[]|null $errors Errors that occured during this call.
      *
      * @return self
      */
-    public function setTokenValidUntil($token_valid_until)
+    public function setErrors($errors)
     {
-        if (is_null($token_valid_until)) {
-            throw new \InvalidArgumentException('non-nullable token_valid_until cannot be null');
+        if (is_null($errors)) {
+            array_push($this->openAPINullablesSetToNull, 'errors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('errors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['token_valid_until'] = $token_valid_until;
-
-        return $this;
-    }
-
-    /**
-     * Gets files
-     *
-     * @return \criteo\api\marketingsolutions\v2023_07\Model\TransparencyReportFile[]
-     */
-    public function getFiles()
-    {
-        return $this->container['files'];
-    }
-
-    /**
-     * Sets files
-     *
-     * @param \criteo\api\marketingsolutions\v2023_07\Model\TransparencyReportFile[] $files files
-     *
-     * @return self
-     */
-    public function setFiles($files)
-    {
-        if (is_null($files)) {
-            throw new \InvalidArgumentException('non-nullable files cannot be null');
-        }
-
-
-        $this->container['files'] = $files;
+        $this->container['errors'] = $errors;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionsReportQueryEntityMessage
+ * TransactionsReportQueryMessageResource
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2023_07\ObjectSerializer;
 
 /**
- * TransactionsReportQueryEntityMessage Class Doc Comment
+ * TransactionsReportQueryMessageResource Class Doc Comment
  *
  * @category Class
- * @description Contains a query for Transaction report and its type
+ * @description A value resource exposed by the API.
  * @package  criteo\api\marketingsolutions\v2023_07
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAccess, \JsonSerializable
+class TransactionsReportQueryMessageResource implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TransactionsReportQueryEntityMessage';
+    protected static $openAPIModelName = 'TransactionsReportQueryMessageResource';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -80,7 +80,7 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'type' => false,
+        'type' => true,
 		'attributes' => false
     ];
 
@@ -282,12 +282,6 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        if ($this->container['attributes'] === null) {
-            $invalidProperties[] = "'attributes' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -306,7 +300,7 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
     /**
      * Gets type
      *
-     * @return string
+     * @return string|null
      */
     public function getType()
     {
@@ -316,14 +310,21 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
     /**
      * Sets type
      *
-     * @param string $type type
+     * @param string|null $type Type of the resource.
      *
      * @return self
      */
     public function setType($type)
     {
         if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['type'] = $type;
 
@@ -333,7 +334,7 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
     /**
      * Gets attributes
      *
-     * @return \criteo\api\marketingsolutions\v2023_07\Model\TransactionsReportQueryMessage
+     * @return \criteo\api\marketingsolutions\v2023_07\Model\TransactionsReportQueryMessage|null
      */
     public function getAttributes()
     {
@@ -343,7 +344,7 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
     /**
      * Sets attributes
      *
-     * @param \criteo\api\marketingsolutions\v2023_07\Model\TransactionsReportQueryMessage $attributes attributes
+     * @param \criteo\api\marketingsolutions\v2023_07\Model\TransactionsReportQueryMessage|null $attributes attributes
      *
      * @return self
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * ProblemsDetails
+ * TransparencyReportListResponse
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2023_07\ObjectSerializer;
 
 /**
- * ProblemsDetails Class Doc Comment
+ * TransparencyReportListResponse Class Doc Comment
  *
  * @category Class
- * @description Common problems object
+ * @description A top-level object that encapsulates a Criteo API response for several value objects.
  * @package  criteo\api\marketingsolutions\v2023_07
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
+class TransparencyReportListResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ProblemsDetails';
+    protected static $openAPIModelName = 'TransparencyReportListResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,9 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\criteo\api\marketingsolutions\v2023_07\Model\ProblemDetails[]'
+        'data' => '\criteo\api\marketingsolutions\v2023_07\Model\TransparencyReportResource[]',
+        'warnings' => '\criteo\api\marketingsolutions\v2023_07\Model\CommonProblem[]',
+        'errors' => '\criteo\api\marketingsolutions\v2023_07\Model\CommonProblem[]'
     ];
 
     /**
@@ -69,6 +71,8 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'data' => null,
+        'warnings' => null,
         'errors' => null
     ];
 
@@ -78,7 +82,9 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'errors' => true
+        'data' => true,
+		'warnings' => true,
+		'errors' => true
     ];
 
     /**
@@ -167,6 +173,8 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'data' => 'data',
+        'warnings' => 'warnings',
         'errors' => 'errors'
     ];
 
@@ -176,6 +184,8 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'data' => 'setData',
+        'warnings' => 'setWarnings',
         'errors' => 'setErrors'
     ];
 
@@ -185,6 +195,8 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'data' => 'getData',
+        'warnings' => 'getWarnings',
         'errors' => 'getErrors'
     ];
 
@@ -245,6 +257,8 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('warnings', $data ?? [], null);
         $this->setIfExists('errors', $data ?? [], null);
     }
 
@@ -291,9 +305,77 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets data
+     *
+     * @return \criteo\api\marketingsolutions\v2023_07\Model\TransparencyReportResource[]|null
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param \criteo\api\marketingsolutions\v2023_07\Model\TransparencyReportResource[]|null $data data
+     *
+     * @return self
+     */
+    public function setData($data)
+    {
+        if (is_null($data)) {
+            array_push($this->openAPINullablesSetToNull, 'data');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('data', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets warnings
+     *
+     * @return \criteo\api\marketingsolutions\v2023_07\Model\CommonProblem[]|null
+     */
+    public function getWarnings()
+    {
+        return $this->container['warnings'];
+    }
+
+    /**
+     * Sets warnings
+     *
+     * @param \criteo\api\marketingsolutions\v2023_07\Model\CommonProblem[]|null $warnings Warnings that occured during this call.
+     *
+     * @return self
+     */
+    public function setWarnings($warnings)
+    {
+        if (is_null($warnings)) {
+            array_push($this->openAPINullablesSetToNull, 'warnings');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('warnings', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['warnings'] = $warnings;
+
+        return $this;
+    }
+
+    /**
      * Gets errors
      *
-     * @return \criteo\api\marketingsolutions\v2023_07\Model\ProblemDetails[]|null
+     * @return \criteo\api\marketingsolutions\v2023_07\Model\CommonProblem[]|null
      */
     public function getErrors()
     {
@@ -303,7 +385,7 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets errors
      *
-     * @param \criteo\api\marketingsolutions\v2023_07\Model\ProblemDetails[]|null $errors errors
+     * @param \criteo\api\marketingsolutions\v2023_07\Model\CommonProblem[]|null $errors Errors that occured during this call.
      *
      * @return self
      */
@@ -319,8 +401,6 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['errors'] = $errors;
 
         return $this;
