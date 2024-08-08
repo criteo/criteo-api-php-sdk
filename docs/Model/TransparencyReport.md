@@ -1,10 +1,11 @@
-# # PlacementsReportQueryEntityMessage
+# # TransparencyReport
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  |
-**attributes** | [**\criteo\api\marketingsolutions\v2023_10\Model\PlacementsReportQueryMessage**](PlacementsReportQueryMessage.md) |  |
+**advertiser_id** | **string** |  |
+**token_valid_until** | **\DateTime** |  |
+**files** | [**\criteo\api\marketingsolutions\v2023_10\Model\TransparencyReportFile[]**](TransparencyReportFile.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

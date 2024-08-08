@@ -1,6 +1,6 @@
 <?php
 /**
- * TransparencyReportDataMessage
+ * Outcome
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2023_10\ObjectSerializer;
 
 /**
- * TransparencyReportDataMessage Class Doc Comment
+ * Outcome Class Doc Comment
  *
  * @category Class
- * @description This is the message defining the response for Transparency report
+ * @description The outcome of an API call.
  * @package  criteo\api\marketingsolutions\v2023_10
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \JsonSerializable
+class Outcome implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TransparencyReportDataMessage';
+    protected static $openAPIModelName = 'Outcome';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,8 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\criteo\api\marketingsolutions\v2023_10\Model\TransparencyReportEntityMessage[]'
+        'warnings' => '\criteo\api\marketingsolutions\v2023_10\Model\CommonProblem[]',
+        'errors' => '\criteo\api\marketingsolutions\v2023_10\Model\CommonProblem[]'
     ];
 
     /**
@@ -69,7 +70,8 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'warnings' => null,
+        'errors' => null
     ];
 
     /**
@@ -78,7 +80,8 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'data' => false
+        'warnings' => true,
+		'errors' => true
     ];
 
     /**
@@ -167,7 +170,8 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'warnings' => 'warnings',
+        'errors' => 'errors'
     ];
 
     /**
@@ -176,7 +180,8 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'warnings' => 'setWarnings',
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -185,7 +190,8 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'warnings' => 'getWarnings',
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -245,7 +251,8 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('warnings', $data ?? [], null);
+        $this->setIfExists('errors', $data ?? [], null);
     }
 
     /**
@@ -275,9 +282,6 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -294,30 +298,69 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets data
+     * Gets warnings
      *
-     * @return \criteo\api\marketingsolutions\v2023_10\Model\TransparencyReportEntityMessage[]
+     * @return \criteo\api\marketingsolutions\v2023_10\Model\CommonProblem[]|null
      */
-    public function getData()
+    public function getWarnings()
     {
-        return $this->container['data'];
+        return $this->container['warnings'];
     }
 
     /**
-     * Sets data
+     * Sets warnings
      *
-     * @param \criteo\api\marketingsolutions\v2023_10\Model\TransparencyReportEntityMessage[] $data data
+     * @param \criteo\api\marketingsolutions\v2023_10\Model\CommonProblem[]|null $warnings Warnings that occured during this call.
      *
      * @return self
      */
-    public function setData($data)
+    public function setWarnings($warnings)
     {
-        if (is_null($data)) {
-            throw new \InvalidArgumentException('non-nullable data cannot be null');
+        if (is_null($warnings)) {
+            array_push($this->openAPINullablesSetToNull, 'warnings');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('warnings', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
+        $this->container['warnings'] = $warnings;
 
+        return $this;
+    }
 
-        $this->container['data'] = $data;
+    /**
+     * Gets errors
+     *
+     * @return \criteo\api\marketingsolutions\v2023_10\Model\CommonProblem[]|null
+     */
+    public function getErrors()
+    {
+        return $this->container['errors'];
+    }
+
+    /**
+     * Sets errors
+     *
+     * @param \criteo\api\marketingsolutions\v2023_10\Model\CommonProblem[]|null $errors Errors that occured during this call.
+     *
+     * @return self
+     */
+    public function setErrors($errors)
+    {
+        if (is_null($errors)) {
+            array_push($this->openAPINullablesSetToNull, 'errors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('errors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['errors'] = $errors;
 
         return $this;
     }

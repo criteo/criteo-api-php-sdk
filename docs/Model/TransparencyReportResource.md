@@ -1,10 +1,10 @@
-# # TransparencyReportEntityMessage
+# # TransparencyReportResource
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [readonly]
-**attributes** | [**\criteo\api\marketingsolutions\v2023_10\Model\TransparencyReportAttributes**](TransparencyReportAttributes.md) |  |
+**type** | **string** | Type of the resource. | [optional]
+**attributes** | [**\criteo\api\marketingsolutions\v2023_10\Model\TransparencyReport**](TransparencyReport.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

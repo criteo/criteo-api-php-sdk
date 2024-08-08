@@ -13,7 +13,7 @@ All URIs are relative to https://api.criteo.com, except if the operation defines
 ## `getAdsetReport()`
 
 ```php
-getAdsetReport($statistics_report_query_message): \SplFileObject
+getAdsetReport($statistics_report_query_message): string
 ```
 
 
@@ -40,7 +40,7 @@ $apiInstance = new criteo\api\marketingsolutions\v2023_10\Api\AnalyticsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$statistics_report_query_message = new \criteo\api\marketingsolutions\v2023_10\Model\StatisticsReportQueryMessage(); // \criteo\api\marketingsolutions\v2023_10\Model\StatisticsReportQueryMessage
+$statistics_report_query_message = {"advertiserIds":"123,456,789","adSetIds":["12345","54321"],"adSetNames":["myAdSet1","myAdSet2"],"adSetStatus":["Active"],"dimensions":["CampaignId","Campaign","AdsetId","Adset","AdvertiserId","Advertiser","AdId","Ad","CouponId","Coupon","CategoryId","Category","Hour","Day","Week","Month","Year","Os","Device"],"metrics":["Clicks","Displays","Cpc","Visits"],"currency":"EUR","format":"csv","timezone":"Europe/Paris","startDate":"2024-04-24T00:00:00.0000000+02:00","endDate":"2024-04-27T00:00:00.0000000+02:00"}; // \criteo\api\marketingsolutions\v2023_10\Model\StatisticsReportQueryMessage
 
 try {
     $result = $apiInstance->getAdsetReport($statistics_report_query_message);
@@ -58,7 +58,7 @@ try {
 
 ### Return type
 
-**\SplFileObject**
+**string**
 
 ### Authorization
 
@@ -76,7 +76,7 @@ try {
 ## `getPlacementsReport()`
 
 ```php
-getPlacementsReport($placements_report_query_data_message): \SplFileObject
+getPlacementsReport($placements_report_query_message_list_request): string
 ```
 
 
@@ -103,10 +103,10 @@ $apiInstance = new criteo\api\marketingsolutions\v2023_10\Api\AnalyticsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$placements_report_query_data_message = new \criteo\api\marketingsolutions\v2023_10\Model\PlacementsReportQueryDataMessage(); // \criteo\api\marketingsolutions\v2023_10\Model\PlacementsReportQueryDataMessage
+$placements_report_query_message_list_request = new \criteo\api\marketingsolutions\v2023_10\Model\PlacementsReportQueryMessageListRequest(); // \criteo\api\marketingsolutions\v2023_10\Model\PlacementsReportQueryMessageListRequest
 
 try {
-    $result = $apiInstance->getPlacementsReport($placements_report_query_data_message);
+    $result = $apiInstance->getPlacementsReport($placements_report_query_message_list_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AnalyticsApi->getPlacementsReport: ', $e->getMessage(), PHP_EOL;
@@ -117,11 +117,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **placements_report_query_data_message** | [**\criteo\api\marketingsolutions\v2023_10\Model\PlacementsReportQueryDataMessage**](../Model/PlacementsReportQueryDataMessage.md)|  | [optional] |
+| **placements_report_query_message_list_request** | [**\criteo\api\marketingsolutions\v2023_10\Model\PlacementsReportQueryMessageListRequest**](../Model/PlacementsReportQueryMessageListRequest.md)|  | [optional] |
 
 ### Return type
 
-**\SplFileObject**
+**string**
 
 ### Authorization
 
@@ -130,7 +130,7 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json-patch+json`, `application/json`, `text/json`, `application/*+json`
-- **Accept**: `text/plain`, `application/json`, `text/json`, `text/csv`, `text/xml`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+- **Accept**: `text/plain`, `application/json`, `text/json`, `application/xml`, `text/xml`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -139,7 +139,7 @@ try {
 ## `getTransactionsReport()`
 
 ```php
-getTransactionsReport($transactions_report_query_data_message): \SplFileObject
+getTransactionsReport($transactions_report_query_message_list_request): string
 ```
 
 
@@ -166,10 +166,10 @@ $apiInstance = new criteo\api\marketingsolutions\v2023_10\Api\AnalyticsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$transactions_report_query_data_message = new \criteo\api\marketingsolutions\v2023_10\Model\TransactionsReportQueryDataMessage(); // \criteo\api\marketingsolutions\v2023_10\Model\TransactionsReportQueryDataMessage
+$transactions_report_query_message_list_request = new \criteo\api\marketingsolutions\v2023_10\Model\TransactionsReportQueryMessageListRequest(); // \criteo\api\marketingsolutions\v2023_10\Model\TransactionsReportQueryMessageListRequest
 
 try {
-    $result = $apiInstance->getTransactionsReport($transactions_report_query_data_message);
+    $result = $apiInstance->getTransactionsReport($transactions_report_query_message_list_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AnalyticsApi->getTransactionsReport: ', $e->getMessage(), PHP_EOL;
@@ -180,11 +180,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **transactions_report_query_data_message** | [**\criteo\api\marketingsolutions\v2023_10\Model\TransactionsReportQueryDataMessage**](../Model/TransactionsReportQueryDataMessage.md)|  | [optional] |
+| **transactions_report_query_message_list_request** | [**\criteo\api\marketingsolutions\v2023_10\Model\TransactionsReportQueryMessageListRequest**](../Model/TransactionsReportQueryMessageListRequest.md)|  | [optional] |
 
 ### Return type
 
-**\SplFileObject**
+**string**
 
 ### Authorization
 
@@ -202,7 +202,7 @@ try {
 ## `getTransparencyReport()`
 
 ```php
-getTransparencyReport($advertiser_id, $transparency_query_message): \criteo\api\marketingsolutions\v2023_10\Model\TransparencyReportDataMessage
+getTransparencyReport($advertiser_id, $transparency_query_message): \criteo\api\marketingsolutions\v2023_10\Model\TransparencyReportListResponse
 ```
 
 
@@ -230,7 +230,7 @@ $apiInstance = new criteo\api\marketingsolutions\v2023_10\Api\AnalyticsApi(
     $config
 );
 $advertiser_id = 56; // int | The advertiser id to fetch the transparency data.
-$transparency_query_message = new \criteo\api\marketingsolutions\v2023_10\Model\TransparencyQueryMessage(); // \criteo\api\marketingsolutions\v2023_10\Model\TransparencyQueryMessage
+$transparency_query_message = {"shouldDisplayProductIds":false,"startDate":"2024-04-24T00:00:00.0000000+02:00","endDate":"2024-04-27T00:00:00.0000000+02:00"}; // \criteo\api\marketingsolutions\v2023_10\Model\TransparencyQueryMessage | The query message.
 
 try {
     $result = $apiInstance->getTransparencyReport($advertiser_id, $transparency_query_message);
@@ -245,11 +245,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **advertiser_id** | **int**| The advertiser id to fetch the transparency data. | |
-| **transparency_query_message** | [**\criteo\api\marketingsolutions\v2023_10\Model\TransparencyQueryMessage**](../Model/TransparencyQueryMessage.md)|  | [optional] |
+| **transparency_query_message** | [**\criteo\api\marketingsolutions\v2023_10\Model\TransparencyQueryMessage**](../Model/TransparencyQueryMessage.md)| The query message. | [optional] |
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2023_10\Model\TransparencyReportDataMessage**](../Model/TransparencyReportDataMessage.md)
+[**\criteo\api\marketingsolutions\v2023_10\Model\TransparencyReportListResponse**](../Model/TransparencyReportListResponse.md)
 
 ### Authorization
 
@@ -258,7 +258,7 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json-patch+json`, `application/json`, `text/json`, `application/*+json`
-- **Accept**: `application/json`, `text/plain`, `text/json`
+- **Accept**: `text/plain`, `application/json`, `text/json`, `application/xml`, `text/xml`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

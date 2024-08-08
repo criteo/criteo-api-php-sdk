@@ -1,6 +1,6 @@
 <?php
 /**
- * ProblemsDetails
+ * PlacementsReportQueryMessageResource
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2023_10\ObjectSerializer;
 
 /**
- * ProblemsDetails Class Doc Comment
+ * PlacementsReportQueryMessageResource Class Doc Comment
  *
  * @category Class
- * @description Common problems object
+ * @description A value resource exposed by the API.
  * @package  criteo\api\marketingsolutions\v2023_10
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
+class PlacementsReportQueryMessageResource implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ProblemsDetails';
+    protected static $openAPIModelName = 'PlacementsReportQueryMessageResource';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,8 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\criteo\api\marketingsolutions\v2023_10\Model\ProblemDetails[]'
+        'type' => 'string',
+        'attributes' => '\criteo\api\marketingsolutions\v2023_10\Model\PlacementsReportQueryMessage'
     ];
 
     /**
@@ -69,7 +70,8 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'errors' => null
+        'type' => null,
+        'attributes' => null
     ];
 
     /**
@@ -78,7 +80,8 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'errors' => true
+        'type' => true,
+		'attributes' => false
     ];
 
     /**
@@ -167,7 +170,8 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'errors' => 'errors'
+        'type' => 'type',
+        'attributes' => 'attributes'
     ];
 
     /**
@@ -176,7 +180,8 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'errors' => 'setErrors'
+        'type' => 'setType',
+        'attributes' => 'setAttributes'
     ];
 
     /**
@@ -185,7 +190,8 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'errors' => 'getErrors'
+        'type' => 'getType',
+        'attributes' => 'getAttributes'
     ];
 
     /**
@@ -245,7 +251,8 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('errors', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('attributes', $data ?? [], null);
     }
 
     /**
@@ -291,37 +298,62 @@ class ProblemsDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets errors
+     * Gets type
      *
-     * @return \criteo\api\marketingsolutions\v2023_10\Model\ProblemDetails[]|null
+     * @return string|null
      */
-    public function getErrors()
+    public function getType()
     {
-        return $this->container['errors'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets errors
+     * Sets type
      *
-     * @param \criteo\api\marketingsolutions\v2023_10\Model\ProblemDetails[]|null $errors errors
+     * @param string|null $type Type of the resource.
      *
      * @return self
      */
-    public function setErrors($errors)
+    public function setType($type)
     {
-        if (is_null($errors)) {
-            array_push($this->openAPINullablesSetToNull, 'errors');
+        if (is_null($type)) {
+            array_push($this->openAPINullablesSetToNull, 'type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('errors', $nullablesSetToNull);
+            $index = array_search('type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+        $this->container['type'] = $type;
 
+        return $this;
+    }
 
-        $this->container['errors'] = $errors;
+    /**
+     * Gets attributes
+     *
+     * @return \criteo\api\marketingsolutions\v2023_10\Model\PlacementsReportQueryMessage|null
+     */
+    public function getAttributes()
+    {
+        return $this->container['attributes'];
+    }
+
+    /**
+     * Sets attributes
+     *
+     * @param \criteo\api\marketingsolutions\v2023_10\Model\PlacementsReportQueryMessage|null $attributes attributes
+     *
+     * @return self
+     */
+    public function setAttributes($attributes)
+    {
+        if (is_null($attributes)) {
+            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
+        }
+        $this->container['attributes'] = $attributes;
 
         return $this;
     }
