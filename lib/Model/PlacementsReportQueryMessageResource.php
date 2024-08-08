@@ -1,6 +1,6 @@
 <?php
 /**
- * TransparencyReportDataMessage
+ * PlacementsReportQueryMessageResource
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2024_04\ObjectSerializer;
 
 /**
- * TransparencyReportDataMessage Class Doc Comment
+ * PlacementsReportQueryMessageResource Class Doc Comment
  *
  * @category Class
- * @description This is the message defining the response for Transparency report
+ * @description A value resource exposed by the API.
  * @package  criteo\api\marketingsolutions\v2024_04
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \JsonSerializable
+class PlacementsReportQueryMessageResource implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TransparencyReportDataMessage';
+    protected static $openAPIModelName = 'PlacementsReportQueryMessageResource';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,8 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\criteo\api\marketingsolutions\v2024_04\Model\TransparencyReportEntityMessage[]'
+        'type' => 'string',
+        'attributes' => '\criteo\api\marketingsolutions\v2024_04\Model\PlacementsReportQueryMessage'
     ];
 
     /**
@@ -69,7 +70,8 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'type' => null,
+        'attributes' => null
     ];
 
     /**
@@ -78,7 +80,8 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'data' => false
+        'type' => true,
+		'attributes' => false
     ];
 
     /**
@@ -167,7 +170,8 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'type' => 'type',
+        'attributes' => 'attributes'
     ];
 
     /**
@@ -176,7 +180,8 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'type' => 'setType',
+        'attributes' => 'setAttributes'
     ];
 
     /**
@@ -185,7 +190,8 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'type' => 'getType',
+        'attributes' => 'getAttributes'
     ];
 
     /**
@@ -245,7 +251,8 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('attributes', $data ?? [], null);
     }
 
     /**
@@ -275,9 +282,6 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -294,30 +298,62 @@ class TransparencyReportDataMessage implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets data
+     * Gets type
      *
-     * @return \criteo\api\marketingsolutions\v2024_04\Model\TransparencyReportEntityMessage[]
+     * @return string|null
      */
-    public function getData()
+    public function getType()
     {
-        return $this->container['data'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets data
+     * Sets type
      *
-     * @param \criteo\api\marketingsolutions\v2024_04\Model\TransparencyReportEntityMessage[] $data data
+     * @param string|null $type Type of the resource.
      *
      * @return self
      */
-    public function setData($data)
+    public function setType($type)
     {
-        if (is_null($data)) {
-            throw new \InvalidArgumentException('non-nullable data cannot be null');
+        if (is_null($type)) {
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
+        $this->container['type'] = $type;
 
+        return $this;
+    }
 
-        $this->container['data'] = $data;
+    /**
+     * Gets attributes
+     *
+     * @return \criteo\api\marketingsolutions\v2024_04\Model\PlacementsReportQueryMessage|null
+     */
+    public function getAttributes()
+    {
+        return $this->container['attributes'];
+    }
+
+    /**
+     * Sets attributes
+     *
+     * @param \criteo\api\marketingsolutions\v2024_04\Model\PlacementsReportQueryMessage|null $attributes attributes
+     *
+     * @return self
+     */
+    public function setAttributes($attributes)
+    {
+        if (is_null($attributes)) {
+            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
+        }
+        $this->container['attributes'] = $attributes;
 
         return $this;
     }

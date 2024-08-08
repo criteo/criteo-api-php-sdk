@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionsReportQueryEntityMessage
+ * Outcome
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2024_04\ObjectSerializer;
 
 /**
- * TransactionsReportQueryEntityMessage Class Doc Comment
+ * Outcome Class Doc Comment
  *
  * @category Class
- * @description Contains a query for Transaction report and its type
+ * @description The outcome of an API call.
  * @package  criteo\api\marketingsolutions\v2024_04
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAccess, \JsonSerializable
+class Outcome implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TransactionsReportQueryEntityMessage';
+    protected static $openAPIModelName = 'Outcome';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,8 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => 'string',
-        'attributes' => '\criteo\api\marketingsolutions\v2024_04\Model\TransactionsReportQueryMessage'
+        'warnings' => '\criteo\api\marketingsolutions\v2024_04\Model\CommonProblem[]',
+        'errors' => '\criteo\api\marketingsolutions\v2024_04\Model\CommonProblem[]'
     ];
 
     /**
@@ -70,8 +70,8 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
-        'attributes' => null
+        'warnings' => null,
+        'errors' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'type' => false,
-		'attributes' => false
+        'warnings' => true,
+		'errors' => true
     ];
 
     /**
@@ -170,8 +170,8 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'attributes' => 'attributes'
+        'warnings' => 'warnings',
+        'errors' => 'errors'
     ];
 
     /**
@@ -180,8 +180,8 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'attributes' => 'setAttributes'
+        'warnings' => 'setWarnings',
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -190,8 +190,8 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'attributes' => 'getAttributes'
+        'warnings' => 'getWarnings',
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -251,8 +251,8 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('attributes', $data ?? [], null);
+        $this->setIfExists('warnings', $data ?? [], null);
+        $this->setIfExists('errors', $data ?? [], null);
     }
 
     /**
@@ -282,12 +282,6 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        if ($this->container['attributes'] === null) {
-            $invalidProperties[] = "'attributes' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,55 +298,69 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
 
 
     /**
-     * Gets type
+     * Gets warnings
      *
-     * @return string
+     * @return \criteo\api\marketingsolutions\v2024_04\Model\CommonProblem[]|null
      */
-    public function getType()
+    public function getWarnings()
     {
-        return $this->container['type'];
+        return $this->container['warnings'];
     }
 
     /**
-     * Sets type
+     * Sets warnings
      *
-     * @param string $type type
+     * @param \criteo\api\marketingsolutions\v2024_04\Model\CommonProblem[]|null $warnings Warnings that occured during this call.
      *
      * @return self
      */
-    public function setType($type)
+    public function setWarnings($warnings)
     {
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        if (is_null($warnings)) {
+            array_push($this->openAPINullablesSetToNull, 'warnings');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('warnings', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['type'] = $type;
+        $this->container['warnings'] = $warnings;
 
         return $this;
     }
 
     /**
-     * Gets attributes
+     * Gets errors
      *
-     * @return \criteo\api\marketingsolutions\v2024_04\Model\TransactionsReportQueryMessage
+     * @return \criteo\api\marketingsolutions\v2024_04\Model\CommonProblem[]|null
      */
-    public function getAttributes()
+    public function getErrors()
     {
-        return $this->container['attributes'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets attributes
+     * Sets errors
      *
-     * @param \criteo\api\marketingsolutions\v2024_04\Model\TransactionsReportQueryMessage $attributes attributes
+     * @param \criteo\api\marketingsolutions\v2024_04\Model\CommonProblem[]|null $errors Errors that occured during this call.
      *
      * @return self
      */
-    public function setAttributes($attributes)
+    public function setErrors($errors)
     {
-        if (is_null($attributes)) {
-            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
+        if (is_null($errors)) {
+            array_push($this->openAPINullablesSetToNull, 'errors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('errors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['attributes'] = $attributes;
+        $this->container['errors'] = $errors;
 
         return $this;
     }
