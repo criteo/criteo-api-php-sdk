@@ -309,6 +309,10 @@ class PlacementsReportQueryMessage implements ModelInterface, ArrayAccess, \Json
     public const DIMENSIONS_ADVERTISER_NAME = 'AdvertiserName';
     public const DIMENSIONS_CAMPAIGN_ID = 'CampaignId';
     public const DIMENSIONS_CAMPAIGN_NAME = 'CampaignName';
+    public const DIMENSIONS_AD_CHANNEL = 'AdChannel';
+    public const DIMENSIONS_SOCIAL_PLATFORM = 'SocialPlatform';
+    public const DIMENSIONS_CATEGORY_ID = 'CategoryId';
+    public const DIMENSIONS_CATEGORY_NAME = 'CategoryName';
 
     /**
      * Gets allowable values of the enum
@@ -326,6 +330,10 @@ class PlacementsReportQueryMessage implements ModelInterface, ArrayAccess, \Json
             self::DIMENSIONS_ADVERTISER_NAME,
             self::DIMENSIONS_CAMPAIGN_ID,
             self::DIMENSIONS_CAMPAIGN_NAME,
+            self::DIMENSIONS_AD_CHANNEL,
+            self::DIMENSIONS_SOCIAL_PLATFORM,
+            self::DIMENSIONS_CATEGORY_ID,
+            self::DIMENSIONS_CATEGORY_NAME,
         ];
     }
 
@@ -616,8 +624,6 @@ class PlacementsReportQueryMessage implements ModelInterface, ArrayAccess, \Json
                 )
             );
         }
-
-
         $this->container['dimensions'] = $dimensions;
 
         return $this;
@@ -645,8 +651,6 @@ class PlacementsReportQueryMessage implements ModelInterface, ArrayAccess, \Json
         if (is_null($metrics)) {
             throw new \InvalidArgumentException('non-nullable metrics cannot be null');
         }
-
-
         $this->container['metrics'] = $metrics;
 
         return $this;

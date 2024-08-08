@@ -1,10 +1,11 @@
-# # TransparencyReportEntityMessage
+# # TransparencyReport
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [readonly]
-**attributes** | [**\criteo\api\marketingsolutions\v2024_07\Model\TransparencyReportAttributes**](TransparencyReportAttributes.md) |  |
+**advertiser_id** | **string** |  |
+**token_valid_until** | **\DateTime** |  |
+**files** | [**\criteo\api\marketingsolutions\v2024_07\Model\TransparencyReportFile[]**](TransparencyReportFile.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

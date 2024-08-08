@@ -1,6 +1,6 @@
 <?php
 /**
- * TransparencyReportEntityMessage
+ * TransparencyReport
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2024_07\ObjectSerializer;
 
 /**
- * TransparencyReportEntityMessage Class Doc Comment
+ * TransparencyReport Class Doc Comment
  *
  * @category Class
- * @description This is the message defining the entity response for Transparency report
+ * @description This is the message defining the attribute response for Transparency report
  * @package  criteo\api\marketingsolutions\v2024_07
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \JsonSerializable
+class TransparencyReport implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TransparencyReportEntityMessage';
+    protected static $openAPIModelName = 'TransparencyReport';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,9 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => 'string',
-        'attributes' => '\criteo\api\marketingsolutions\v2024_07\Model\TransparencyReportAttributes'
+        'advertiser_id' => 'string',
+        'token_valid_until' => '\DateTime',
+        'files' => '\criteo\api\marketingsolutions\v2024_07\Model\TransparencyReportFile[]'
     ];
 
     /**
@@ -70,8 +71,9 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
-        'attributes' => null
+        'advertiser_id' => null,
+        'token_valid_until' => 'date-time',
+        'files' => null
     ];
 
     /**
@@ -80,8 +82,9 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'type' => false,
-		'attributes' => false
+        'advertiser_id' => false,
+		'token_valid_until' => false,
+		'files' => false
     ];
 
     /**
@@ -170,8 +173,9 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'attributes' => 'attributes'
+        'advertiser_id' => 'advertiserId',
+        'token_valid_until' => 'tokenValidUntil',
+        'files' => 'files'
     ];
 
     /**
@@ -180,8 +184,9 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'attributes' => 'setAttributes'
+        'advertiser_id' => 'setAdvertiserId',
+        'token_valid_until' => 'setTokenValidUntil',
+        'files' => 'setFiles'
     ];
 
     /**
@@ -190,8 +195,9 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'attributes' => 'getAttributes'
+        'advertiser_id' => 'getAdvertiserId',
+        'token_valid_until' => 'getTokenValidUntil',
+        'files' => 'getFiles'
     ];
 
     /**
@@ -251,8 +257,9 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('attributes', $data ?? [], null);
+        $this->setIfExists('advertiser_id', $data ?? [], null);
+        $this->setIfExists('token_valid_until', $data ?? [], null);
+        $this->setIfExists('files', $data ?? [], null);
     }
 
     /**
@@ -282,11 +289,14 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
     {
         $invalidProperties = [];
 
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
+        if ($this->container['advertiser_id'] === null) {
+            $invalidProperties[] = "'advertiser_id' can't be null";
         }
-        if ($this->container['attributes'] === null) {
-            $invalidProperties[] = "'attributes' can't be null";
+        if ($this->container['token_valid_until'] === null) {
+            $invalidProperties[] = "'token_valid_until' can't be null";
+        }
+        if ($this->container['files'] === null) {
+            $invalidProperties[] = "'files' can't be null";
         }
         return $invalidProperties;
     }
@@ -304,55 +314,82 @@ class TransparencyReportEntityMessage implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets type
+     * Gets advertiser_id
      *
      * @return string
      */
-    public function getType()
+    public function getAdvertiserId()
     {
-        return $this->container['type'];
+        return $this->container['advertiser_id'];
     }
 
     /**
-     * Sets type
+     * Sets advertiser_id
      *
-     * @param string $type type
+     * @param string $advertiser_id advertiser_id
      *
      * @return self
      */
-    public function setType($type)
+    public function setAdvertiserId($advertiser_id)
     {
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        if (is_null($advertiser_id)) {
+            throw new \InvalidArgumentException('non-nullable advertiser_id cannot be null');
         }
-        $this->container['type'] = $type;
+        $this->container['advertiser_id'] = $advertiser_id;
 
         return $this;
     }
 
     /**
-     * Gets attributes
+     * Gets token_valid_until
      *
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\TransparencyReportAttributes
+     * @return \DateTime
      */
-    public function getAttributes()
+    public function getTokenValidUntil()
     {
-        return $this->container['attributes'];
+        return $this->container['token_valid_until'];
     }
 
     /**
-     * Sets attributes
+     * Sets token_valid_until
      *
-     * @param \criteo\api\marketingsolutions\v2024_07\Model\TransparencyReportAttributes $attributes attributes
+     * @param \DateTime $token_valid_until token_valid_until
      *
      * @return self
      */
-    public function setAttributes($attributes)
+    public function setTokenValidUntil($token_valid_until)
     {
-        if (is_null($attributes)) {
-            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
+        if (is_null($token_valid_until)) {
+            throw new \InvalidArgumentException('non-nullable token_valid_until cannot be null');
         }
-        $this->container['attributes'] = $attributes;
+        $this->container['token_valid_until'] = $token_valid_until;
+
+        return $this;
+    }
+
+    /**
+     * Gets files
+     *
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\TransparencyReportFile[]
+     */
+    public function getFiles()
+    {
+        return $this->container['files'];
+    }
+
+    /**
+     * Sets files
+     *
+     * @param \criteo\api\marketingsolutions\v2024_07\Model\TransparencyReportFile[] $files files
+     *
+     * @return self
+     */
+    public function setFiles($files)
+    {
+        if (is_null($files)) {
+            throw new \InvalidArgumentException('non-nullable files cannot be null');
+        }
+        $this->container['files'] = $files;
 
         return $this;
     }

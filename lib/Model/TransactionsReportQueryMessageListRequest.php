@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionsReportQueryEntityMessage
+ * TransactionsReportQueryMessageListRequest
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2024_07\ObjectSerializer;
 
 /**
- * TransactionsReportQueryEntityMessage Class Doc Comment
+ * TransactionsReportQueryMessageListRequest Class Doc Comment
  *
  * @category Class
- * @description Contains a query for Transaction report and its type
+ * @description A top-level object that encapsulates a Criteo API request for several value objects.
  * @package  criteo\api\marketingsolutions\v2024_07
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAccess, \JsonSerializable
+class TransactionsReportQueryMessageListRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TransactionsReportQueryEntityMessage';
+    protected static $openAPIModelName = 'TransactionsReportQueryMessageListRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,7 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => 'string',
-        'attributes' => '\criteo\api\marketingsolutions\v2024_07\Model\TransactionsReportQueryMessage'
+        'data' => '\criteo\api\marketingsolutions\v2024_07\Model\TransactionsReportQueryMessageResource[]'
     ];
 
     /**
@@ -70,8 +69,7 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
-        'attributes' => null
+        'data' => null
     ];
 
     /**
@@ -80,8 +78,7 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'type' => false,
-		'attributes' => false
+        'data' => true
     ];
 
     /**
@@ -170,8 +167,7 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'attributes' => 'attributes'
+        'data' => 'data'
     ];
 
     /**
@@ -180,8 +176,7 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'attributes' => 'setAttributes'
+        'data' => 'setData'
     ];
 
     /**
@@ -190,8 +185,7 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'attributes' => 'getAttributes'
+        'data' => 'getData'
     ];
 
     /**
@@ -251,8 +245,7 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('attributes', $data ?? [], null);
+        $this->setIfExists('data', $data ?? [], null);
     }
 
     /**
@@ -282,12 +275,6 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        if ($this->container['attributes'] === null) {
-            $invalidProperties[] = "'attributes' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -304,55 +291,35 @@ class TransactionsReportQueryEntityMessage implements ModelInterface, ArrayAcces
 
 
     /**
-     * Gets type
+     * Gets data
      *
-     * @return string
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\TransactionsReportQueryMessageResource[]|null
      */
-    public function getType()
+    public function getData()
     {
-        return $this->container['type'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets type
+     * Sets data
      *
-     * @param string $type type
+     * @param \criteo\api\marketingsolutions\v2024_07\Model\TransactionsReportQueryMessageResource[]|null $data data
      *
      * @return self
      */
-    public function setType($type)
+    public function setData($data)
     {
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        if (is_null($data)) {
+            array_push($this->openAPINullablesSetToNull, 'data');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('data', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets attributes
-     *
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\TransactionsReportQueryMessage
-     */
-    public function getAttributes()
-    {
-        return $this->container['attributes'];
-    }
-
-    /**
-     * Sets attributes
-     *
-     * @param \criteo\api\marketingsolutions\v2024_07\Model\TransactionsReportQueryMessage $attributes attributes
-     *
-     * @return self
-     */
-    public function setAttributes($attributes)
-    {
-        if (is_null($attributes)) {
-            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
-        }
-        $this->container['attributes'] = $attributes;
+        $this->container['data'] = $data;
 
         return $this;
     }
