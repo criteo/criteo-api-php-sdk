@@ -138,7 +138,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_seller_id' => 'string',
         'external_seller_name' => 'string',
         'number_of_reviews' => 'int',
-        'product_rating' => 'string'
+        'product_rating' => 'string',
+        'badge' => 'string'
     ];
 
     /**
@@ -229,7 +230,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_seller_id' => null,
         'external_seller_name' => null,
         'number_of_reviews' => 'int32',
-        'product_rating' => null
+        'product_rating' => null,
+        'badge' => null
     ];
 
     /**
@@ -318,7 +320,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
 		'external_seller_id' => true,
 		'external_seller_name' => true,
 		'number_of_reviews' => true,
-		'product_rating' => true
+		'product_rating' => true,
+		'badge' => true
     ];
 
     /**
@@ -487,7 +490,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_seller_id' => 'externalSellerId',
         'external_seller_name' => 'externalSellerName',
         'number_of_reviews' => 'numberOfReviews',
-        'product_rating' => 'productRating'
+        'product_rating' => 'productRating',
+        'badge' => 'badge'
     ];
 
     /**
@@ -576,7 +580,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_seller_id' => 'setExternalSellerId',
         'external_seller_name' => 'setExternalSellerName',
         'number_of_reviews' => 'setNumberOfReviews',
-        'product_rating' => 'setProductRating'
+        'product_rating' => 'setProductRating',
+        'badge' => 'setBadge'
     ];
 
     /**
@@ -665,7 +670,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_seller_id' => 'getExternalSellerId',
         'external_seller_name' => 'getExternalSellerName',
         'number_of_reviews' => 'getNumberOfReviews',
-        'product_rating' => 'getProductRating'
+        'product_rating' => 'getProductRating',
+        'badge' => 'getBadge'
     ];
 
     /**
@@ -819,6 +825,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('external_seller_name', $data ?? [], null);
         $this->setIfExists('number_of_reviews', $data ?? [], null);
         $this->setIfExists('product_rating', $data ?? [], null);
+        $this->setIfExists('badge', $data ?? [], null);
     }
 
     /**
@@ -3535,6 +3542,40 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['product_rating'] = $product_rating;
+
+        return $this;
+    }
+
+    /**
+     * Gets badge
+     *
+     * @return string|null
+     */
+    public function getBadge()
+    {
+        return $this->container['badge'];
+    }
+
+    /**
+     * Sets badge
+     *
+     * @param string|null $badge URL of a badge image to display on the product.
+     *
+     * @return self
+     */
+    public function setBadge($badge)
+    {
+        if (is_null($badge)) {
+            array_push($this->openAPINullablesSetToNull, 'badge');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('badge', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['badge'] = $badge;
 
         return $this;
     }

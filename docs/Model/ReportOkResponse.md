@@ -11,5 +11,7 @@ Name | Type | Description | Notes
 **number_of_products_deleted** | **int** | The number of products deleted. |
 **number_of_products_with_errors** | **int** | The number of products with errors. |
 **error_details** | [**\criteo\api\marketingsolutions\preview\Model\ReportDetailErrors[]**](ReportDetailErrors.md) | The list of errors with details. |
+**number_of_products_with_warnings** | **int** | The number of products with Warnings. |
+**warning_details** | [**\criteo\api\marketingsolutions\preview\Model\ReportDetailWarnings[]**](ReportDetailWarnings.md) | The list of Warnings with details. |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

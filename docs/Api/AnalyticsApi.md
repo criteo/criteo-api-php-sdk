@@ -20,7 +20,7 @@ All URIs are relative to https://api.criteo.com, except if the operation defines
 ## `getAdsetReport()`
 
 ```php
-getAdsetReport($statistics_report_query_message): string
+getAdsetReport($statistics_report_query_message): \SplFileObject
 ```
 
 
@@ -65,7 +65,7 @@ try {
 
 ### Return type
 
-**string**
+**\SplFileObject**
 
 ### Authorization
 
@@ -335,7 +335,7 @@ try {
 ## `getCategoriesReport()`
 
 ```php
-getCategoriesReport($generate_categories_report_request_attributes_request): string
+getCategoriesReport($generate_categories_report_request_attributes_request): \SplFileObject
 ```
 
 
@@ -380,7 +380,7 @@ try {
 
 ### Return type
 
-**string**
+**\SplFileObject**
 
 ### Authorization
 
@@ -461,7 +461,7 @@ try {
 ## `getPlacementsReport()`
 
 ```php
-getPlacementsReport($placements_report_query_message_list_request): string
+getPlacementsReport($placements_report_query_message_list_request): \SplFileObject
 ```
 
 
@@ -506,7 +506,7 @@ try {
 
 ### Return type
 
-**string**
+**\SplFileObject**
 
 ### Authorization
 
@@ -515,7 +515,7 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json-patch+json`, `application/json`, `text/json`, `application/*+json`
-- **Accept**: `text/plain`, `application/json`, `text/json`, `application/xml`, `text/xml`
+- **Accept**: `text/plain`, `application/json`, `text/json`, `text/csv`, `application/xml`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`, `text/xml`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -587,7 +587,7 @@ try {
 ## `getTransactionsReport()`
 
 ```php
-getTransactionsReport($transactions_report_query_message_list_request): string
+getTransactionsReport($transactions_report_query_message_list_request): \SplFileObject
 ```
 
 
@@ -632,7 +632,7 @@ try {
 
 ### Return type
 
-**string**
+**\SplFileObject**
 
 ### Authorization
 

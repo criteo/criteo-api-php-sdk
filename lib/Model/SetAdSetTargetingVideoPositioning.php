@@ -59,6 +59,7 @@ class SetAdSetTargetingVideoPositioning implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPITypes = [
         'video_placement' => 'string[]',
+        'video_plcmt' => 'string[]',
         'playback_method' => 'string[]',
         'skippable' => 'string',
         'video_in_stream_position' => 'string[]',
@@ -75,6 +76,7 @@ class SetAdSetTargetingVideoPositioning implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPIFormats = [
         'video_placement' => null,
+        'video_plcmt' => null,
         'playback_method' => null,
         'skippable' => null,
         'video_in_stream_position' => null,
@@ -89,6 +91,7 @@ class SetAdSetTargetingVideoPositioning implements ModelInterface, ArrayAccess, 
       */
     protected static array $openAPINullables = [
         'video_placement' => true,
+		'video_plcmt' => true,
 		'playback_method' => true,
 		'skippable' => true,
 		'video_in_stream_position' => true,
@@ -183,6 +186,7 @@ class SetAdSetTargetingVideoPositioning implements ModelInterface, ArrayAccess, 
      */
     protected static $attributeMap = [
         'video_placement' => 'videoPlacement',
+        'video_plcmt' => 'videoPlcmt',
         'playback_method' => 'playbackMethod',
         'skippable' => 'skippable',
         'video_in_stream_position' => 'videoInStreamPosition',
@@ -197,6 +201,7 @@ class SetAdSetTargetingVideoPositioning implements ModelInterface, ArrayAccess, 
      */
     protected static $setters = [
         'video_placement' => 'setVideoPlacement',
+        'video_plcmt' => 'setVideoPlcmt',
         'playback_method' => 'setPlaybackMethod',
         'skippable' => 'setSkippable',
         'video_in_stream_position' => 'setVideoInStreamPosition',
@@ -211,6 +216,7 @@ class SetAdSetTargetingVideoPositioning implements ModelInterface, ArrayAccess, 
      */
     protected static $getters = [
         'video_placement' => 'getVideoPlacement',
+        'video_plcmt' => 'getVideoPlcmt',
         'playback_method' => 'getPlaybackMethod',
         'skippable' => 'getSkippable',
         'video_in_stream_position' => 'getVideoInStreamPosition',
@@ -264,6 +270,10 @@ class SetAdSetTargetingVideoPositioning implements ModelInterface, ArrayAccess, 
     public const VIDEO_PLACEMENT_IN_FEED = 'InFeed';
     public const VIDEO_PLACEMENT_INTERSTITIAL = 'Interstitial';
     public const VIDEO_PLACEMENT_IN_STREAM = 'InStream';
+    public const VIDEO_PLCMT_IN_STREAM = 'InStream';
+    public const VIDEO_PLCMT_ACCOMPANYING_CONTENT = 'AccompanyingContent';
+    public const VIDEO_PLCMT_INTERSTITIAL = 'Interstitial';
+    public const VIDEO_PLCMT_NO_CONTENT_STANDALONE = 'NoContentStandalone';
     public const PLAYBACK_METHOD_AUTO_SOUND_ON = 'AutoSoundOn';
     public const PLAYBACK_METHOD_AUTO_SOUND_OFF = 'AutoSoundOff';
     public const PLAYBACK_METHOD_CLICK_SOUND_ON = 'ClickSoundOn';
@@ -296,6 +306,21 @@ class SetAdSetTargetingVideoPositioning implements ModelInterface, ArrayAccess, 
             self::VIDEO_PLACEMENT_IN_FEED,
             self::VIDEO_PLACEMENT_INTERSTITIAL,
             self::VIDEO_PLACEMENT_IN_STREAM,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getVideoPlcmtAllowableValues()
+    {
+        return [
+            self::VIDEO_PLCMT_IN_STREAM,
+            self::VIDEO_PLCMT_ACCOMPANYING_CONTENT,
+            self::VIDEO_PLCMT_INTERSTITIAL,
+            self::VIDEO_PLCMT_NO_CONTENT_STANDALONE,
         ];
     }
 
@@ -388,6 +413,7 @@ class SetAdSetTargetingVideoPositioning implements ModelInterface, ArrayAccess, 
     public function __construct(array $data = null)
     {
         $this->setIfExists('video_placement', $data ?? [], null);
+        $this->setIfExists('video_plcmt', $data ?? [], null);
         $this->setIfExists('playback_method', $data ?? [], null);
         $this->setIfExists('skippable', $data ?? [], null);
         $this->setIfExists('video_in_stream_position', $data ?? [], null);
@@ -487,6 +513,51 @@ class SetAdSetTargetingVideoPositioning implements ModelInterface, ArrayAccess, 
 
 
         $this->container['video_placement'] = $video_placement;
+
+        return $this;
+    }
+
+    /**
+     * Gets video_plcmt
+     *
+     * @return string[]|null
+     */
+    public function getVideoPlcmt()
+    {
+        return $this->container['video_plcmt'];
+    }
+
+    /**
+     * Sets video_plcmt
+     *
+     * @param string[]|null $video_plcmt video_plcmt
+     *
+     * @return self
+     */
+    public function setVideoPlcmt($video_plcmt)
+    {
+        if (is_null($video_plcmt)) {
+            array_push($this->openAPINullablesSetToNull, 'video_plcmt');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('video_plcmt', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getVideoPlcmtAllowableValues();
+        if (!is_null($video_plcmt) && array_diff($video_plcmt, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'video_plcmt', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+
+
+        $this->container['video_plcmt'] = $video_plcmt;
 
         return $this;
     }

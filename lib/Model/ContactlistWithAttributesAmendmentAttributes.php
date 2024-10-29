@@ -253,7 +253,6 @@ class ContactlistWithAttributesAmendmentAttributes implements ModelInterface, Ar
     public const IDENTIFIER_TYPE_MADID = 'madid';
     public const IDENTIFIER_TYPE_IDENTITY_LINK = 'identityLink';
     public const IDENTIFIER_TYPE_GUM = 'gum';
-    public const IDENTIFIER_TYPE_CUSTOMERID = 'customerid';
     public const IDENTIFIER_TYPE_PHONE_NUMBER = 'phoneNumber';
 
     /**
@@ -281,7 +280,6 @@ class ContactlistWithAttributesAmendmentAttributes implements ModelInterface, Ar
             self::IDENTIFIER_TYPE_MADID,
             self::IDENTIFIER_TYPE_IDENTITY_LINK,
             self::IDENTIFIER_TYPE_GUM,
-            self::IDENTIFIER_TYPE_CUSTOMERID,
             self::IDENTIFIER_TYPE_PHONE_NUMBER,
         ];
     }

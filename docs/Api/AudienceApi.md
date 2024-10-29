@@ -12,18 +12,16 @@ All URIs are relative to https://api.criteo.com, except if the operation defines
 | [**bulkUpdateAudiences()**](AudienceApi.md#bulkUpdateAudiences) | **PATCH** /preview/marketing-solutions/audiences |  |
 | [**computeAudienceSegmentsSizes()**](AudienceApi.md#computeAudienceSegmentsSizes) | **POST** /preview/marketing-solutions/audience-segments/compute-sizes |  |
 | [**computeAudiencesSizes()**](AudienceApi.md#computeAudiencesSizes) | **POST** /preview/marketing-solutions/audiences/compute-sizes |  |
-| [**deleteContactListIdentifiers()**](AudienceApi.md#deleteContactListIdentifiers) | **DELETE** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list |  |
-| [**deleteUserProfiles()**](AudienceApi.md#deleteUserProfiles) | **POST** /preview/marketing-solutions/advertisers/{advertiserId}/user-profiles/delete |  |
 | [**estimateAudienceSegmentSize()**](AudienceApi.md#estimateAudienceSegmentSize) | **POST** /preview/marketing-solutions/audience-segments/estimate-size |  |
 | [**estimateAudienceSize()**](AudienceApi.md#estimateAudienceSize) | **POST** /preview/marketing-solutions/audiences/estimate-size |  |
 | [**getAudienceSegmentContactListStatistics()**](AudienceApi.md#getAudienceSegmentContactListStatistics) | **GET** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list |  |
 | [**getAudienceSegmentsInMarketBrands()**](AudienceApi.md#getAudienceSegmentsInMarketBrands) | **GET** /preview/marketing-solutions/audience-segments/in-market-brands |  |
 | [**getAudienceSegmentsInMarketInterests()**](AudienceApi.md#getAudienceSegmentsInMarketInterests) | **GET** /preview/marketing-solutions/audience-segments/in-market-interests |  |
 | [**modifyAudienceUsersWithAttributes()**](AudienceApi.md#modifyAudienceUsersWithAttributes) | **PATCH** /preview/audiences/{audience-id}/contactlist-attributes |  |
+| [**previewMarketingSolutionsAudienceSegmentsAudienceSegmentIdContactListDelete()**](AudienceApi.md#previewMarketingSolutionsAudienceSegmentsAudienceSegmentIdContactListDelete) | **DELETE** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list |  |
+| [**previewMarketingSolutionsAudienceSegmentsAudienceSegmentIdContactListPatch()**](AudienceApi.md#previewMarketingSolutionsAudienceSegmentsAudienceSegmentIdContactListPatch) | **PATCH** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list |  |
 | [**searchAudienceSegments()**](AudienceApi.md#searchAudienceSegments) | **POST** /preview/marketing-solutions/audience-segments/search |  |
 | [**searchAudiences()**](AudienceApi.md#searchAudiences) | **POST** /preview/marketing-solutions/audiences/search |  |
-| [**setUserProfiles()**](AudienceApi.md#setUserProfiles) | **POST** /preview/marketing-solutions/advertisers/{advertiserId}/user-profiles/set |  |
-| [**updateContactListIdentifiers()**](AudienceApi.md#updateContactListIdentifiers) | **PATCH** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list |  |
 
 
 ## `bulkCreateAudienceSegments()`
@@ -530,133 +528,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `deleteContactListIdentifiers()`
-
-```php
-deleteContactListIdentifiers($audience_segment_id): \criteo\api\marketingsolutions\preview\Model\DeleteAudienceContactListResponse
-```
-
-
-
-Delete all identifiers from a contact list audience-segment.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-// Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\AudienceApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$audience_segment_id = 'audience_segment_id_example'; // string | The id of the contact list audience-segment to amend
-
-try {
-    $result = $apiInstance->deleteContactListIdentifiers($audience_segment_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AudienceApi->deleteContactListIdentifiers: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **audience_segment_id** | **string**| The id of the contact list audience-segment to amend | |
-
-### Return type
-
-[**\criteo\api\marketingsolutions\preview\Model\DeleteAudienceContactListResponse**](../Model/DeleteAudienceContactListResponse.md)
-
-### Authorization
-
-[oauth](../../README.md#oauth), [oauth](../../README.md#oauth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `deleteUserProfiles()`
-
-```php
-deleteUserProfiles($advertiser_id, $delete_user_profile_model_list_request)
-```
-
-
-
-This endpoint will Delete User Profiles for a given Advertiser.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-// Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\AudienceApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$advertiser_id = 56; // int | Criteo Advertiser ID of user profiles' owner
-$delete_user_profile_model_list_request = new \criteo\api\marketingsolutions\preview\Model\DeleteUserProfileModelListRequest(); // \criteo\api\marketingsolutions\preview\Model\DeleteUserProfileModelListRequest
-
-try {
-    $apiInstance->deleteUserProfiles($advertiser_id, $delete_user_profile_model_list_request);
-} catch (Exception $e) {
-    echo 'Exception when calling AudienceApi->deleteUserProfiles: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **advertiser_id** | **int**| Criteo Advertiser ID of user profiles&#39; owner | |
-| **delete_user_profile_model_list_request** | [**\criteo\api\marketingsolutions\preview\Model\DeleteUserProfileModelListRequest**](../Model/DeleteUserProfileModelListRequest.md)|  | [optional] |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth](../../README.md#oauth), [oauth](../../README.md#oauth)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json-patch+json`, `application/json`, `text/json`, `application/*+json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `estimateAudienceSegmentSize()`
 
 ```php
@@ -1041,6 +912,134 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `previewMarketingSolutionsAudienceSegmentsAudienceSegmentIdContactListDelete()`
+
+```php
+previewMarketingSolutionsAudienceSegmentsAudienceSegmentIdContactListDelete($audience_segment_id): \criteo\api\marketingsolutions\preview\Model\DeleteAudienceContactListResponse
+```
+
+
+
+Delete all identifiers from a contact list audience-segment.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth
+$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure OAuth2 access token for authorization: oauth
+$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new criteo\api\marketingsolutions\preview\Api\AudienceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$audience_segment_id = 'audience_segment_id_example'; // string | The id of the contact list audience-segment to amend
+
+try {
+    $result = $apiInstance->previewMarketingSolutionsAudienceSegmentsAudienceSegmentIdContactListDelete($audience_segment_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AudienceApi->previewMarketingSolutionsAudienceSegmentsAudienceSegmentIdContactListDelete: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **audience_segment_id** | **string**| The id of the contact list audience-segment to amend | |
+
+### Return type
+
+[**\criteo\api\marketingsolutions\preview\Model\DeleteAudienceContactListResponse**](../Model/DeleteAudienceContactListResponse.md)
+
+### Authorization
+
+[oauth](../../README.md#oauth), [oauth](../../README.md#oauth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `previewMarketingSolutionsAudienceSegmentsAudienceSegmentIdContactListPatch()`
+
+```php
+previewMarketingSolutionsAudienceSegmentsAudienceSegmentIdContactListPatch($audience_segment_id, $contactlist_amendment_request): \criteo\api\marketingsolutions\preview\Model\ModifyAudienceResponse
+```
+
+
+
+Add/remove identifiers to or from a contact list audience-segment.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth
+$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure OAuth2 access token for authorization: oauth
+$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new criteo\api\marketingsolutions\preview\Api\AudienceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$audience_segment_id = 'audience_segment_id_example'; // string | The id of the contact list audience-segment to amend
+$contactlist_amendment_request = new \criteo\api\marketingsolutions\preview\Model\ContactlistAmendmentRequest(); // \criteo\api\marketingsolutions\preview\Model\ContactlistAmendmentRequest
+
+try {
+    $result = $apiInstance->previewMarketingSolutionsAudienceSegmentsAudienceSegmentIdContactListPatch($audience_segment_id, $contactlist_amendment_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AudienceApi->previewMarketingSolutionsAudienceSegmentsAudienceSegmentIdContactListPatch: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **audience_segment_id** | **string**| The id of the contact list audience-segment to amend | |
+| **contactlist_amendment_request** | [**\criteo\api\marketingsolutions\preview\Model\ContactlistAmendmentRequest**](../Model/ContactlistAmendmentRequest.md)|  | |
+
+### Return type
+
+[**\criteo\api\marketingsolutions\preview\Model\ModifyAudienceResponse**](../Model/ModifyAudienceResponse.md)
+
+### Authorization
+
+[oauth](../../README.md#oauth), [oauth](../../README.md#oauth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `searchAudienceSegments()`
 
 ```php
@@ -1170,135 +1169,6 @@ try {
 
 - **Content-Type**: `application/json-patch+json`, `application/json`, `text/json`, `application/*+json`
 - **Accept**: `text/plain`, `application/json`, `text/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `setUserProfiles()`
-
-```php
-setUserProfiles($advertiser_id, $set_user_profile_model_list_request)
-```
-
-
-
-This endpoint will Set User Profiles for a given Advertiser. If a User Profile does not exist, a new one will be created. If a User Profile exists, it will be replaced.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-// Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\AudienceApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$advertiser_id = 56; // int | Criteo Advertiser ID of user profiles' owner
-$set_user_profile_model_list_request = new \criteo\api\marketingsolutions\preview\Model\SetUserProfileModelListRequest(); // \criteo\api\marketingsolutions\preview\Model\SetUserProfileModelListRequest
-
-try {
-    $apiInstance->setUserProfiles($advertiser_id, $set_user_profile_model_list_request);
-} catch (Exception $e) {
-    echo 'Exception when calling AudienceApi->setUserProfiles: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **advertiser_id** | **int**| Criteo Advertiser ID of user profiles&#39; owner | |
-| **set_user_profile_model_list_request** | [**\criteo\api\marketingsolutions\preview\Model\SetUserProfileModelListRequest**](../Model/SetUserProfileModelListRequest.md)|  | [optional] |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth](../../README.md#oauth), [oauth](../../README.md#oauth)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json-patch+json`, `application/json`, `text/json`, `application/*+json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `updateContactListIdentifiers()`
-
-```php
-updateContactListIdentifiers($audience_segment_id, $contactlist_amendment_request): \criteo\api\marketingsolutions\preview\Model\ModifyAudienceResponse
-```
-
-
-
-Add/remove identifiers to or from a contact list audience-segment.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-// Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\preview\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new criteo\api\marketingsolutions\preview\Api\AudienceApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$audience_segment_id = 'audience_segment_id_example'; // string | The id of the contact list audience-segment to amend
-$contactlist_amendment_request = new \criteo\api\marketingsolutions\preview\Model\ContactlistAmendmentRequest(); // \criteo\api\marketingsolutions\preview\Model\ContactlistAmendmentRequest
-
-try {
-    $result = $apiInstance->updateContactListIdentifiers($audience_segment_id, $contactlist_amendment_request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AudienceApi->updateContactListIdentifiers: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **audience_segment_id** | **string**| The id of the contact list audience-segment to amend | |
-| **contactlist_amendment_request** | [**\criteo\api\marketingsolutions\preview\Model\ContactlistAmendmentRequest**](../Model/ContactlistAmendmentRequest.md)|  | |
-
-### Return type
-
-[**\criteo\api\marketingsolutions\preview\Model\ModifyAudienceResponse**](../Model/ModifyAudienceResponse.md)
-
-### Authorization
-
-[oauth](../../README.md#oauth), [oauth](../../README.md#oauth)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

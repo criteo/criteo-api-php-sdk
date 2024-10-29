@@ -85,5 +85,6 @@ Name | Type | Description | Notes
 **external_seller_name** | **string** | The external name of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads. | [optional]
 **number_of_reviews** | **int** | The number of customer reviews for the product | [optional]
 **product_rating** | **string** | The product rating for the product | [optional]
+**badge** | **string** | URL of a badge image to display on the product. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -64,7 +64,9 @@ class ReportOkResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'number_of_products_upserted' => 'int',
         'number_of_products_deleted' => 'int',
         'number_of_products_with_errors' => 'int',
-        'error_details' => '\criteo\api\marketingsolutions\preview\Model\ReportDetailErrors[]'
+        'error_details' => '\criteo\api\marketingsolutions\preview\Model\ReportDetailErrors[]',
+        'number_of_products_with_warnings' => 'int',
+        'warning_details' => '\criteo\api\marketingsolutions\preview\Model\ReportDetailWarnings[]'
     ];
 
     /**
@@ -81,7 +83,9 @@ class ReportOkResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'number_of_products_upserted' => 'int32',
         'number_of_products_deleted' => 'int32',
         'number_of_products_with_errors' => 'int32',
-        'error_details' => null
+        'error_details' => null,
+        'number_of_products_with_warnings' => 'int32',
+        'warning_details' => null
     ];
 
     /**
@@ -96,7 +100,9 @@ class ReportOkResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 		'number_of_products_upserted' => false,
 		'number_of_products_deleted' => false,
 		'number_of_products_with_errors' => false,
-		'error_details' => false
+		'error_details' => false,
+		'number_of_products_with_warnings' => false,
+		'warning_details' => false
     ];
 
     /**
@@ -191,7 +197,9 @@ class ReportOkResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'number_of_products_upserted' => 'numberOfProductsUpserted',
         'number_of_products_deleted' => 'numberOfProductsDeleted',
         'number_of_products_with_errors' => 'numberOfProductsWithErrors',
-        'error_details' => 'errorDetails'
+        'error_details' => 'errorDetails',
+        'number_of_products_with_warnings' => 'numberOfProductsWithWarnings',
+        'warning_details' => 'warningDetails'
     ];
 
     /**
@@ -206,7 +214,9 @@ class ReportOkResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'number_of_products_upserted' => 'setNumberOfProductsUpserted',
         'number_of_products_deleted' => 'setNumberOfProductsDeleted',
         'number_of_products_with_errors' => 'setNumberOfProductsWithErrors',
-        'error_details' => 'setErrorDetails'
+        'error_details' => 'setErrorDetails',
+        'number_of_products_with_warnings' => 'setNumberOfProductsWithWarnings',
+        'warning_details' => 'setWarningDetails'
     ];
 
     /**
@@ -221,7 +231,9 @@ class ReportOkResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'number_of_products_upserted' => 'getNumberOfProductsUpserted',
         'number_of_products_deleted' => 'getNumberOfProductsDeleted',
         'number_of_products_with_errors' => 'getNumberOfProductsWithErrors',
-        'error_details' => 'getErrorDetails'
+        'error_details' => 'getErrorDetails',
+        'number_of_products_with_warnings' => 'getNumberOfProductsWithWarnings',
+        'warning_details' => 'getWarningDetails'
     ];
 
     /**
@@ -309,6 +321,8 @@ class ReportOkResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('number_of_products_deleted', $data ?? [], null);
         $this->setIfExists('number_of_products_with_errors', $data ?? [], null);
         $this->setIfExists('error_details', $data ?? [], null);
+        $this->setIfExists('number_of_products_with_warnings', $data ?? [], null);
+        $this->setIfExists('warning_details', $data ?? [], null);
     }
 
     /**
@@ -367,6 +381,12 @@ class ReportOkResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['error_details'] === null) {
             $invalidProperties[] = "'error_details' can't be null";
+        }
+        if ($this->container['number_of_products_with_warnings'] === null) {
+            $invalidProperties[] = "'number_of_products_with_warnings' can't be null";
+        }
+        if ($this->container['warning_details'] === null) {
+            $invalidProperties[] = "'warning_details' can't be null";
         }
         return $invalidProperties;
     }
@@ -578,6 +598,60 @@ class ReportOkResponse implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable error_details cannot be null');
         }
         $this->container['error_details'] = $error_details;
+
+        return $this;
+    }
+
+    /**
+     * Gets number_of_products_with_warnings
+     *
+     * @return int
+     */
+    public function getNumberOfProductsWithWarnings()
+    {
+        return $this->container['number_of_products_with_warnings'];
+    }
+
+    /**
+     * Sets number_of_products_with_warnings
+     *
+     * @param int $number_of_products_with_warnings The number of products with Warnings.
+     *
+     * @return self
+     */
+    public function setNumberOfProductsWithWarnings($number_of_products_with_warnings)
+    {
+        if (is_null($number_of_products_with_warnings)) {
+            throw new \InvalidArgumentException('non-nullable number_of_products_with_warnings cannot be null');
+        }
+        $this->container['number_of_products_with_warnings'] = $number_of_products_with_warnings;
+
+        return $this;
+    }
+
+    /**
+     * Gets warning_details
+     *
+     * @return \criteo\api\marketingsolutions\preview\Model\ReportDetailWarnings[]
+     */
+    public function getWarningDetails()
+    {
+        return $this->container['warning_details'];
+    }
+
+    /**
+     * Sets warning_details
+     *
+     * @param \criteo\api\marketingsolutions\preview\Model\ReportDetailWarnings[] $warning_details The list of Warnings with details.
+     *
+     * @return self
+     */
+    public function setWarningDetails($warning_details)
+    {
+        if (is_null($warning_details)) {
+            throw new \InvalidArgumentException('non-nullable warning_details cannot be null');
+        }
+        $this->container['warning_details'] = $warning_details;
 
         return $this;
     }
