@@ -253,7 +253,6 @@ class ContactlistAmendmentAttributes implements ModelInterface, ArrayAccess, \Js
     public const IDENTIFIER_TYPE_MADID = 'madid';
     public const IDENTIFIER_TYPE_IDENTITY_LINK = 'identityLink';
     public const IDENTIFIER_TYPE_GUM = 'gum';
-    public const IDENTIFIER_TYPE_CUSTOMERID = 'customerid';
     public const IDENTIFIER_TYPE_PHONE_NUMBER = 'phoneNumber';
 
     /**
@@ -281,7 +280,6 @@ class ContactlistAmendmentAttributes implements ModelInterface, ArrayAccess, \Js
             self::IDENTIFIER_TYPE_MADID,
             self::IDENTIFIER_TYPE_IDENTITY_LINK,
             self::IDENTIFIER_TYPE_GUM,
-            self::IDENTIFIER_TYPE_CUSTOMERID,
             self::IDENTIFIER_TYPE_PHONE_NUMBER,
         ];
     }
@@ -467,7 +465,7 @@ class ContactlistAmendmentAttributes implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets identifiers
      *
-     * @param string[] $identifiers The users tos add or remove, each in the schema specified
+     * @param string[] $identifiers The users to add or remove, each in the schema specified
      *
      * @return self
      */
