@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**\criteo\api\marketingsolutions\preview\Model\CampaignV23Q1**](CampaignV23Q1.md) |  | [optional]
+**attributes** | [**\criteo\api\marketingsolutions\v2024_10\Model\CampaignV23Q1**](CampaignV23Q1.md) |  | [optional]
 **id** | **string** | Id of the entity | [optional]
 **type** | **string** | Canonical type name of the entity | [optional]
 

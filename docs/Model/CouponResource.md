@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**\criteo\api\marketingsolutions\preview\Model\Coupon**](Coupon.md) |  | [optional]
+**attributes** | [**\criteo\api\marketingsolutions\v2024_10\Model\Coupon**](Coupon.md) |  | [optional]
 **id** | **string** |  | [optional]
 **type** | **string** |  | [optional]
 

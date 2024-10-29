@@ -4,8 +4,8 @@
 // Then import it as follow:
 // require_once(__DIR__ . '/vendor/autoload.php');
 
-use criteo\api\marketingsolutions\preview\Api\GatewayApi;
-use criteo\api\marketingsolutions\preview\ClientCredentialsClient;
+use criteo\api\marketingsolutions\v2024_10\Api\GatewayApi;
+use criteo\api\marketingsolutions\v2024_10\ClientCredentialsClient;
 
 class ExampleApplication
 {
