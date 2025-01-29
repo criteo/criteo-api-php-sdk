@@ -67,7 +67,8 @@ class CreateAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
         'targeting' => '\criteo\api\marketingsolutions\preview\Model\CreateAdSetTargetingV24Q3',
         'budget' => '\criteo\api\marketingsolutions\preview\Model\CreateAdSetBudgetV24Q3',
         'tracking_code' => 'string',
-        'media_type' => 'string'
+        'media_type' => 'string',
+        'attribution_configuration' => '\criteo\api\marketingsolutions\preview\Model\CreateAdSetAttributionConfigurationV24Q3'
     ];
 
     /**
@@ -87,7 +88,8 @@ class CreateAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
         'targeting' => null,
         'budget' => null,
         'tracking_code' => null,
-        'media_type' => null
+        'media_type' => null,
+        'attribution_configuration' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class CreateAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
 		'targeting' => false,
 		'budget' => false,
 		'tracking_code' => true,
-		'media_type' => false
+		'media_type' => false,
+		'attribution_configuration' => false
     ];
 
     /**
@@ -203,7 +206,8 @@ class CreateAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
         'targeting' => 'targeting',
         'budget' => 'budget',
         'tracking_code' => 'trackingCode',
-        'media_type' => 'mediaType'
+        'media_type' => 'mediaType',
+        'attribution_configuration' => 'attributionConfiguration'
     ];
 
     /**
@@ -221,7 +225,8 @@ class CreateAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
         'targeting' => 'setTargeting',
         'budget' => 'setBudget',
         'tracking_code' => 'setTrackingCode',
-        'media_type' => 'setMediaType'
+        'media_type' => 'setMediaType',
+        'attribution_configuration' => 'setAttributionConfiguration'
     ];
 
     /**
@@ -239,7 +244,8 @@ class CreateAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
         'targeting' => 'getTargeting',
         'budget' => 'getBudget',
         'tracking_code' => 'getTrackingCode',
-        'media_type' => 'getMediaType'
+        'media_type' => 'getMediaType',
+        'attribution_configuration' => 'getAttributionConfiguration'
     ];
 
     /**
@@ -357,6 +363,7 @@ class CreateAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('budget', $data ?? [], null);
         $this->setIfExists('tracking_code', $data ?? [], null);
         $this->setIfExists('media_type', $data ?? [], null);
+        $this->setIfExists('attribution_configuration', $data ?? [], null);
     }
 
     /**
@@ -763,6 +770,33 @@ class CreateAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['media_type'] = $media_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets attribution_configuration
+     *
+     * @return \criteo\api\marketingsolutions\preview\Model\CreateAdSetAttributionConfigurationV24Q3|null
+     */
+    public function getAttributionConfiguration()
+    {
+        return $this->container['attribution_configuration'];
+    }
+
+    /**
+     * Sets attribution_configuration
+     *
+     * @param \criteo\api\marketingsolutions\preview\Model\CreateAdSetAttributionConfigurationV24Q3|null $attribution_configuration attribution_configuration
+     *
+     * @return self
+     */
+    public function setAttributionConfiguration($attribution_configuration)
+    {
+        if (is_null($attribution_configuration)) {
+            throw new \InvalidArgumentException('non-nullable attribution_configuration cannot be null');
+        }
+        $this->container['attribution_configuration'] = $attribution_configuration;
 
         return $this;
     }

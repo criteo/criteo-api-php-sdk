@@ -385,8 +385,6 @@ class DynamicAttributes implements ModelInterface, ArrayAccess, \JsonSerializabl
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['logos'] = $logos;
 
         return $this;
@@ -557,8 +555,6 @@ class DynamicAttributes implements ModelInterface, ArrayAccess, \JsonSerializabl
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['calls_to_action'] = $calls_to_action;
 
         return $this;

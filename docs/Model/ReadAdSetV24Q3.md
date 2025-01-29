@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **budget** | [**\criteo\api\marketingsolutions\preview\Model\ReadAdSetBudgetV24Q3**](ReadAdSetBudgetV24Q3.md) |  | [optional]
 **media_type** | **string** |  | [optional]
 **video_channel** | **string** |  | [optional]
+**attribution_configuration** | [**\criteo\api\marketingsolutions\preview\Model\ReadAdSetAttributionConfigurationV24Q3**](ReadAdSetAttributionConfigurationV24Q3.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

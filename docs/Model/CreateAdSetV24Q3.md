@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **budget** | [**\criteo\api\marketingsolutions\preview\Model\CreateAdSetBudgetV24Q3**](CreateAdSetBudgetV24Q3.md) |  |
 **tracking_code** | **string** | The click tracking code associated to this Ad Set. |
 **media_type** | **string** | Media type for the ad set |
+**attribution_configuration** | [**\criteo\api\marketingsolutions\preview\Model\CreateAdSetAttributionConfigurationV24Q3**](CreateAdSetAttributionConfigurationV24Q3.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -69,7 +69,8 @@ class ReadAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
         'targeting' => '\criteo\api\marketingsolutions\preview\Model\AdSetTargetingV24Q3',
         'budget' => '\criteo\api\marketingsolutions\preview\Model\ReadAdSetBudgetV24Q3',
         'media_type' => 'string',
-        'video_channel' => 'string'
+        'video_channel' => 'string',
+        'attribution_configuration' => '\criteo\api\marketingsolutions\preview\Model\ReadAdSetAttributionConfigurationV24Q3'
     ];
 
     /**
@@ -91,7 +92,8 @@ class ReadAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
         'targeting' => null,
         'budget' => null,
         'media_type' => null,
-        'video_channel' => null
+        'video_channel' => null,
+        'attribution_configuration' => null
     ];
 
     /**
@@ -111,7 +113,8 @@ class ReadAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
 		'targeting' => false,
 		'budget' => false,
 		'media_type' => true,
-		'video_channel' => true
+		'video_channel' => true,
+		'attribution_configuration' => false
     ];
 
     /**
@@ -211,7 +214,8 @@ class ReadAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
         'targeting' => 'targeting',
         'budget' => 'budget',
         'media_type' => 'mediaType',
-        'video_channel' => 'videoChannel'
+        'video_channel' => 'videoChannel',
+        'attribution_configuration' => 'attributionConfiguration'
     ];
 
     /**
@@ -231,7 +235,8 @@ class ReadAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
         'targeting' => 'setTargeting',
         'budget' => 'setBudget',
         'media_type' => 'setMediaType',
-        'video_channel' => 'setVideoChannel'
+        'video_channel' => 'setVideoChannel',
+        'attribution_configuration' => 'setAttributionConfiguration'
     ];
 
     /**
@@ -251,7 +256,8 @@ class ReadAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
         'targeting' => 'getTargeting',
         'budget' => 'getBudget',
         'media_type' => 'getMediaType',
-        'video_channel' => 'getVideoChannel'
+        'video_channel' => 'getVideoChannel',
+        'attribution_configuration' => 'getAttributionConfiguration'
     ];
 
     /**
@@ -403,6 +409,7 @@ class ReadAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('budget', $data ?? [], null);
         $this->setIfExists('media_type', $data ?? [], null);
         $this->setIfExists('video_channel', $data ?? [], null);
+        $this->setIfExists('attribution_configuration', $data ?? [], null);
     }
 
     /**
@@ -899,6 +906,33 @@ class ReadAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['video_channel'] = $video_channel;
+
+        return $this;
+    }
+
+    /**
+     * Gets attribution_configuration
+     *
+     * @return \criteo\api\marketingsolutions\preview\Model\ReadAdSetAttributionConfigurationV24Q3|null
+     */
+    public function getAttributionConfiguration()
+    {
+        return $this->container['attribution_configuration'];
+    }
+
+    /**
+     * Sets attribution_configuration
+     *
+     * @param \criteo\api\marketingsolutions\preview\Model\ReadAdSetAttributionConfigurationV24Q3|null $attribution_configuration attribution_configuration
+     *
+     * @return self
+     */
+    public function setAttributionConfiguration($attribution_configuration)
+    {
+        if (is_null($attribution_configuration)) {
+            throw new \InvalidArgumentException('non-nullable attribution_configuration cannot be null');
+        }
+        $this->container['attribution_configuration'] = $attribution_configuration;
 
         return $this;
     }
