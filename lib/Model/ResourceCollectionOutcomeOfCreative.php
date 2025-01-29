@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateImageSlide
+ * ResourceCollectionOutcomeOfCreative
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2024_01\ObjectSerializer;
 
 /**
- * CreateImageSlide Class Doc Comment
+ * ResourceCollectionOutcomeOfCreative Class Doc Comment
  *
  * @category Class
- * @description Slide containing the images of the same size as a base-64 encoded string
+ * @description A top-level object that encapsulates a Criteo API response for several entities.
  * @package  criteo\api\marketingsolutions\v2024_01
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreateImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResourceCollectionOutcomeOfCreative implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class CreateImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateImageSlide';
+    protected static $openAPIModelName = 'ResourceCollectionOutcomeOfCreative';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,9 @@ class CreateImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'width' => 'int',
-        'height' => 'int',
-        'slide_base64_strings' => 'string[]'
+        'data' => '\criteo\api\marketingsolutions\v2024_01\Model\ResourceOfCreative[]',
+        'warnings' => '\criteo\api\marketingsolutions\v2024_01\Model\CommonProblem[]',
+        'errors' => '\criteo\api\marketingsolutions\v2024_01\Model\CommonProblem[]'
     ];
 
     /**
@@ -71,9 +71,9 @@ class CreateImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'width' => 'int32',
-        'height' => 'int32',
-        'slide_base64_strings' => null
+        'data' => null,
+        'warnings' => null,
+        'errors' => null
     ];
 
     /**
@@ -82,9 +82,9 @@ class CreateImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'width' => true,
-		'height' => true,
-		'slide_base64_strings' => true
+        'data' => true,
+		'warnings' => true,
+		'errors' => true
     ];
 
     /**
@@ -173,9 +173,9 @@ class CreateImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'width' => 'width',
-        'height' => 'height',
-        'slide_base64_strings' => 'slideBase64Strings'
+        'data' => 'data',
+        'warnings' => 'warnings',
+        'errors' => 'errors'
     ];
 
     /**
@@ -184,9 +184,9 @@ class CreateImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'width' => 'setWidth',
-        'height' => 'setHeight',
-        'slide_base64_strings' => 'setSlideBase64Strings'
+        'data' => 'setData',
+        'warnings' => 'setWarnings',
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -195,9 +195,9 @@ class CreateImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'width' => 'getWidth',
-        'height' => 'getHeight',
-        'slide_base64_strings' => 'getSlideBase64Strings'
+        'data' => 'getData',
+        'warnings' => 'getWarnings',
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -257,9 +257,9 @@ class CreateImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('width', $data ?? [], null);
-        $this->setIfExists('height', $data ?? [], null);
-        $this->setIfExists('slide_base64_strings', $data ?? [], null);
+        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('warnings', $data ?? [], null);
+        $this->setIfExists('errors', $data ?? [], null);
     }
 
     /**
@@ -305,103 +305,103 @@ class CreateImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets width
+     * Gets data
      *
-     * @return int|null
+     * @return \criteo\api\marketingsolutions\v2024_01\Model\ResourceOfCreative[]|null
      */
-    public function getWidth()
+    public function getData()
     {
-        return $this->container['width'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets width
+     * Sets data
      *
-     * @param int|null $width Width of the Coupon slide
+     * @param \criteo\api\marketingsolutions\v2024_01\Model\ResourceOfCreative[]|null $data data
      *
      * @return self
      */
-    public function setWidth($width)
+    public function setData($data)
     {
-        if (is_null($width)) {
-            array_push($this->openAPINullablesSetToNull, 'width');
+        if (is_null($data)) {
+            array_push($this->openAPINullablesSetToNull, 'data');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('width', $nullablesSetToNull);
+            $index = array_search('data', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['width'] = $width;
+        $this->container['data'] = $data;
 
         return $this;
     }
 
     /**
-     * Gets height
+     * Gets warnings
      *
-     * @return int|null
+     * @return \criteo\api\marketingsolutions\v2024_01\Model\CommonProblem[]|null
      */
-    public function getHeight()
+    public function getWarnings()
     {
-        return $this->container['height'];
+        return $this->container['warnings'];
     }
 
     /**
-     * Sets height
+     * Sets warnings
      *
-     * @param int|null $height Height of the Coupon slide
+     * @param \criteo\api\marketingsolutions\v2024_01\Model\CommonProblem[]|null $warnings warnings
      *
      * @return self
      */
-    public function setHeight($height)
+    public function setWarnings($warnings)
     {
-        if (is_null($height)) {
-            array_push($this->openAPINullablesSetToNull, 'height');
+        if (is_null($warnings)) {
+            array_push($this->openAPINullablesSetToNull, 'warnings');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('height', $nullablesSetToNull);
+            $index = array_search('warnings', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['height'] = $height;
+        $this->container['warnings'] = $warnings;
 
         return $this;
     }
 
     /**
-     * Gets slide_base64_strings
+     * Gets errors
      *
-     * @return string[]|null
+     * @return \criteo\api\marketingsolutions\v2024_01\Model\CommonProblem[]|null
      */
-    public function getSlideBase64Strings()
+    public function getErrors()
     {
-        return $this->container['slide_base64_strings'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets slide_base64_strings
+     * Sets errors
      *
-     * @param string[]|null $slide_base64_strings Array of images of the same size as a base-64 encoded string
+     * @param \criteo\api\marketingsolutions\v2024_01\Model\CommonProblem[]|null $errors errors
      *
      * @return self
      */
-    public function setSlideBase64Strings($slide_base64_strings)
+    public function setErrors($errors)
     {
-        if (is_null($slide_base64_strings)) {
-            array_push($this->openAPINullablesSetToNull, 'slide_base64_strings');
+        if (is_null($errors)) {
+            array_push($this->openAPINullablesSetToNull, 'errors');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('slide_base64_strings', $nullablesSetToNull);
+            $index = array_search('errors', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['slide_base64_strings'] = $slide_base64_strings;
+        $this->container['errors'] = $errors;
 
         return $this;
     }

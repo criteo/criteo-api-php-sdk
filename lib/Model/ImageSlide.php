@@ -401,8 +401,6 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['slide_urls'] = $slide_urls;
 
         return $this;
