@@ -326,8 +326,6 @@ class ImageAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['urls'] = $urls;
 
         return $this;

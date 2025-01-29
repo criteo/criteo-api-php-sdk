@@ -750,8 +750,6 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['images'] = $images;
 
         return $this;

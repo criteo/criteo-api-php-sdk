@@ -415,7 +415,7 @@ class DynamicWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets creative_background_color
      *
-     * @param string|null $creative_background_color Color of the creative's background  Valid hexadecimal RGB color (e.g. \"AB00FF\")
+     * @param string|null $creative_background_color Color of the creative's background  Valid hexadecimal color (e.g. \"AB00FF\")
      *
      * @return self
      */
@@ -449,7 +449,7 @@ class DynamicWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets body_text_color
      *
-     * @param string $body_text_color Color of the creative's body text  Valid hexadecimal RGB color (e.g. \"AB00FF\")
+     * @param string $body_text_color Color of the creative's body text  Valid hexadecimal color (e.g. \"AB00FF\")
      *
      * @return self
      */
@@ -476,7 +476,7 @@ class DynamicWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets prices_color
      *
-     * @param string $prices_color Color of the creative's prices  Valid hexadecimal RGB color (e.g. \"AB00FF\")
+     * @param string $prices_color Color of the creative's prices  Valid hexadecimal color (e.g. \"AB00FF\")
      *
      * @return self
      */

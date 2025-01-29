@@ -26,7 +26,7 @@ All URIs are relative to https://api.criteo.com, except if the operation defines
 ## `createAdvertiserAd()`
 
 ```php
-createAdvertiserAd($advertiser_id, $ad_write_request): \criteo\api\marketingsolutions\v2024_04\Model\AdResponse
+createAdvertiserAd($advertiser_id, $resource_input_of_ad_write): \criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfAd
 ```
 
 
@@ -54,10 +54,10 @@ $apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     $config
 );
 $advertiser_id = 'advertiser_id_example'; // string | The advertiser identifier.
-$ad_write_request = new \criteo\api\marketingsolutions\v2024_04\Model\AdWriteRequest(); // \criteo\api\marketingsolutions\v2024_04\Model\AdWriteRequest
+$resource_input_of_ad_write = new \criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfAdWrite(); // \criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfAdWrite
 
 try {
-    $result = $apiInstance->createAdvertiserAd($advertiser_id, $ad_write_request);
+    $result = $apiInstance->createAdvertiserAd($advertiser_id, $resource_input_of_ad_write);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CreativeApi->createAdvertiserAd: ', $e->getMessage(), PHP_EOL;
@@ -69,11 +69,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **advertiser_id** | **string**| The advertiser identifier. | |
-| **ad_write_request** | [**\criteo\api\marketingsolutions\v2024_04\Model\AdWriteRequest**](../Model/AdWriteRequest.md)|  | |
+| **resource_input_of_ad_write** | [**\criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfAdWrite**](../Model/ResourceInputOfAdWrite.md)|  | |
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2024_04\Model\AdResponse**](../Model/AdResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfAd**](../Model/ResourceOutcomeOfAd.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ try {
 ## `createAdvertiserCoupon()`
 
 ```php
-createAdvertiserCoupon($advertiser_id, $create_coupon_request): \criteo\api\marketingsolutions\v2024_04\Model\CouponResponse
+createAdvertiserCoupon($advertiser_id, $resource_input_of_create_coupon): \criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfCoupon
 ```
 
 
@@ -119,10 +119,10 @@ $apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     $config
 );
 $advertiser_id = 'advertiser_id_example'; // string | The advertiser identifier.
-$create_coupon_request = new \criteo\api\marketingsolutions\v2024_04\Model\CreateCouponRequest(); // \criteo\api\marketingsolutions\v2024_04\Model\CreateCouponRequest
+$resource_input_of_create_coupon = new \criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfCreateCoupon(); // \criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfCreateCoupon
 
 try {
-    $result = $apiInstance->createAdvertiserCoupon($advertiser_id, $create_coupon_request);
+    $result = $apiInstance->createAdvertiserCoupon($advertiser_id, $resource_input_of_create_coupon);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CreativeApi->createAdvertiserCoupon: ', $e->getMessage(), PHP_EOL;
@@ -134,11 +134,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **advertiser_id** | **string**| The advertiser identifier. | |
-| **create_coupon_request** | [**\criteo\api\marketingsolutions\v2024_04\Model\CreateCouponRequest**](../Model/CreateCouponRequest.md)|  | |
+| **resource_input_of_create_coupon** | [**\criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfCreateCoupon**](../Model/ResourceInputOfCreateCoupon.md)|  | |
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2024_04\Model\CouponResponse**](../Model/CouponResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfCoupon**](../Model/ResourceOutcomeOfCoupon.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ try {
 ## `createAdvertiserCreative()`
 
 ```php
-createAdvertiserCreative($advertiser_id, $creative_write_request): \criteo\api\marketingsolutions\v2024_04\Model\CreativeResponse
+createAdvertiserCreative($advertiser_id, $resource_input_of_creative_write): \criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfCreative
 ```
 
 
@@ -184,10 +184,10 @@ $apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     $config
 );
 $advertiser_id = 'advertiser_id_example'; // string | The advertiser identifier.
-$creative_write_request = new \criteo\api\marketingsolutions\v2024_04\Model\CreativeWriteRequest(); // \criteo\api\marketingsolutions\v2024_04\Model\CreativeWriteRequest
+$resource_input_of_creative_write = new \criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfCreativeWrite(); // \criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfCreativeWrite
 
 try {
-    $result = $apiInstance->createAdvertiserCreative($advertiser_id, $creative_write_request);
+    $result = $apiInstance->createAdvertiserCreative($advertiser_id, $resource_input_of_creative_write);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CreativeApi->createAdvertiserCreative: ', $e->getMessage(), PHP_EOL;
@@ -199,11 +199,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **advertiser_id** | **string**| The advertiser identifier. | |
-| **creative_write_request** | [**\criteo\api\marketingsolutions\v2024_04\Model\CreativeWriteRequest**](../Model/CreativeWriteRequest.md)|  | |
+| **resource_input_of_creative_write** | [**\criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfCreativeWrite**](../Model/ResourceInputOfCreativeWrite.md)|  | |
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2024_04\Model\CreativeResponse**](../Model/CreativeResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfCreative**](../Model/ResourceOutcomeOfCreative.md)
 
 ### Authorization
 
@@ -409,7 +409,7 @@ void (empty response body)
 ## `editAdvertiserCoupon()`
 
 ```php
-editAdvertiserCoupon($advertiser_id, $id, $update_coupon_request): \criteo\api\marketingsolutions\v2024_04\Model\CouponResponse
+editAdvertiserCoupon($advertiser_id, $id, $resource_input_of_update_coupon): \criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfCoupon
 ```
 
 
@@ -438,10 +438,10 @@ $apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
 );
 $advertiser_id = 'advertiser_id_example'; // string | The advertiser identifier.
 $id = 'id_example'; // string | The Coupon identifier to edit.
-$update_coupon_request = new \criteo\api\marketingsolutions\v2024_04\Model\UpdateCouponRequest(); // \criteo\api\marketingsolutions\v2024_04\Model\UpdateCouponRequest
+$resource_input_of_update_coupon = new \criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfUpdateCoupon(); // \criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfUpdateCoupon
 
 try {
-    $result = $apiInstance->editAdvertiserCoupon($advertiser_id, $id, $update_coupon_request);
+    $result = $apiInstance->editAdvertiserCoupon($advertiser_id, $id, $resource_input_of_update_coupon);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CreativeApi->editAdvertiserCoupon: ', $e->getMessage(), PHP_EOL;
@@ -454,11 +454,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **advertiser_id** | **string**| The advertiser identifier. | |
 | **id** | **string**| The Coupon identifier to edit. | |
-| **update_coupon_request** | [**\criteo\api\marketingsolutions\v2024_04\Model\UpdateCouponRequest**](../Model/UpdateCouponRequest.md)|  | |
+| **resource_input_of_update_coupon** | [**\criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfUpdateCoupon**](../Model/ResourceInputOfUpdateCoupon.md)|  | |
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2024_04\Model\CouponResponse**](../Model/CouponResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfCoupon**](../Model/ResourceOutcomeOfCoupon.md)
 
 ### Authorization
 
@@ -476,7 +476,7 @@ try {
 ## `editCreative()`
 
 ```php
-editCreative($id, $creative_write_request): \criteo\api\marketingsolutions\v2024_04\Model\CreativeResponse
+editCreative($id, $resource_input_of_creative_write): \criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfCreative
 ```
 
 
@@ -504,10 +504,10 @@ $apiInstance = new criteo\api\marketingsolutions\v2024_04\Api\CreativeApi(
     $config
 );
 $id = 'id_example'; // string | The creative identifier to edit.
-$creative_write_request = new \criteo\api\marketingsolutions\v2024_04\Model\CreativeWriteRequest(); // \criteo\api\marketingsolutions\v2024_04\Model\CreativeWriteRequest
+$resource_input_of_creative_write = new \criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfCreativeWrite(); // \criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfCreativeWrite
 
 try {
-    $result = $apiInstance->editCreative($id, $creative_write_request);
+    $result = $apiInstance->editCreative($id, $resource_input_of_creative_write);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CreativeApi->editCreative: ', $e->getMessage(), PHP_EOL;
@@ -519,11 +519,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| The creative identifier to edit. | |
-| **creative_write_request** | [**\criteo\api\marketingsolutions\v2024_04\Model\CreativeWriteRequest**](../Model/CreativeWriteRequest.md)|  | |
+| **resource_input_of_creative_write** | [**\criteo\api\marketingsolutions\v2024_04\Model\ResourceInputOfCreativeWrite**](../Model/ResourceInputOfCreativeWrite.md)|  | |
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2024_04\Model\CreativeResponse**](../Model/CreativeResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfCreative**](../Model/ResourceOutcomeOfCreative.md)
 
 ### Authorization
 
@@ -546,7 +546,7 @@ generateCreativePreview($id, $width, $height): string
 
 
 
-Generate a preview of a specific Creative
+Get the preview of a specific Creative
 
 ### Example
 
@@ -608,12 +608,12 @@ try {
 ## `getAd()`
 
 ```php
-getAd($id): \criteo\api\marketingsolutions\v2024_04\Model\AdResponse
+getAd($id): \criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfAd
 ```
 
 
 
-Get an Ad from its id
+Get an Ad with its id
 
 ### Example
 
@@ -653,7 +653,7 @@ try {
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2024_04\Model\AdResponse**](../Model/AdResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfAd**](../Model/ResourceOutcomeOfAd.md)
 
 ### Authorization
 
@@ -671,7 +671,7 @@ try {
 ## `getAdvertiserAds()`
 
 ```php
-getAdvertiserAds($advertiser_id, $limit, $offset): \criteo\api\marketingsolutions\v2024_04\Model\AdListResponse
+getAdvertiserAds($advertiser_id, $limit, $offset): \criteo\api\marketingsolutions\v2024_04\Model\ResourceCollectionOutcomeOfAd
 ```
 
 
@@ -720,7 +720,7 @@ try {
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2024_04\Model\AdListResponse**](../Model/AdListResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\ResourceCollectionOutcomeOfAd**](../Model/ResourceCollectionOutcomeOfAd.md)
 
 ### Authorization
 
@@ -738,12 +738,12 @@ try {
 ## `getAdvertiserCoupon()`
 
 ```php
-getAdvertiserCoupon($advertiser_id, $id): \criteo\api\marketingsolutions\v2024_04\Model\CouponResponse
+getAdvertiserCoupon($advertiser_id, $id): \criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfCoupon
 ```
 
 
 
-Get a Coupon from its id
+Get a Coupon with its id
 
 ### Example
 
@@ -785,7 +785,7 @@ try {
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2024_04\Model\CouponResponse**](../Model/CouponResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfCoupon**](../Model/ResourceOutcomeOfCoupon.md)
 
 ### Authorization
 
@@ -872,7 +872,7 @@ try {
 ## `getAdvertiserCouponSupportedSizes()`
 
 ```php
-getAdvertiserCouponSupportedSizes($advertiser_id, $ad_set_id): \criteo\api\marketingsolutions\v2024_04\Model\CouponSupportedSizesResponse
+getAdvertiserCouponSupportedSizes($advertiser_id, $ad_set_id): \criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfCouponSupportedSizes
 ```
 
 
@@ -919,7 +919,7 @@ try {
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2024_04\Model\CouponSupportedSizesResponse**](../Model/CouponSupportedSizesResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfCouponSupportedSizes**](../Model/ResourceOutcomeOfCouponSupportedSizes.md)
 
 ### Authorization
 
@@ -937,7 +937,7 @@ try {
 ## `getAdvertiserCoupons()`
 
 ```php
-getAdvertiserCoupons($advertiser_id, $limit, $offset): \criteo\api\marketingsolutions\v2024_04\Model\CouponListResponse
+getAdvertiserCoupons($advertiser_id, $limit, $offset): \criteo\api\marketingsolutions\v2024_04\Model\ResourceCollectionOutcomeOfCoupon
 ```
 
 
@@ -986,7 +986,7 @@ try {
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2024_04\Model\CouponListResponse**](../Model/CouponListResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\ResourceCollectionOutcomeOfCoupon**](../Model/ResourceCollectionOutcomeOfCoupon.md)
 
 ### Authorization
 
@@ -1004,7 +1004,7 @@ try {
 ## `getAdvertiserCreatives()`
 
 ```php
-getAdvertiserCreatives($advertiser_id, $limit, $offset): \criteo\api\marketingsolutions\v2024_04\Model\CreativeListResponse
+getAdvertiserCreatives($advertiser_id, $limit, $offset): \criteo\api\marketingsolutions\v2024_04\Model\ResourceCollectionOutcomeOfCreative
 ```
 
 
@@ -1053,7 +1053,7 @@ try {
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2024_04\Model\CreativeListResponse**](../Model/CreativeListResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\ResourceCollectionOutcomeOfCreative**](../Model/ResourceCollectionOutcomeOfCreative.md)
 
 ### Authorization
 
@@ -1071,12 +1071,12 @@ try {
 ## `getCreative()`
 
 ```php
-getCreative($id): \criteo\api\marketingsolutions\v2024_04\Model\CreativeResponse
+getCreative($id): \criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfCreative
 ```
 
 
 
-Get a Creative from its id
+Get a Creative with its id
 
 ### Example
 
@@ -1116,7 +1116,7 @@ try {
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2024_04\Model\CreativeResponse**](../Model/CreativeResponse.md)
+[**\criteo\api\marketingsolutions\v2024_04\Model\ResourceOutcomeOfCreative**](../Model/ResourceOutcomeOfCreative.md)
 
 ### Authorization
 

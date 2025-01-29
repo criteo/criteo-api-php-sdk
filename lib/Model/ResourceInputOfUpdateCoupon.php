@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageSlide
+ * ResourceInputOfUpdateCoupon
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2024_04\ObjectSerializer;
 
 /**
- * ImageSlide Class Doc Comment
+ * ResourceInputOfUpdateCoupon Class Doc Comment
  *
  * @category Class
- * @description Slide containing the image URLs
+ * @description A top-level object that encapsulates a Criteo API request for a single entity.
  * @package  criteo\api\marketingsolutions\v2024_04
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResourceInputOfUpdateCoupon implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ImageSlide';
+    protected static $openAPIModelName = 'ResourceInputOfUpdateCoupon';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,7 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'width' => 'int',
-        'height' => 'int',
-        'slide_urls' => 'string[]'
+        'data' => '\criteo\api\marketingsolutions\v2024_04\Model\ResourceOfUpdateCoupon'
     ];
 
     /**
@@ -71,9 +69,7 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'width' => 'int32',
-        'height' => 'int32',
-        'slide_urls' => null
+        'data' => null
     ];
 
     /**
@@ -82,9 +78,7 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'width' => true,
-		'height' => true,
-		'slide_urls' => true
+        'data' => false
     ];
 
     /**
@@ -173,9 +167,7 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'width' => 'width',
-        'height' => 'height',
-        'slide_urls' => 'slideUrls'
+        'data' => 'data'
     ];
 
     /**
@@ -184,9 +176,7 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'width' => 'setWidth',
-        'height' => 'setHeight',
-        'slide_urls' => 'setSlideUrls'
+        'data' => 'setData'
     ];
 
     /**
@@ -195,9 +185,7 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'width' => 'getWidth',
-        'height' => 'getHeight',
-        'slide_urls' => 'getSlideUrls'
+        'data' => 'getData'
     ];
 
     /**
@@ -257,9 +245,7 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('width', $data ?? [], null);
-        $this->setIfExists('height', $data ?? [], null);
-        $this->setIfExists('slide_urls', $data ?? [], null);
+        $this->setIfExists('data', $data ?? [], null);
     }
 
     /**
@@ -305,103 +291,28 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets width
+     * Gets data
      *
-     * @return int|null
+     * @return \criteo\api\marketingsolutions\v2024_04\Model\ResourceOfUpdateCoupon|null
      */
-    public function getWidth()
+    public function getData()
     {
-        return $this->container['width'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets width
+     * Sets data
      *
-     * @param int|null $width Width of the Coupon slide
+     * @param \criteo\api\marketingsolutions\v2024_04\Model\ResourceOfUpdateCoupon|null $data data
      *
      * @return self
      */
-    public function setWidth($width)
+    public function setData($data)
     {
-        if (is_null($width)) {
-            array_push($this->openAPINullablesSetToNull, 'width');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('width', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($data)) {
+            throw new \InvalidArgumentException('non-nullable data cannot be null');
         }
-        $this->container['width'] = $width;
-
-        return $this;
-    }
-
-    /**
-     * Gets height
-     *
-     * @return int|null
-     */
-    public function getHeight()
-    {
-        return $this->container['height'];
-    }
-
-    /**
-     * Sets height
-     *
-     * @param int|null $height Height of the Coupon slide
-     *
-     * @return self
-     */
-    public function setHeight($height)
-    {
-        if (is_null($height)) {
-            array_push($this->openAPINullablesSetToNull, 'height');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('height', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['height'] = $height;
-
-        return $this;
-    }
-
-    /**
-     * Gets slide_urls
-     *
-     * @return string[]|null
-     */
-    public function getSlideUrls()
-    {
-        return $this->container['slide_urls'];
-    }
-
-    /**
-     * Sets slide_urls
-     *
-     * @param string[]|null $slide_urls Array of images of the same size uploaded on demostatic.criteo.com when deploying and then static.criteo.net
-     *
-     * @return self
-     */
-    public function setSlideUrls($slide_urls)
-    {
-        if (is_null($slide_urls)) {
-            array_push($this->openAPINullablesSetToNull, 'slide_urls');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('slide_urls', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['slide_urls'] = $slide_urls;
+        $this->container['data'] = $data;
 
         return $this;
     }

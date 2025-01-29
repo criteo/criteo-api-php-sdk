@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageSlide
+ * ResourceOutcomeOfCoupon
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2024_04\ObjectSerializer;
 
 /**
- * ImageSlide Class Doc Comment
+ * ResourceOutcomeOfCoupon Class Doc Comment
  *
  * @category Class
- * @description Slide containing the image URLs
+ * @description A top-level object that encapsulates a Criteo API response for a single entity.
  * @package  criteo\api\marketingsolutions\v2024_04
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResourceOutcomeOfCoupon implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ImageSlide';
+    protected static $openAPIModelName = 'ResourceOutcomeOfCoupon';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,9 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'width' => 'int',
-        'height' => 'int',
-        'slide_urls' => 'string[]'
+        'data' => '\criteo\api\marketingsolutions\v2024_04\Model\ResourceOfCoupon',
+        'warnings' => '\criteo\api\marketingsolutions\v2024_04\Model\CommonProblem[]',
+        'errors' => '\criteo\api\marketingsolutions\v2024_04\Model\CommonProblem[]'
     ];
 
     /**
@@ -71,9 +71,9 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'width' => 'int32',
-        'height' => 'int32',
-        'slide_urls' => null
+        'data' => null,
+        'warnings' => null,
+        'errors' => null
     ];
 
     /**
@@ -82,9 +82,9 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'width' => true,
-		'height' => true,
-		'slide_urls' => true
+        'data' => false,
+		'warnings' => true,
+		'errors' => true
     ];
 
     /**
@@ -173,9 +173,9 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'width' => 'width',
-        'height' => 'height',
-        'slide_urls' => 'slideUrls'
+        'data' => 'data',
+        'warnings' => 'warnings',
+        'errors' => 'errors'
     ];
 
     /**
@@ -184,9 +184,9 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'width' => 'setWidth',
-        'height' => 'setHeight',
-        'slide_urls' => 'setSlideUrls'
+        'data' => 'setData',
+        'warnings' => 'setWarnings',
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -195,9 +195,9 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'width' => 'getWidth',
-        'height' => 'getHeight',
-        'slide_urls' => 'getSlideUrls'
+        'data' => 'getData',
+        'warnings' => 'getWarnings',
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -257,9 +257,9 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('width', $data ?? [], null);
-        $this->setIfExists('height', $data ?? [], null);
-        $this->setIfExists('slide_urls', $data ?? [], null);
+        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('warnings', $data ?? [], null);
+        $this->setIfExists('errors', $data ?? [], null);
     }
 
     /**
@@ -305,103 +305,96 @@ class ImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets width
+     * Gets data
      *
-     * @return int|null
+     * @return \criteo\api\marketingsolutions\v2024_04\Model\ResourceOfCoupon|null
      */
-    public function getWidth()
+    public function getData()
     {
-        return $this->container['width'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets width
+     * Sets data
      *
-     * @param int|null $width Width of the Coupon slide
+     * @param \criteo\api\marketingsolutions\v2024_04\Model\ResourceOfCoupon|null $data data
      *
      * @return self
      */
-    public function setWidth($width)
+    public function setData($data)
     {
-        if (is_null($width)) {
-            array_push($this->openAPINullablesSetToNull, 'width');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('width', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($data)) {
+            throw new \InvalidArgumentException('non-nullable data cannot be null');
         }
-        $this->container['width'] = $width;
+        $this->container['data'] = $data;
 
         return $this;
     }
 
     /**
-     * Gets height
+     * Gets warnings
      *
-     * @return int|null
+     * @return \criteo\api\marketingsolutions\v2024_04\Model\CommonProblem[]|null
      */
-    public function getHeight()
+    public function getWarnings()
     {
-        return $this->container['height'];
+        return $this->container['warnings'];
     }
 
     /**
-     * Sets height
+     * Sets warnings
      *
-     * @param int|null $height Height of the Coupon slide
+     * @param \criteo\api\marketingsolutions\v2024_04\Model\CommonProblem[]|null $warnings warnings
      *
      * @return self
      */
-    public function setHeight($height)
+    public function setWarnings($warnings)
     {
-        if (is_null($height)) {
-            array_push($this->openAPINullablesSetToNull, 'height');
+        if (is_null($warnings)) {
+            array_push($this->openAPINullablesSetToNull, 'warnings');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('height', $nullablesSetToNull);
+            $index = array_search('warnings', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['height'] = $height;
+        $this->container['warnings'] = $warnings;
 
         return $this;
     }
 
     /**
-     * Gets slide_urls
+     * Gets errors
      *
-     * @return string[]|null
+     * @return \criteo\api\marketingsolutions\v2024_04\Model\CommonProblem[]|null
      */
-    public function getSlideUrls()
+    public function getErrors()
     {
-        return $this->container['slide_urls'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets slide_urls
+     * Sets errors
      *
-     * @param string[]|null $slide_urls Array of images of the same size uploaded on demostatic.criteo.com when deploying and then static.criteo.net
+     * @param \criteo\api\marketingsolutions\v2024_04\Model\CommonProblem[]|null $errors errors
      *
      * @return self
      */
-    public function setSlideUrls($slide_urls)
+    public function setErrors($errors)
     {
-        if (is_null($slide_urls)) {
-            array_push($this->openAPINullablesSetToNull, 'slide_urls');
+        if (is_null($errors)) {
+            array_push($this->openAPINullablesSetToNull, 'errors');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('slide_urls', $nullablesSetToNull);
+            $index = array_search('errors', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['slide_urls'] = $slide_urls;
+        $this->container['errors'] = $errors;
 
         return $this;
     }

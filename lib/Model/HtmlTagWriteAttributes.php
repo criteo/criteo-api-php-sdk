@@ -315,8 +315,6 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
         if (is_null($tags)) {
             throw new \InvalidArgumentException('non-nullable tags cannot be null');
         }
-
-
         $this->container['tags'] = $tags;
 
         return $this;
