@@ -1,9 +1,9 @@
 <?php
 
-use criteo\api\marketingsolutions\v2024_10\Configuration;
-use criteo\api\marketingsolutions\v2024_10\OAuthClient;
-use criteo\api\marketingsolutions\v2024_10\ObjectSerializer;
-use criteo\api\marketingsolutions\v2024_10\ClientCredentialsClient;
+use criteo\api\marketingsolutions\v2025_01\Configuration;
+use criteo\api\marketingsolutions\v2025_01\OAuthClient;
+use criteo\api\marketingsolutions\v2025_01\ObjectSerializer;
+use criteo\api\marketingsolutions\v2025_01\ClientCredentialsClient;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Uri;

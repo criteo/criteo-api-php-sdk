@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**\criteo\api\marketingsolutions\v2024_10\Model\Ad**](Ad.md) |  | [optional]
+**attributes** | [**\criteo\api\marketingsolutions\v2025_01\Model\Ad**](Ad.md) |  | [optional]
 **id** | **string** | Unique identifier of this resource. | [optional]
 **type** | **string** |  | [optional]
 

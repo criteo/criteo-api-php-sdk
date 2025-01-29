@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**points_of_interest** | [**\criteo\api\marketingsolutions\v2024_10\Model\PointOfInterestV1[]**](PointOfInterestV1.md) | Reach users which have been historically located in the given coordinates |
+**points_of_interest** | [**\criteo\api\marketingsolutions\v2025_01\Model\PointOfInterestV1[]**](PointOfInterestV1.md) | Reach users which have been historically located in the given coordinates |
 **radius_in_km** | **int** | The expected maximum distance in kilometers between a user and a point of interest |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

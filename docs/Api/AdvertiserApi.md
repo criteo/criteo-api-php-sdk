@@ -1,16 +1,16 @@
-# criteo\api\marketingsolutions\v2024_10\AdvertiserApi
+# criteo\api\marketingsolutions\v2025_01\AdvertiserApi
 
 All URIs are relative to https://api.criteo.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**apiPortfolioGet()**](AdvertiserApi.md#apiPortfolioGet) | **GET** /2024-10/advertisers/me |  |
+| [**apiPortfolioGet()**](AdvertiserApi.md#apiPortfolioGet) | **GET** /2025-01/advertisers/me |  |
 
 
 ## `apiPortfolioGet()`
 
 ```php
-apiPortfolioGet(): \criteo\api\marketingsolutions\v2024_10\Model\GetPortfolioResponse
+apiPortfolioGet(): \criteo\api\marketingsolutions\v2025_01\Model\GetPortfolioResponse
 ```
 
 
@@ -25,13 +25,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\v2024_10\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2025_01\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\v2024_10\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2025_01\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\v2024_10\Api\AdvertiserApi(
+$apiInstance = new criteo\api\marketingsolutions\v2025_01\Api\AdvertiserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -52,7 +52,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2024_10\Model\GetPortfolioResponse**](../Model/GetPortfolioResponse.md)
+[**\criteo\api\marketingsolutions\v2025_01\Model\GetPortfolioResponse**](../Model/GetPortfolioResponse.md)
 
 ### Authorization
 

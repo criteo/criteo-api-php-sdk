@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**\criteo\api\marketingsolutions\v2024_10\Model\ContactListStatisticsEntityV1**](ContactListStatisticsEntityV1.md) |  | [optional]
+**attributes** | [**\criteo\api\marketingsolutions\v2025_01\Model\ContactListStatisticsEntityV1**](ContactListStatisticsEntityV1.md) |  | [optional]
 **id** | **string** | Id of the entity | [optional]
 **type** | **string** |  | [optional]
 

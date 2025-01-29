@@ -1,13 +1,13 @@
-# criteo\api\marketingsolutions\v2024_10\AnalyticsApi
+# criteo\api\marketingsolutions\v2025_01\AnalyticsApi
 
 All URIs are relative to https://api.criteo.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getAdsetReport()**](AnalyticsApi.md#getAdsetReport) | **POST** /2024-10/statistics/report |  |
-| [**getPlacementsReport()**](AnalyticsApi.md#getPlacementsReport) | **POST** /2024-10/placements/report |  |
-| [**getTransactionsReport()**](AnalyticsApi.md#getTransactionsReport) | **POST** /2024-10/transactions/report |  |
-| [**getTransparencyReport()**](AnalyticsApi.md#getTransparencyReport) | **POST** /2024-10/log-level/advertisers/{advertiser-id}/report |  |
+| [**getAdsetReport()**](AnalyticsApi.md#getAdsetReport) | **POST** /2025-01/statistics/report |  |
+| [**getPlacementsReport()**](AnalyticsApi.md#getPlacementsReport) | **POST** /2025-01/placements/report |  |
+| [**getTransactionsReport()**](AnalyticsApi.md#getTransactionsReport) | **POST** /2025-01/transactions/report |  |
+| [**getTransparencyReport()**](AnalyticsApi.md#getTransparencyReport) | **POST** /2025-01/log-level/advertisers/{advertiser-id}/report |  |
 
 
 ## `getAdsetReport()`
@@ -28,19 +28,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\v2024_10\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2025_01\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\v2024_10\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2025_01\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\v2024_10\Api\AnalyticsApi(
+$apiInstance = new criteo\api\marketingsolutions\v2025_01\Api\AnalyticsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$statistics_report_query_message = {"advertiserIds":"123,456,789","adSetIds":["12345","54321"],"adSetNames":["myAdSet1","myAdSet2"],"adSetStatus":["Active"],"dimensions":["CampaignId","Campaign","AdsetId","Adset","AdvertiserId","Advertiser","AdId","Ad","CouponId","Coupon","CategoryId","Category","Hour","Day","Week","Month","Year","Os","Device"],"metrics":["Clicks","Displays","Cpc","Visits"],"currency":"EUR","format":"csv","timezone":"Europe/Paris","startDate":"2024-04-24T00:00:00.0000000+02:00","endDate":"2024-04-27T00:00:00.0000000+02:00"}; // \criteo\api\marketingsolutions\v2024_10\Model\StatisticsReportQueryMessage
+$statistics_report_query_message = {"advertiserIds":"123,456,789","adSetIds":["12345","54321"],"adSetNames":["myAdSet1","myAdSet2"],"adSetStatus":["Active"],"dimensions":["CampaignId","Campaign","AdsetId","Adset","AdvertiserId","Advertiser","AdId","Ad","CouponId","Coupon","CategoryId","Category","Hour","Day","Week","Month","Year","Os","Device"],"metrics":["Clicks","Displays","Cpc","Visits"],"currency":"EUR","format":"csv","timezone":"Europe/Paris","startDate":"2024-04-24T00:00:00.0000000+02:00","endDate":"2024-04-27T00:00:00.0000000+02:00"}; // \criteo\api\marketingsolutions\v2025_01\Model\StatisticsReportQueryMessage
 
 try {
     $result = $apiInstance->getAdsetReport($statistics_report_query_message);
@@ -54,7 +54,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **statistics_report_query_message** | [**\criteo\api\marketingsolutions\v2024_10\Model\StatisticsReportQueryMessage**](../Model/StatisticsReportQueryMessage.md)|  | [optional] |
+| **statistics_report_query_message** | [**\criteo\api\marketingsolutions\v2025_01\Model\StatisticsReportQueryMessage**](../Model/StatisticsReportQueryMessage.md)|  | [optional] |
 
 ### Return type
 
@@ -91,19 +91,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\v2024_10\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2025_01\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\v2024_10\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2025_01\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\v2024_10\Api\AnalyticsApi(
+$apiInstance = new criteo\api\marketingsolutions\v2025_01\Api\AnalyticsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$placements_report_query_message_list_request = new \criteo\api\marketingsolutions\v2024_10\Model\PlacementsReportQueryMessageListRequest(); // \criteo\api\marketingsolutions\v2024_10\Model\PlacementsReportQueryMessageListRequest
+$placements_report_query_message_list_request = new \criteo\api\marketingsolutions\v2025_01\Model\PlacementsReportQueryMessageListRequest(); // \criteo\api\marketingsolutions\v2025_01\Model\PlacementsReportQueryMessageListRequest
 
 try {
     $result = $apiInstance->getPlacementsReport($placements_report_query_message_list_request);
@@ -117,7 +117,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **placements_report_query_message_list_request** | [**\criteo\api\marketingsolutions\v2024_10\Model\PlacementsReportQueryMessageListRequest**](../Model/PlacementsReportQueryMessageListRequest.md)|  | [optional] |
+| **placements_report_query_message_list_request** | [**\criteo\api\marketingsolutions\v2025_01\Model\PlacementsReportQueryMessageListRequest**](../Model/PlacementsReportQueryMessageListRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -154,19 +154,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\v2024_10\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2025_01\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\v2024_10\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2025_01\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\v2024_10\Api\AnalyticsApi(
+$apiInstance = new criteo\api\marketingsolutions\v2025_01\Api\AnalyticsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$transactions_report_query_message_list_request = new \criteo\api\marketingsolutions\v2024_10\Model\TransactionsReportQueryMessageListRequest(); // \criteo\api\marketingsolutions\v2024_10\Model\TransactionsReportQueryMessageListRequest
+$transactions_report_query_message_list_request = new \criteo\api\marketingsolutions\v2025_01\Model\TransactionsReportQueryMessageListRequest(); // \criteo\api\marketingsolutions\v2025_01\Model\TransactionsReportQueryMessageListRequest
 
 try {
     $result = $apiInstance->getTransactionsReport($transactions_report_query_message_list_request);
@@ -180,7 +180,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **transactions_report_query_message_list_request** | [**\criteo\api\marketingsolutions\v2024_10\Model\TransactionsReportQueryMessageListRequest**](../Model/TransactionsReportQueryMessageListRequest.md)|  | [optional] |
+| **transactions_report_query_message_list_request** | [**\criteo\api\marketingsolutions\v2025_01\Model\TransactionsReportQueryMessageListRequest**](../Model/TransactionsReportQueryMessageListRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -202,7 +202,7 @@ try {
 ## `getTransparencyReport()`
 
 ```php
-getTransparencyReport($advertiser_id, $transparency_query_message): \criteo\api\marketingsolutions\v2024_10\Model\TransparencyReportListResponse
+getTransparencyReport($advertiser_id, $transparency_query_message): \criteo\api\marketingsolutions\v2025_01\Model\TransparencyReportListResponse
 ```
 
 
@@ -217,20 +217,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\v2024_10\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2025_01\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 // Configure OAuth2 access token for authorization: oauth
-$config = criteo\api\marketingsolutions\v2024_10\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = criteo\api\marketingsolutions\v2025_01\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new criteo\api\marketingsolutions\v2024_10\Api\AnalyticsApi(
+$apiInstance = new criteo\api\marketingsolutions\v2025_01\Api\AnalyticsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $advertiser_id = 56; // int | The advertiser id to fetch the transparency data.
-$transparency_query_message = {"shouldDisplayProductIds":false,"startDate":"2024-04-24T00:00:00.0000000+02:00","endDate":"2024-04-27T00:00:00.0000000+02:00"}; // \criteo\api\marketingsolutions\v2024_10\Model\TransparencyQueryMessage | The query message.
+$transparency_query_message = {"shouldDisplayProductIds":false,"startDate":"2024-04-24T00:00:00.0000000+02:00","endDate":"2024-04-27T00:00:00.0000000+02:00"}; // \criteo\api\marketingsolutions\v2025_01\Model\TransparencyQueryMessage | The query message.
 
 try {
     $result = $apiInstance->getTransparencyReport($advertiser_id, $transparency_query_message);
@@ -245,11 +245,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **advertiser_id** | **int**| The advertiser id to fetch the transparency data. | |
-| **transparency_query_message** | [**\criteo\api\marketingsolutions\v2024_10\Model\TransparencyQueryMessage**](../Model/TransparencyQueryMessage.md)| The query message. | [optional] |
+| **transparency_query_message** | [**\criteo\api\marketingsolutions\v2025_01\Model\TransparencyQueryMessage**](../Model/TransparencyQueryMessage.md)| The query message. | [optional] |
 
 ### Return type
 
-[**\criteo\api\marketingsolutions\v2024_10\Model\TransparencyReportListResponse**](../Model/TransparencyReportListResponse.md)
+[**\criteo\api\marketingsolutions\v2025_01\Model\TransparencyReportListResponse**](../Model/TransparencyReportListResponse.md)
 
 ### Authorization
 

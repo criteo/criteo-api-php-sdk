@@ -1,6 +1,6 @@
 {
     "name": "criteo/criteo-api-marketingsolutions-sdk",
-    "description": "PHP SDK for Criteo API 2024.10.0.250129 version",
+    "description": "PHP SDK for Criteo API 2025.01.0.250129 version",
     "keywords": [
         "criteo",
         "openapi generator",
@@ -36,9 +36,9 @@
         "jchook/phpunit-assert-throws": "^1.0"
     },
     "autoload": {
-        "psr-4": { "criteo\\api\\marketingsolutions\\v2024_10\\" : "lib/" }
+        "psr-4": { "criteo\\api\\marketingsolutions\\v2025_01\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "criteo\\api\\marketingsolutions\\v2024_10\\" : "test/" }
+        "psr-4": { "criteo\\api\\marketingsolutions\\v2025_01\\" : "test/" }
     }
 }

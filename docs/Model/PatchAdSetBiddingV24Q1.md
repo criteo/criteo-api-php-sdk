@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bid_amount** | [**\criteo\api\marketingsolutions\v2024_10\Model\NillableDecimal**](NillableDecimal.md) |  | [optional]
+**bid_amount** | [**\criteo\api\marketingsolutions\v2025_01\Model\NillableDecimal**](NillableDecimal.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
