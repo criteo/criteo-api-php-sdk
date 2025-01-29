@@ -189,16 +189,16 @@ class CreativeApi
      * Operation createAdvertiserAd
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\AdWriteRequest $ad_write_request ad_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfAdWrite $resource_input_of_ad_write resource_input_of_ad_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserAd'] to see the possible values for this operation
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\AdResponse
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd
      */
-    public function createAdvertiserAd($advertiser_id, $ad_write_request, string $contentType = self::contentTypes['createAdvertiserAd'][0])
+    public function createAdvertiserAd($advertiser_id, $resource_input_of_ad_write, string $contentType = self::contentTypes['createAdvertiserAd'][0])
     {
-        list($response) = $this->createAdvertiserAdWithHttpInfo($advertiser_id, $ad_write_request, $contentType);
+        list($response) = $this->createAdvertiserAdWithHttpInfo($advertiser_id, $resource_input_of_ad_write, $contentType);
         return $response;
     }
 
@@ -206,16 +206,16 @@ class CreativeApi
      * Operation createAdvertiserAdWithHttpInfo
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\AdWriteRequest $ad_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfAdWrite $resource_input_of_ad_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserAd'] to see the possible values for this operation
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\AdResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createAdvertiserAdWithHttpInfo($advertiser_id, $ad_write_request, string $contentType = self::contentTypes['createAdvertiserAd'][0])
+    public function createAdvertiserAdWithHttpInfo($advertiser_id, $resource_input_of_ad_write, string $contentType = self::contentTypes['createAdvertiserAd'][0])
     {
-        $request = $this->createAdvertiserAdRequest($advertiser_id, $ad_write_request, $contentType);
+        $request = $this->createAdvertiserAdRequest($advertiser_id, $resource_input_of_ad_write, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -254,23 +254,23 @@ class CreativeApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\criteo\api\marketingsolutions\v2024_07\Model\AdResponse' === '\SplFileObject') {
+                    if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\criteo\api\marketingsolutions\v2024_07\Model\AdResponse' !== 'string') {
+                        if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\AdResponse', []),
+                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\AdResponse';
+            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -291,7 +291,7 @@ class CreativeApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\criteo\api\marketingsolutions\v2024_07\Model\AdResponse',
+                        '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -305,15 +305,15 @@ class CreativeApi
      * Operation createAdvertiserAdAsync
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\AdWriteRequest $ad_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfAdWrite $resource_input_of_ad_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserAd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAdvertiserAdAsync($advertiser_id, $ad_write_request, string $contentType = self::contentTypes['createAdvertiserAd'][0])
+    public function createAdvertiserAdAsync($advertiser_id, $resource_input_of_ad_write, string $contentType = self::contentTypes['createAdvertiserAd'][0])
     {
-        return $this->createAdvertiserAdAsyncWithHttpInfo($advertiser_id, $ad_write_request, $contentType)
+        return $this->createAdvertiserAdAsyncWithHttpInfo($advertiser_id, $resource_input_of_ad_write, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -325,16 +325,16 @@ class CreativeApi
      * Operation createAdvertiserAdAsyncWithHttpInfo
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\AdWriteRequest $ad_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfAdWrite $resource_input_of_ad_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserAd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAdvertiserAdAsyncWithHttpInfo($advertiser_id, $ad_write_request, string $contentType = self::contentTypes['createAdvertiserAd'][0])
+    public function createAdvertiserAdAsyncWithHttpInfo($advertiser_id, $resource_input_of_ad_write, string $contentType = self::contentTypes['createAdvertiserAd'][0])
     {
-        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\AdResponse';
-        $request = $this->createAdvertiserAdRequest($advertiser_id, $ad_write_request, $contentType);
+        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd';
+        $request = $this->createAdvertiserAdRequest($advertiser_id, $resource_input_of_ad_write, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -376,13 +376,13 @@ class CreativeApi
      * Create request for operation 'createAdvertiserAd'
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\AdWriteRequest $ad_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfAdWrite $resource_input_of_ad_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserAd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createAdvertiserAdRequest($advertiser_id, $ad_write_request, string $contentType = self::contentTypes['createAdvertiserAd'][0])
+    public function createAdvertiserAdRequest($advertiser_id, $resource_input_of_ad_write, string $contentType = self::contentTypes['createAdvertiserAd'][0])
     {
 
         // verify the required parameter 'advertiser_id' is set
@@ -392,10 +392,10 @@ class CreativeApi
             );
         }
 
-        // verify the required parameter 'ad_write_request' is set
-        if ($ad_write_request === null || (is_array($ad_write_request) && count($ad_write_request) === 0)) {
+        // verify the required parameter 'resource_input_of_ad_write' is set
+        if ($resource_input_of_ad_write === null || (is_array($resource_input_of_ad_write) && count($resource_input_of_ad_write) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ad_write_request when calling createAdvertiserAd'
+                'Missing the required parameter $resource_input_of_ad_write when calling createAdvertiserAd'
             );
         }
 
@@ -426,12 +426,12 @@ class CreativeApi
         );
 
         // for model (json/xml)
-        if (isset($ad_write_request)) {
+        if (isset($resource_input_of_ad_write)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ad_write_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($resource_input_of_ad_write));
             } else {
-                $httpBody = $ad_write_request;
+                $httpBody = $resource_input_of_ad_write;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -491,16 +491,16 @@ class CreativeApi
      * Operation createAdvertiserCoupon
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreateCouponRequest $create_coupon_request create_coupon_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreateCoupon $resource_input_of_create_coupon resource_input_of_create_coupon (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserCoupon'] to see the possible values for this operation
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\CouponResponse
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon
      */
-    public function createAdvertiserCoupon($advertiser_id, $create_coupon_request, string $contentType = self::contentTypes['createAdvertiserCoupon'][0])
+    public function createAdvertiserCoupon($advertiser_id, $resource_input_of_create_coupon, string $contentType = self::contentTypes['createAdvertiserCoupon'][0])
     {
-        list($response) = $this->createAdvertiserCouponWithHttpInfo($advertiser_id, $create_coupon_request, $contentType);
+        list($response) = $this->createAdvertiserCouponWithHttpInfo($advertiser_id, $resource_input_of_create_coupon, $contentType);
         return $response;
     }
 
@@ -508,16 +508,16 @@ class CreativeApi
      * Operation createAdvertiserCouponWithHttpInfo
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreateCouponRequest $create_coupon_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreateCoupon $resource_input_of_create_coupon (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserCoupon'] to see the possible values for this operation
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\CouponResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createAdvertiserCouponWithHttpInfo($advertiser_id, $create_coupon_request, string $contentType = self::contentTypes['createAdvertiserCoupon'][0])
+    public function createAdvertiserCouponWithHttpInfo($advertiser_id, $resource_input_of_create_coupon, string $contentType = self::contentTypes['createAdvertiserCoupon'][0])
     {
-        $request = $this->createAdvertiserCouponRequest($advertiser_id, $create_coupon_request, $contentType);
+        $request = $this->createAdvertiserCouponRequest($advertiser_id, $resource_input_of_create_coupon, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -556,23 +556,23 @@ class CreativeApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse' === '\SplFileObject') {
+                    if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse' !== 'string') {
+                        if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse', []),
+                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse';
+            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -593,7 +593,7 @@ class CreativeApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse',
+                        '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -607,15 +607,15 @@ class CreativeApi
      * Operation createAdvertiserCouponAsync
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreateCouponRequest $create_coupon_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreateCoupon $resource_input_of_create_coupon (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserCoupon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAdvertiserCouponAsync($advertiser_id, $create_coupon_request, string $contentType = self::contentTypes['createAdvertiserCoupon'][0])
+    public function createAdvertiserCouponAsync($advertiser_id, $resource_input_of_create_coupon, string $contentType = self::contentTypes['createAdvertiserCoupon'][0])
     {
-        return $this->createAdvertiserCouponAsyncWithHttpInfo($advertiser_id, $create_coupon_request, $contentType)
+        return $this->createAdvertiserCouponAsyncWithHttpInfo($advertiser_id, $resource_input_of_create_coupon, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -627,16 +627,16 @@ class CreativeApi
      * Operation createAdvertiserCouponAsyncWithHttpInfo
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreateCouponRequest $create_coupon_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreateCoupon $resource_input_of_create_coupon (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserCoupon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAdvertiserCouponAsyncWithHttpInfo($advertiser_id, $create_coupon_request, string $contentType = self::contentTypes['createAdvertiserCoupon'][0])
+    public function createAdvertiserCouponAsyncWithHttpInfo($advertiser_id, $resource_input_of_create_coupon, string $contentType = self::contentTypes['createAdvertiserCoupon'][0])
     {
-        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse';
-        $request = $this->createAdvertiserCouponRequest($advertiser_id, $create_coupon_request, $contentType);
+        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon';
+        $request = $this->createAdvertiserCouponRequest($advertiser_id, $resource_input_of_create_coupon, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -678,13 +678,13 @@ class CreativeApi
      * Create request for operation 'createAdvertiserCoupon'
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreateCouponRequest $create_coupon_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreateCoupon $resource_input_of_create_coupon (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserCoupon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createAdvertiserCouponRequest($advertiser_id, $create_coupon_request, string $contentType = self::contentTypes['createAdvertiserCoupon'][0])
+    public function createAdvertiserCouponRequest($advertiser_id, $resource_input_of_create_coupon, string $contentType = self::contentTypes['createAdvertiserCoupon'][0])
     {
 
         // verify the required parameter 'advertiser_id' is set
@@ -694,10 +694,10 @@ class CreativeApi
             );
         }
 
-        // verify the required parameter 'create_coupon_request' is set
-        if ($create_coupon_request === null || (is_array($create_coupon_request) && count($create_coupon_request) === 0)) {
+        // verify the required parameter 'resource_input_of_create_coupon' is set
+        if ($resource_input_of_create_coupon === null || (is_array($resource_input_of_create_coupon) && count($resource_input_of_create_coupon) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $create_coupon_request when calling createAdvertiserCoupon'
+                'Missing the required parameter $resource_input_of_create_coupon when calling createAdvertiserCoupon'
             );
         }
 
@@ -728,12 +728,12 @@ class CreativeApi
         );
 
         // for model (json/xml)
-        if (isset($create_coupon_request)) {
+        if (isset($resource_input_of_create_coupon)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_coupon_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($resource_input_of_create_coupon));
             } else {
-                $httpBody = $create_coupon_request;
+                $httpBody = $resource_input_of_create_coupon;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -793,16 +793,16 @@ class CreativeApi
      * Operation createAdvertiserCreative
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreativeWriteRequest $creative_write_request creative_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreativeWrite $resource_input_of_creative_write resource_input_of_creative_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserCreative'] to see the possible values for this operation
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative
      */
-    public function createAdvertiserCreative($advertiser_id, $creative_write_request, string $contentType = self::contentTypes['createAdvertiserCreative'][0])
+    public function createAdvertiserCreative($advertiser_id, $resource_input_of_creative_write, string $contentType = self::contentTypes['createAdvertiserCreative'][0])
     {
-        list($response) = $this->createAdvertiserCreativeWithHttpInfo($advertiser_id, $creative_write_request, $contentType);
+        list($response) = $this->createAdvertiserCreativeWithHttpInfo($advertiser_id, $resource_input_of_creative_write, $contentType);
         return $response;
     }
 
@@ -810,16 +810,16 @@ class CreativeApi
      * Operation createAdvertiserCreativeWithHttpInfo
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreativeWriteRequest $creative_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreativeWrite $resource_input_of_creative_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserCreative'] to see the possible values for this operation
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createAdvertiserCreativeWithHttpInfo($advertiser_id, $creative_write_request, string $contentType = self::contentTypes['createAdvertiserCreative'][0])
+    public function createAdvertiserCreativeWithHttpInfo($advertiser_id, $resource_input_of_creative_write, string $contentType = self::contentTypes['createAdvertiserCreative'][0])
     {
-        $request = $this->createAdvertiserCreativeRequest($advertiser_id, $creative_write_request, $contentType);
+        $request = $this->createAdvertiserCreativeRequest($advertiser_id, $resource_input_of_creative_write, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -858,23 +858,23 @@ class CreativeApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse' === '\SplFileObject') {
+                    if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse' !== 'string') {
+                        if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse', []),
+                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse';
+            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -895,7 +895,7 @@ class CreativeApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse',
+                        '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -909,15 +909,15 @@ class CreativeApi
      * Operation createAdvertiserCreativeAsync
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreativeWriteRequest $creative_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreativeWrite $resource_input_of_creative_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserCreative'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAdvertiserCreativeAsync($advertiser_id, $creative_write_request, string $contentType = self::contentTypes['createAdvertiserCreative'][0])
+    public function createAdvertiserCreativeAsync($advertiser_id, $resource_input_of_creative_write, string $contentType = self::contentTypes['createAdvertiserCreative'][0])
     {
-        return $this->createAdvertiserCreativeAsyncWithHttpInfo($advertiser_id, $creative_write_request, $contentType)
+        return $this->createAdvertiserCreativeAsyncWithHttpInfo($advertiser_id, $resource_input_of_creative_write, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -929,16 +929,16 @@ class CreativeApi
      * Operation createAdvertiserCreativeAsyncWithHttpInfo
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreativeWriteRequest $creative_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreativeWrite $resource_input_of_creative_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserCreative'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAdvertiserCreativeAsyncWithHttpInfo($advertiser_id, $creative_write_request, string $contentType = self::contentTypes['createAdvertiserCreative'][0])
+    public function createAdvertiserCreativeAsyncWithHttpInfo($advertiser_id, $resource_input_of_creative_write, string $contentType = self::contentTypes['createAdvertiserCreative'][0])
     {
-        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse';
-        $request = $this->createAdvertiserCreativeRequest($advertiser_id, $creative_write_request, $contentType);
+        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative';
+        $request = $this->createAdvertiserCreativeRequest($advertiser_id, $resource_input_of_creative_write, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -980,13 +980,13 @@ class CreativeApi
      * Create request for operation 'createAdvertiserCreative'
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreativeWriteRequest $creative_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreativeWrite $resource_input_of_creative_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAdvertiserCreative'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createAdvertiserCreativeRequest($advertiser_id, $creative_write_request, string $contentType = self::contentTypes['createAdvertiserCreative'][0])
+    public function createAdvertiserCreativeRequest($advertiser_id, $resource_input_of_creative_write, string $contentType = self::contentTypes['createAdvertiserCreative'][0])
     {
 
         // verify the required parameter 'advertiser_id' is set
@@ -996,10 +996,10 @@ class CreativeApi
             );
         }
 
-        // verify the required parameter 'creative_write_request' is set
-        if ($creative_write_request === null || (is_array($creative_write_request) && count($creative_write_request) === 0)) {
+        // verify the required parameter 'resource_input_of_creative_write' is set
+        if ($resource_input_of_creative_write === null || (is_array($resource_input_of_creative_write) && count($resource_input_of_creative_write) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $creative_write_request when calling createAdvertiserCreative'
+                'Missing the required parameter $resource_input_of_creative_write when calling createAdvertiserCreative'
             );
         }
 
@@ -1030,12 +1030,12 @@ class CreativeApi
         );
 
         // for model (json/xml)
-        if (isset($creative_write_request)) {
+        if (isset($resource_input_of_creative_write)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($creative_write_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($resource_input_of_creative_write));
             } else {
-                $httpBody = $creative_write_request;
+                $httpBody = $resource_input_of_creative_write;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1803,16 +1803,16 @@ class CreativeApi
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
      * @param  string $id The Coupon identifier to edit. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\UpdateCouponRequest $update_coupon_request update_coupon_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfUpdateCoupon $resource_input_of_update_coupon resource_input_of_update_coupon (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['editAdvertiserCoupon'] to see the possible values for this operation
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\CouponResponse
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon
      */
-    public function editAdvertiserCoupon($advertiser_id, $id, $update_coupon_request, string $contentType = self::contentTypes['editAdvertiserCoupon'][0])
+    public function editAdvertiserCoupon($advertiser_id, $id, $resource_input_of_update_coupon, string $contentType = self::contentTypes['editAdvertiserCoupon'][0])
     {
-        list($response) = $this->editAdvertiserCouponWithHttpInfo($advertiser_id, $id, $update_coupon_request, $contentType);
+        list($response) = $this->editAdvertiserCouponWithHttpInfo($advertiser_id, $id, $resource_input_of_update_coupon, $contentType);
         return $response;
     }
 
@@ -1821,16 +1821,16 @@ class CreativeApi
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
      * @param  string $id The Coupon identifier to edit. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\UpdateCouponRequest $update_coupon_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfUpdateCoupon $resource_input_of_update_coupon (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['editAdvertiserCoupon'] to see the possible values for this operation
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\CouponResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon, HTTP status code, HTTP response headers (array of strings)
      */
-    public function editAdvertiserCouponWithHttpInfo($advertiser_id, $id, $update_coupon_request, string $contentType = self::contentTypes['editAdvertiserCoupon'][0])
+    public function editAdvertiserCouponWithHttpInfo($advertiser_id, $id, $resource_input_of_update_coupon, string $contentType = self::contentTypes['editAdvertiserCoupon'][0])
     {
-        $request = $this->editAdvertiserCouponRequest($advertiser_id, $id, $update_coupon_request, $contentType);
+        $request = $this->editAdvertiserCouponRequest($advertiser_id, $id, $resource_input_of_update_coupon, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1869,23 +1869,23 @@ class CreativeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse' === '\SplFileObject') {
+                    if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse' !== 'string') {
+                        if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse', []),
+                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse';
+            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1906,7 +1906,7 @@ class CreativeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse',
+                        '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1921,15 +1921,15 @@ class CreativeApi
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
      * @param  string $id The Coupon identifier to edit. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\UpdateCouponRequest $update_coupon_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfUpdateCoupon $resource_input_of_update_coupon (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['editAdvertiserCoupon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editAdvertiserCouponAsync($advertiser_id, $id, $update_coupon_request, string $contentType = self::contentTypes['editAdvertiserCoupon'][0])
+    public function editAdvertiserCouponAsync($advertiser_id, $id, $resource_input_of_update_coupon, string $contentType = self::contentTypes['editAdvertiserCoupon'][0])
     {
-        return $this->editAdvertiserCouponAsyncWithHttpInfo($advertiser_id, $id, $update_coupon_request, $contentType)
+        return $this->editAdvertiserCouponAsyncWithHttpInfo($advertiser_id, $id, $resource_input_of_update_coupon, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1942,16 +1942,16 @@ class CreativeApi
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
      * @param  string $id The Coupon identifier to edit. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\UpdateCouponRequest $update_coupon_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfUpdateCoupon $resource_input_of_update_coupon (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['editAdvertiserCoupon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editAdvertiserCouponAsyncWithHttpInfo($advertiser_id, $id, $update_coupon_request, string $contentType = self::contentTypes['editAdvertiserCoupon'][0])
+    public function editAdvertiserCouponAsyncWithHttpInfo($advertiser_id, $id, $resource_input_of_update_coupon, string $contentType = self::contentTypes['editAdvertiserCoupon'][0])
     {
-        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse';
-        $request = $this->editAdvertiserCouponRequest($advertiser_id, $id, $update_coupon_request, $contentType);
+        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon';
+        $request = $this->editAdvertiserCouponRequest($advertiser_id, $id, $resource_input_of_update_coupon, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1994,13 +1994,13 @@ class CreativeApi
      *
      * @param  string $advertiser_id The advertiser identifier. (required)
      * @param  string $id The Coupon identifier to edit. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\UpdateCouponRequest $update_coupon_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfUpdateCoupon $resource_input_of_update_coupon (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['editAdvertiserCoupon'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function editAdvertiserCouponRequest($advertiser_id, $id, $update_coupon_request, string $contentType = self::contentTypes['editAdvertiserCoupon'][0])
+    public function editAdvertiserCouponRequest($advertiser_id, $id, $resource_input_of_update_coupon, string $contentType = self::contentTypes['editAdvertiserCoupon'][0])
     {
 
         // verify the required parameter 'advertiser_id' is set
@@ -2017,10 +2017,10 @@ class CreativeApi
             );
         }
 
-        // verify the required parameter 'update_coupon_request' is set
-        if ($update_coupon_request === null || (is_array($update_coupon_request) && count($update_coupon_request) === 0)) {
+        // verify the required parameter 'resource_input_of_update_coupon' is set
+        if ($resource_input_of_update_coupon === null || (is_array($resource_input_of_update_coupon) && count($resource_input_of_update_coupon) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $update_coupon_request when calling editAdvertiserCoupon'
+                'Missing the required parameter $resource_input_of_update_coupon when calling editAdvertiserCoupon'
             );
         }
 
@@ -2059,12 +2059,12 @@ class CreativeApi
         );
 
         // for model (json/xml)
-        if (isset($update_coupon_request)) {
+        if (isset($resource_input_of_update_coupon)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_coupon_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($resource_input_of_update_coupon));
             } else {
-                $httpBody = $update_coupon_request;
+                $httpBody = $resource_input_of_update_coupon;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2124,16 +2124,16 @@ class CreativeApi
      * Operation editCreative
      *
      * @param  string $id The creative identifier to edit. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreativeWriteRequest $creative_write_request creative_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreativeWrite $resource_input_of_creative_write resource_input_of_creative_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['editCreative'] to see the possible values for this operation
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative
      */
-    public function editCreative($id, $creative_write_request, string $contentType = self::contentTypes['editCreative'][0])
+    public function editCreative($id, $resource_input_of_creative_write, string $contentType = self::contentTypes['editCreative'][0])
     {
-        list($response) = $this->editCreativeWithHttpInfo($id, $creative_write_request, $contentType);
+        list($response) = $this->editCreativeWithHttpInfo($id, $resource_input_of_creative_write, $contentType);
         return $response;
     }
 
@@ -2141,16 +2141,16 @@ class CreativeApi
      * Operation editCreativeWithHttpInfo
      *
      * @param  string $id The creative identifier to edit. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreativeWriteRequest $creative_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreativeWrite $resource_input_of_creative_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['editCreative'] to see the possible values for this operation
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative, HTTP status code, HTTP response headers (array of strings)
      */
-    public function editCreativeWithHttpInfo($id, $creative_write_request, string $contentType = self::contentTypes['editCreative'][0])
+    public function editCreativeWithHttpInfo($id, $resource_input_of_creative_write, string $contentType = self::contentTypes['editCreative'][0])
     {
-        $request = $this->editCreativeRequest($id, $creative_write_request, $contentType);
+        $request = $this->editCreativeRequest($id, $resource_input_of_creative_write, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2189,23 +2189,23 @@ class CreativeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse' === '\SplFileObject') {
+                    if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse' !== 'string') {
+                        if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse', []),
+                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse';
+            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2226,7 +2226,7 @@ class CreativeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse',
+                        '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2240,15 +2240,15 @@ class CreativeApi
      * Operation editCreativeAsync
      *
      * @param  string $id The creative identifier to edit. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreativeWriteRequest $creative_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreativeWrite $resource_input_of_creative_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['editCreative'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editCreativeAsync($id, $creative_write_request, string $contentType = self::contentTypes['editCreative'][0])
+    public function editCreativeAsync($id, $resource_input_of_creative_write, string $contentType = self::contentTypes['editCreative'][0])
     {
-        return $this->editCreativeAsyncWithHttpInfo($id, $creative_write_request, $contentType)
+        return $this->editCreativeAsyncWithHttpInfo($id, $resource_input_of_creative_write, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2260,16 +2260,16 @@ class CreativeApi
      * Operation editCreativeAsyncWithHttpInfo
      *
      * @param  string $id The creative identifier to edit. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreativeWriteRequest $creative_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreativeWrite $resource_input_of_creative_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['editCreative'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function editCreativeAsyncWithHttpInfo($id, $creative_write_request, string $contentType = self::contentTypes['editCreative'][0])
+    public function editCreativeAsyncWithHttpInfo($id, $resource_input_of_creative_write, string $contentType = self::contentTypes['editCreative'][0])
     {
-        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse';
-        $request = $this->editCreativeRequest($id, $creative_write_request, $contentType);
+        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative';
+        $request = $this->editCreativeRequest($id, $resource_input_of_creative_write, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2311,13 +2311,13 @@ class CreativeApi
      * Create request for operation 'editCreative'
      *
      * @param  string $id The creative identifier to edit. (required)
-     * @param  \criteo\api\marketingsolutions\v2024_07\Model\CreativeWriteRequest $creative_write_request (required)
+     * @param  \criteo\api\marketingsolutions\v2024_07\Model\ResourceInputOfCreativeWrite $resource_input_of_creative_write (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['editCreative'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function editCreativeRequest($id, $creative_write_request, string $contentType = self::contentTypes['editCreative'][0])
+    public function editCreativeRequest($id, $resource_input_of_creative_write, string $contentType = self::contentTypes['editCreative'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -2327,10 +2327,10 @@ class CreativeApi
             );
         }
 
-        // verify the required parameter 'creative_write_request' is set
-        if ($creative_write_request === null || (is_array($creative_write_request) && count($creative_write_request) === 0)) {
+        // verify the required parameter 'resource_input_of_creative_write' is set
+        if ($resource_input_of_creative_write === null || (is_array($resource_input_of_creative_write) && count($resource_input_of_creative_write) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $creative_write_request when calling editCreative'
+                'Missing the required parameter $resource_input_of_creative_write when calling editCreative'
             );
         }
 
@@ -2361,12 +2361,12 @@ class CreativeApi
         );
 
         // for model (json/xml)
-        if (isset($creative_write_request)) {
+        if (isset($resource_input_of_creative_write)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($creative_write_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($resource_input_of_creative_write));
             } else {
-                $httpBody = $creative_write_request;
+                $httpBody = $resource_input_of_creative_write;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2743,7 +2743,7 @@ class CreativeApi
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\AdResponse
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd
      */
     public function getAd($id, string $contentType = self::contentTypes['getAd'][0])
     {
@@ -2759,7 +2759,7 @@ class CreativeApi
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\AdResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAdWithHttpInfo($id, string $contentType = self::contentTypes['getAd'][0])
     {
@@ -2802,23 +2802,23 @@ class CreativeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\criteo\api\marketingsolutions\v2024_07\Model\AdResponse' === '\SplFileObject') {
+                    if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\criteo\api\marketingsolutions\v2024_07\Model\AdResponse' !== 'string') {
+                        if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\AdResponse', []),
+                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\AdResponse';
+            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2839,7 +2839,7 @@ class CreativeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\criteo\api\marketingsolutions\v2024_07\Model\AdResponse',
+                        '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2879,7 +2879,7 @@ class CreativeApi
      */
     public function getAdAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getAd'][0])
     {
-        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\AdResponse';
+        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfAd';
         $request = $this->getAdRequest($id, $contentType);
 
         return $this->client
@@ -3028,7 +3028,7 @@ class CreativeApi
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\AdListResponse
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfAd
      */
     public function getAdvertiserAds($advertiser_id, $limit = null, $offset = null, string $contentType = self::contentTypes['getAdvertiserAds'][0])
     {
@@ -3046,7 +3046,7 @@ class CreativeApi
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\AdListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfAd, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAdvertiserAdsWithHttpInfo($advertiser_id, $limit = null, $offset = null, string $contentType = self::contentTypes['getAdvertiserAds'][0])
     {
@@ -3089,23 +3089,23 @@ class CreativeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\criteo\api\marketingsolutions\v2024_07\Model\AdListResponse' === '\SplFileObject') {
+                    if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfAd' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\criteo\api\marketingsolutions\v2024_07\Model\AdListResponse' !== 'string') {
+                        if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfAd' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\AdListResponse', []),
+                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfAd', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\AdListResponse';
+            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfAd';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3126,7 +3126,7 @@ class CreativeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\criteo\api\marketingsolutions\v2024_07\Model\AdListResponse',
+                        '\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfAd',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3170,7 +3170,7 @@ class CreativeApi
      */
     public function getAdvertiserAdsAsyncWithHttpInfo($advertiser_id, $limit = null, $offset = null, string $contentType = self::contentTypes['getAdvertiserAds'][0])
     {
-        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\AdListResponse';
+        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfAd';
         $request = $this->getAdvertiserAdsRequest($advertiser_id, $limit, $offset, $contentType);
 
         return $this->client
@@ -3340,7 +3340,7 @@ class CreativeApi
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\CouponResponse
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon
      */
     public function getAdvertiserCoupon($advertiser_id, $id, string $contentType = self::contentTypes['getAdvertiserCoupon'][0])
     {
@@ -3357,7 +3357,7 @@ class CreativeApi
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\CouponResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAdvertiserCouponWithHttpInfo($advertiser_id, $id, string $contentType = self::contentTypes['getAdvertiserCoupon'][0])
     {
@@ -3400,23 +3400,23 @@ class CreativeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse' === '\SplFileObject') {
+                    if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse' !== 'string') {
+                        if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse', []),
+                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse';
+            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3437,7 +3437,7 @@ class CreativeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse',
+                        '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3479,7 +3479,7 @@ class CreativeApi
      */
     public function getAdvertiserCouponAsyncWithHttpInfo($advertiser_id, $id, string $contentType = self::contentTypes['getAdvertiserCoupon'][0])
     {
-        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CouponResponse';
+        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCoupon';
         $request = $this->getAdvertiserCouponRequest($advertiser_id, $id, $contentType);
 
         return $this->client
@@ -3976,7 +3976,7 @@ class CreativeApi
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\CouponSupportedSizesResponse
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCouponSupportedSizes
      */
     public function getAdvertiserCouponSupportedSizes($advertiser_id, $ad_set_id = null, string $contentType = self::contentTypes['getAdvertiserCouponSupportedSizes'][0])
     {
@@ -3993,7 +3993,7 @@ class CreativeApi
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\CouponSupportedSizesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCouponSupportedSizes, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAdvertiserCouponSupportedSizesWithHttpInfo($advertiser_id, $ad_set_id = null, string $contentType = self::contentTypes['getAdvertiserCouponSupportedSizes'][0])
     {
@@ -4036,23 +4036,23 @@ class CreativeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\criteo\api\marketingsolutions\v2024_07\Model\CouponSupportedSizesResponse' === '\SplFileObject') {
+                    if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCouponSupportedSizes' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\criteo\api\marketingsolutions\v2024_07\Model\CouponSupportedSizesResponse' !== 'string') {
+                        if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCouponSupportedSizes' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\CouponSupportedSizesResponse', []),
+                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCouponSupportedSizes', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CouponSupportedSizesResponse';
+            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCouponSupportedSizes';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4073,7 +4073,7 @@ class CreativeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\criteo\api\marketingsolutions\v2024_07\Model\CouponSupportedSizesResponse',
+                        '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCouponSupportedSizes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4115,7 +4115,7 @@ class CreativeApi
      */
     public function getAdvertiserCouponSupportedSizesAsyncWithHttpInfo($advertiser_id, $ad_set_id = null, string $contentType = self::contentTypes['getAdvertiserCouponSupportedSizes'][0])
     {
-        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CouponSupportedSizesResponse';
+        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCouponSupportedSizes';
         $request = $this->getAdvertiserCouponSupportedSizesRequest($advertiser_id, $ad_set_id, $contentType);
 
         return $this->client
@@ -4275,7 +4275,7 @@ class CreativeApi
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\CouponListResponse
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCoupon
      */
     public function getAdvertiserCoupons($advertiser_id, $limit = null, $offset = null, string $contentType = self::contentTypes['getAdvertiserCoupons'][0])
     {
@@ -4293,7 +4293,7 @@ class CreativeApi
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\CouponListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCoupon, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAdvertiserCouponsWithHttpInfo($advertiser_id, $limit = null, $offset = null, string $contentType = self::contentTypes['getAdvertiserCoupons'][0])
     {
@@ -4336,23 +4336,23 @@ class CreativeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\criteo\api\marketingsolutions\v2024_07\Model\CouponListResponse' === '\SplFileObject') {
+                    if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCoupon' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\criteo\api\marketingsolutions\v2024_07\Model\CouponListResponse' !== 'string') {
+                        if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCoupon' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\CouponListResponse', []),
+                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCoupon', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CouponListResponse';
+            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCoupon';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4373,7 +4373,7 @@ class CreativeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\criteo\api\marketingsolutions\v2024_07\Model\CouponListResponse',
+                        '\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCoupon',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4417,7 +4417,7 @@ class CreativeApi
      */
     public function getAdvertiserCouponsAsyncWithHttpInfo($advertiser_id, $limit = null, $offset = null, string $contentType = self::contentTypes['getAdvertiserCoupons'][0])
     {
-        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CouponListResponse';
+        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCoupon';
         $request = $this->getAdvertiserCouponsRequest($advertiser_id, $limit, $offset, $contentType);
 
         return $this->client
@@ -4588,7 +4588,7 @@ class CreativeApi
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\CreativeListResponse
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCreative
      */
     public function getAdvertiserCreatives($advertiser_id, $limit = null, $offset = null, string $contentType = self::contentTypes['getAdvertiserCreatives'][0])
     {
@@ -4606,7 +4606,7 @@ class CreativeApi
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\CreativeListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCreative, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAdvertiserCreativesWithHttpInfo($advertiser_id, $limit = null, $offset = null, string $contentType = self::contentTypes['getAdvertiserCreatives'][0])
     {
@@ -4649,23 +4649,23 @@ class CreativeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\criteo\api\marketingsolutions\v2024_07\Model\CreativeListResponse' === '\SplFileObject') {
+                    if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCreative' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\criteo\api\marketingsolutions\v2024_07\Model\CreativeListResponse' !== 'string') {
+                        if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCreative' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\CreativeListResponse', []),
+                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCreative', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CreativeListResponse';
+            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCreative';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4686,7 +4686,7 @@ class CreativeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\criteo\api\marketingsolutions\v2024_07\Model\CreativeListResponse',
+                        '\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCreative',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4730,7 +4730,7 @@ class CreativeApi
      */
     public function getAdvertiserCreativesAsyncWithHttpInfo($advertiser_id, $limit = null, $offset = null, string $contentType = self::contentTypes['getAdvertiserCreatives'][0])
     {
-        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CreativeListResponse';
+        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceCollectionOutcomeOfCreative';
         $request = $this->getAdvertiserCreativesRequest($advertiser_id, $limit, $offset, $contentType);
 
         return $this->client
@@ -4899,7 +4899,7 @@ class CreativeApi
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative
      */
     public function getCreative($id, string $contentType = self::contentTypes['getCreative'][0])
     {
@@ -4915,7 +4915,7 @@ class CreativeApi
      *
      * @throws \criteo\api\marketingsolutions\v2024_07\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCreativeWithHttpInfo($id, string $contentType = self::contentTypes['getCreative'][0])
     {
@@ -4958,23 +4958,23 @@ class CreativeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse' === '\SplFileObject') {
+                    if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse' !== 'string') {
+                        if ('\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse', []),
+                        ObjectSerializer::deserialize($content, '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse';
+            $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4995,7 +4995,7 @@ class CreativeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse',
+                        '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5035,7 +5035,7 @@ class CreativeApi
      */
     public function getCreativeAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getCreative'][0])
     {
-        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\CreativeResponse';
+        $returnType = '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOutcomeOfCreative';
         $request = $this->getCreativeRequest($id, $contentType);
 
         return $this->client

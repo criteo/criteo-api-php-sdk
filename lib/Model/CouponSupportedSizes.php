@@ -326,8 +326,6 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['logo_zone'] = $logo_zone;
 
         return $this;
@@ -362,8 +360,6 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['full_frame'] = $full_frame;
 
         return $this;

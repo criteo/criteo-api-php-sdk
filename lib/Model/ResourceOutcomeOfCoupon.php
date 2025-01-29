@@ -1,6 +1,6 @@
 <?php
 /**
- * HtmlTagWriteAttributes
+ * ResourceOutcomeOfCoupon
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2024_07\ObjectSerializer;
 
 /**
- * HtmlTagWriteAttributes Class Doc Comment
+ * ResourceOutcomeOfCoupon Class Doc Comment
  *
  * @category Class
- * @description The attributes specific to create or update a HtmlTag creative
+ * @description A top-level object that encapsulates a Criteo API response for a single entity.
  * @package  criteo\api\marketingsolutions\v2024_07
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResourceOutcomeOfCoupon implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'HtmlTagWriteAttributes';
+    protected static $openAPIModelName = 'ResourceOutcomeOfCoupon';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,9 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => '\criteo\api\marketingsolutions\v2024_07\Model\Tag[]'
+        'data' => '\criteo\api\marketingsolutions\v2024_07\Model\ResourceOfCoupon',
+        'warnings' => '\criteo\api\marketingsolutions\v2024_07\Model\CommonProblem[]',
+        'errors' => '\criteo\api\marketingsolutions\v2024_07\Model\CommonProblem[]'
     ];
 
     /**
@@ -69,7 +71,9 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null
+        'data' => null,
+        'warnings' => null,
+        'errors' => null
     ];
 
     /**
@@ -78,7 +82,9 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'tags' => false
+        'data' => false,
+		'warnings' => true,
+		'errors' => true
     ];
 
     /**
@@ -167,7 +173,9 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags'
+        'data' => 'data',
+        'warnings' => 'warnings',
+        'errors' => 'errors'
     ];
 
     /**
@@ -176,7 +184,9 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags'
+        'data' => 'setData',
+        'warnings' => 'setWarnings',
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -185,7 +195,9 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags'
+        'data' => 'getData',
+        'warnings' => 'getWarnings',
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -245,7 +257,9 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('tags', $data ?? [], null);
+        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('warnings', $data ?? [], null);
+        $this->setIfExists('errors', $data ?? [], null);
     }
 
     /**
@@ -275,9 +289,6 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['tags'] === null) {
-            $invalidProperties[] = "'tags' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -294,28 +305,96 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets tags
+     * Gets data
      *
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\Tag[]
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\ResourceOfCoupon|null
      */
-    public function getTags()
+    public function getData()
     {
-        return $this->container['tags'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets tags
+     * Sets data
      *
-     * @param \criteo\api\marketingsolutions\v2024_07\Model\Tag[] $tags An array containing the html tags
+     * @param \criteo\api\marketingsolutions\v2024_07\Model\ResourceOfCoupon|null $data data
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setData($data)
     {
-        if (is_null($tags)) {
-            throw new \InvalidArgumentException('non-nullable tags cannot be null');
+        if (is_null($data)) {
+            throw new \InvalidArgumentException('non-nullable data cannot be null');
         }
-        $this->container['tags'] = $tags;
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets warnings
+     *
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\CommonProblem[]|null
+     */
+    public function getWarnings()
+    {
+        return $this->container['warnings'];
+    }
+
+    /**
+     * Sets warnings
+     *
+     * @param \criteo\api\marketingsolutions\v2024_07\Model\CommonProblem[]|null $warnings warnings
+     *
+     * @return self
+     */
+    public function setWarnings($warnings)
+    {
+        if (is_null($warnings)) {
+            array_push($this->openAPINullablesSetToNull, 'warnings');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('warnings', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['warnings'] = $warnings;
+
+        return $this;
+    }
+
+    /**
+     * Gets errors
+     *
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\CommonProblem[]|null
+     */
+    public function getErrors()
+    {
+        return $this->container['errors'];
+    }
+
+    /**
+     * Sets errors
+     *
+     * @param \criteo\api\marketingsolutions\v2024_07\Model\CommonProblem[]|null $errors errors
+     *
+     * @return self
+     */
+    public function setErrors($errors)
+    {
+        if (is_null($errors)) {
+            array_push($this->openAPINullablesSetToNull, 'errors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('errors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['errors'] = $errors;
 
         return $this;
     }

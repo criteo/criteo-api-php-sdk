@@ -319,8 +319,6 @@ class HtmlTagAttributes implements ModelInterface, ArrayAccess, \JsonSerializabl
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['tags'] = $tags;
 
         return $this;

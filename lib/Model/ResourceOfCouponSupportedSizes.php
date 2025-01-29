@@ -1,6 +1,6 @@
 <?php
 /**
- * HtmlTagWriteAttributes
+ * ResourceOfCouponSupportedSizes
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2024_07\ObjectSerializer;
 
 /**
- * HtmlTagWriteAttributes Class Doc Comment
+ * ResourceOfCouponSupportedSizes Class Doc Comment
  *
  * @category Class
- * @description The attributes specific to create or update a HtmlTag creative
+ * @description A class that represents a domain entity exposed by an API.
  * @package  criteo\api\marketingsolutions\v2024_07
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResourceOfCouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'HtmlTagWriteAttributes';
+    protected static $openAPIModelName = 'ResourceOfCouponSupportedSizes';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,9 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tags' => '\criteo\api\marketingsolutions\v2024_07\Model\Tag[]'
+        'attributes' => '\criteo\api\marketingsolutions\v2024_07\Model\CouponSupportedSizes',
+        'id' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -69,7 +71,9 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'tags' => null
+        'attributes' => null,
+        'id' => null,
+        'type' => null
     ];
 
     /**
@@ -78,7 +82,9 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'tags' => false
+        'attributes' => false,
+		'id' => true,
+		'type' => true
     ];
 
     /**
@@ -167,7 +173,9 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags'
+        'attributes' => 'attributes',
+        'id' => 'id',
+        'type' => 'type'
     ];
 
     /**
@@ -176,7 +184,9 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags'
+        'attributes' => 'setAttributes',
+        'id' => 'setId',
+        'type' => 'setType'
     ];
 
     /**
@@ -185,7 +195,9 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags'
+        'attributes' => 'getAttributes',
+        'id' => 'getId',
+        'type' => 'getType'
     ];
 
     /**
@@ -245,7 +257,9 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('tags', $data ?? [], null);
+        $this->setIfExists('attributes', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
     }
 
     /**
@@ -275,9 +289,6 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['tags'] === null) {
-            $invalidProperties[] = "'tags' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -294,28 +305,96 @@ class HtmlTagWriteAttributes implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets tags
+     * Gets attributes
      *
-     * @return \criteo\api\marketingsolutions\v2024_07\Model\Tag[]
+     * @return \criteo\api\marketingsolutions\v2024_07\Model\CouponSupportedSizes|null
      */
-    public function getTags()
+    public function getAttributes()
     {
-        return $this->container['tags'];
+        return $this->container['attributes'];
     }
 
     /**
-     * Sets tags
+     * Sets attributes
      *
-     * @param \criteo\api\marketingsolutions\v2024_07\Model\Tag[] $tags An array containing the html tags
+     * @param \criteo\api\marketingsolutions\v2024_07\Model\CouponSupportedSizes|null $attributes attributes
      *
      * @return self
      */
-    public function setTags($tags)
+    public function setAttributes($attributes)
     {
-        if (is_null($tags)) {
-            throw new \InvalidArgumentException('non-nullable tags cannot be null');
+        if (is_null($attributes)) {
+            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
         }
-        $this->container['tags'] = $tags;
+        $this->container['attributes'] = $attributes;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id Unique identifier of this resource.
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        if (is_null($id)) {
+            array_push($this->openAPINullablesSetToNull, 'id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }
