@@ -401,8 +401,6 @@ class CreateImageSlide implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['slide_base64_strings'] = $slide_base64_strings;
 
         return $this;

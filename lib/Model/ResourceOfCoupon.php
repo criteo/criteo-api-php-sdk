@@ -1,6 +1,6 @@
 <?php
 /**
- * CouponSupportedSizes
+ * ResourceOfCoupon
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2024_10\ObjectSerializer;
 
 /**
- * CouponSupportedSizes Class Doc Comment
+ * ResourceOfCoupon Class Doc Comment
  *
  * @category Class
- * @description Entity containing the list of Coupon supported sizes
+ * @description A class that represents a domain entity exposed by an API.
  * @package  criteo\api\marketingsolutions\v2024_10
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResourceOfCoupon implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CouponSupportedSizes';
+    protected static $openAPIModelName = 'ResourceOfCoupon';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,9 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'logo_zone' => 'string[]',
-        'full_frame' => 'string[]'
+        'attributes' => '\criteo\api\marketingsolutions\v2024_10\Model\Coupon',
+        'id' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -70,8 +71,9 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'logo_zone' => null,
-        'full_frame' => null
+        'attributes' => null,
+        'id' => null,
+        'type' => null
     ];
 
     /**
@@ -80,8 +82,9 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'logo_zone' => true,
-		'full_frame' => true
+        'attributes' => false,
+		'id' => true,
+		'type' => true
     ];
 
     /**
@@ -170,8 +173,9 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'logo_zone' => 'logoZone',
-        'full_frame' => 'fullFrame'
+        'attributes' => 'attributes',
+        'id' => 'id',
+        'type' => 'type'
     ];
 
     /**
@@ -180,8 +184,9 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'logo_zone' => 'setLogoZone',
-        'full_frame' => 'setFullFrame'
+        'attributes' => 'setAttributes',
+        'id' => 'setId',
+        'type' => 'setType'
     ];
 
     /**
@@ -190,8 +195,9 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'logo_zone' => 'getLogoZone',
-        'full_frame' => 'getFullFrame'
+        'attributes' => 'getAttributes',
+        'id' => 'getId',
+        'type' => 'getType'
     ];
 
     /**
@@ -251,8 +257,9 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('logo_zone', $data ?? [], null);
-        $this->setIfExists('full_frame', $data ?? [], null);
+        $this->setIfExists('attributes', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
     }
 
     /**
@@ -298,69 +305,96 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets logo_zone
+     * Gets attributes
      *
-     * @return string[]|null
+     * @return \criteo\api\marketingsolutions\v2024_10\Model\Coupon|null
      */
-    public function getLogoZone()
+    public function getAttributes()
     {
-        return $this->container['logo_zone'];
+        return $this->container['attributes'];
     }
 
     /**
-     * Sets logo_zone
+     * Sets attributes
      *
-     * @param string[]|null $logo_zone Array of LogoZone sizes as string in width x height format
+     * @param \criteo\api\marketingsolutions\v2024_10\Model\Coupon|null $attributes attributes
      *
      * @return self
      */
-    public function setLogoZone($logo_zone)
+    public function setAttributes($attributes)
     {
-        if (is_null($logo_zone)) {
-            array_push($this->openAPINullablesSetToNull, 'logo_zone');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('logo_zone', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($attributes)) {
+            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
         }
-        $this->container['logo_zone'] = $logo_zone;
+        $this->container['attributes'] = $attributes;
 
         return $this;
     }
 
     /**
-     * Gets full_frame
+     * Gets id
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getFullFrame()
+    public function getId()
     {
-        return $this->container['full_frame'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets full_frame
+     * Sets id
      *
-     * @param string[]|null $full_frame Array of FullFrame sizes as string in width x height format
+     * @param string|null $id Unique identifier of this resource.
      *
      * @return self
      */
-    public function setFullFrame($full_frame)
+    public function setId($id)
     {
-        if (is_null($full_frame)) {
-            array_push($this->openAPINullablesSetToNull, 'full_frame');
+        if (is_null($id)) {
+            array_push($this->openAPINullablesSetToNull, 'id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('full_frame', $nullablesSetToNull);
+            $index = array_search('id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['full_frame'] = $full_frame;
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }

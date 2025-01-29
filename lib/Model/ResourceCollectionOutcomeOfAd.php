@@ -1,6 +1,6 @@
 <?php
 /**
- * CouponSupportedSizes
+ * ResourceCollectionOutcomeOfAd
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2024_10\ObjectSerializer;
 
 /**
- * CouponSupportedSizes Class Doc Comment
+ * ResourceCollectionOutcomeOfAd Class Doc Comment
  *
  * @category Class
- * @description Entity containing the list of Coupon supported sizes
+ * @description A top-level object that encapsulates a Criteo API response for several entities.
  * @package  criteo\api\marketingsolutions\v2024_10
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResourceCollectionOutcomeOfAd implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CouponSupportedSizes';
+    protected static $openAPIModelName = 'ResourceCollectionOutcomeOfAd';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,9 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'logo_zone' => 'string[]',
-        'full_frame' => 'string[]'
+        'data' => '\criteo\api\marketingsolutions\v2024_10\Model\ResourceOfAd[]',
+        'warnings' => '\criteo\api\marketingsolutions\v2024_10\Model\CommonProblem[]',
+        'errors' => '\criteo\api\marketingsolutions\v2024_10\Model\CommonProblem[]'
     ];
 
     /**
@@ -70,8 +71,9 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'logo_zone' => null,
-        'full_frame' => null
+        'data' => null,
+        'warnings' => null,
+        'errors' => null
     ];
 
     /**
@@ -80,8 +82,9 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'logo_zone' => true,
-		'full_frame' => true
+        'data' => true,
+		'warnings' => true,
+		'errors' => true
     ];
 
     /**
@@ -170,8 +173,9 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'logo_zone' => 'logoZone',
-        'full_frame' => 'fullFrame'
+        'data' => 'data',
+        'warnings' => 'warnings',
+        'errors' => 'errors'
     ];
 
     /**
@@ -180,8 +184,9 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'logo_zone' => 'setLogoZone',
-        'full_frame' => 'setFullFrame'
+        'data' => 'setData',
+        'warnings' => 'setWarnings',
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -190,8 +195,9 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'logo_zone' => 'getLogoZone',
-        'full_frame' => 'getFullFrame'
+        'data' => 'getData',
+        'warnings' => 'getWarnings',
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -251,8 +257,9 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('logo_zone', $data ?? [], null);
-        $this->setIfExists('full_frame', $data ?? [], null);
+        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('warnings', $data ?? [], null);
+        $this->setIfExists('errors', $data ?? [], null);
     }
 
     /**
@@ -298,69 +305,103 @@ class CouponSupportedSizes implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets logo_zone
+     * Gets data
      *
-     * @return string[]|null
+     * @return \criteo\api\marketingsolutions\v2024_10\Model\ResourceOfAd[]|null
      */
-    public function getLogoZone()
+    public function getData()
     {
-        return $this->container['logo_zone'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets logo_zone
+     * Sets data
      *
-     * @param string[]|null $logo_zone Array of LogoZone sizes as string in width x height format
+     * @param \criteo\api\marketingsolutions\v2024_10\Model\ResourceOfAd[]|null $data data
      *
      * @return self
      */
-    public function setLogoZone($logo_zone)
+    public function setData($data)
     {
-        if (is_null($logo_zone)) {
-            array_push($this->openAPINullablesSetToNull, 'logo_zone');
+        if (is_null($data)) {
+            array_push($this->openAPINullablesSetToNull, 'data');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('logo_zone', $nullablesSetToNull);
+            $index = array_search('data', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['logo_zone'] = $logo_zone;
+        $this->container['data'] = $data;
 
         return $this;
     }
 
     /**
-     * Gets full_frame
+     * Gets warnings
      *
-     * @return string[]|null
+     * @return \criteo\api\marketingsolutions\v2024_10\Model\CommonProblem[]|null
      */
-    public function getFullFrame()
+    public function getWarnings()
     {
-        return $this->container['full_frame'];
+        return $this->container['warnings'];
     }
 
     /**
-     * Sets full_frame
+     * Sets warnings
      *
-     * @param string[]|null $full_frame Array of FullFrame sizes as string in width x height format
+     * @param \criteo\api\marketingsolutions\v2024_10\Model\CommonProblem[]|null $warnings warnings
      *
      * @return self
      */
-    public function setFullFrame($full_frame)
+    public function setWarnings($warnings)
     {
-        if (is_null($full_frame)) {
-            array_push($this->openAPINullablesSetToNull, 'full_frame');
+        if (is_null($warnings)) {
+            array_push($this->openAPINullablesSetToNull, 'warnings');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('full_frame', $nullablesSetToNull);
+            $index = array_search('warnings', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['full_frame'] = $full_frame;
+        $this->container['warnings'] = $warnings;
+
+        return $this;
+    }
+
+    /**
+     * Gets errors
+     *
+     * @return \criteo\api\marketingsolutions\v2024_10\Model\CommonProblem[]|null
+     */
+    public function getErrors()
+    {
+        return $this->container['errors'];
+    }
+
+    /**
+     * Sets errors
+     *
+     * @param \criteo\api\marketingsolutions\v2024_10\Model\CommonProblem[]|null $errors errors
+     *
+     * @return self
+     */
+    public function setErrors($errors)
+    {
+        if (is_null($errors)) {
+            array_push($this->openAPINullablesSetToNull, 'errors');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('errors', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['errors'] = $errors;
 
         return $this;
     }

@@ -707,8 +707,6 @@ class AdaptiveWriteAttributes implements ModelInterface, ArrayAccess, \JsonSeria
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['image_sets_base64'] = $image_sets_base64;
 
         return $this;
@@ -787,8 +785,6 @@ class AdaptiveWriteAttributes implements ModelInterface, ArrayAccess, \JsonSeria
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['video_base64_strings'] = $video_base64_strings;
 
         return $this;

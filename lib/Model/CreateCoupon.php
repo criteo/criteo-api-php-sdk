@@ -670,8 +670,6 @@ class CreateCoupon implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($images)) {
             throw new \InvalidArgumentException('non-nullable images cannot be null');
         }
-
-
         $this->container['images'] = $images;
 
         return $this;

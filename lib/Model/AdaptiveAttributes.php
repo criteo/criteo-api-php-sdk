@@ -466,8 +466,6 @@ class AdaptiveAttributes implements ModelInterface, ArrayAccess, \JsonSerializab
                 )
             );
         }
-
-
         $this->container['layouts'] = $layouts;
 
         return $this;
@@ -495,8 +493,6 @@ class AdaptiveAttributes implements ModelInterface, ArrayAccess, \JsonSerializab
         if (is_null($logos)) {
             throw new \InvalidArgumentException('non-nullable logos cannot be null');
         }
-
-
         $this->container['logos'] = $logos;
 
         return $this;
@@ -632,8 +628,6 @@ class AdaptiveAttributes implements ModelInterface, ArrayAccess, \JsonSerializab
         if (is_null($calls_to_action)) {
             throw new \InvalidArgumentException('non-nullable calls_to_action cannot be null');
         }
-
-
         $this->container['calls_to_action'] = $calls_to_action;
 
         return $this;
@@ -695,8 +689,6 @@ class AdaptiveAttributes implements ModelInterface, ArrayAccess, \JsonSerializab
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['image_sets'] = $image_sets;
 
         return $this;
@@ -775,8 +767,6 @@ class AdaptiveAttributes implements ModelInterface, ArrayAccess, \JsonSerializab
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
-
         $this->container['videos'] = $videos;
 
         return $this;
