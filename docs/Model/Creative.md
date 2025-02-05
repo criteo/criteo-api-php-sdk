@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **html_tag_attributes** | [**\criteo\api\marketingsolutions\v2024_10\Model\HtmlTagAttributes**](HtmlTagAttributes.md) |  | [optional]
 **dynamic_attributes** | [**\criteo\api\marketingsolutions\v2024_10\Model\DynamicAttributes**](DynamicAttributes.md) |  | [optional]
 **adaptive_attributes** | [**\criteo\api\marketingsolutions\v2024_10\Model\AdaptiveAttributes**](AdaptiveAttributes.md) |  | [optional]
+**id** | **string** | Unique identifier (duplicate of the parent id). | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
