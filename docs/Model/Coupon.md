@@ -18,5 +18,6 @@ Name | Type | Description | Notes
 **show_every** | **int** | Show the Coupon every N seconds (between 1 and 10) | [optional]
 **show_duration** | **int** | Show Coupon for a duration of N seconds (between 1 and 5) | [optional]
 **rotations_number** | **int** | Number of rotations for the Coupons (from 1 to 10 times) | [optional]
+**id** | **string** | Unique identifier (duplicate of the parent id). | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -68,7 +68,8 @@ class Creative implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_attributes' => '\criteo\api\marketingsolutions\v2025_01\Model\ImageAttributes',
         'html_tag_attributes' => '\criteo\api\marketingsolutions\v2025_01\Model\HtmlTagAttributes',
         'dynamic_attributes' => '\criteo\api\marketingsolutions\v2025_01\Model\DynamicAttributes',
-        'adaptive_attributes' => '\criteo\api\marketingsolutions\v2025_01\Model\AdaptiveAttributes'
+        'adaptive_attributes' => '\criteo\api\marketingsolutions\v2025_01\Model\AdaptiveAttributes',
+        'id' => 'string'
     ];
 
     /**
@@ -89,7 +90,8 @@ class Creative implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_attributes' => null,
         'html_tag_attributes' => null,
         'dynamic_attributes' => null,
-        'adaptive_attributes' => null
+        'adaptive_attributes' => null,
+        'id' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class Creative implements ModelInterface, ArrayAccess, \JsonSerializable
 		'image_attributes' => false,
 		'html_tag_attributes' => false,
 		'dynamic_attributes' => false,
-		'adaptive_attributes' => false
+		'adaptive_attributes' => false,
+		'id' => true
     ];
 
     /**
@@ -207,7 +210,8 @@ class Creative implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_attributes' => 'imageAttributes',
         'html_tag_attributes' => 'htmlTagAttributes',
         'dynamic_attributes' => 'dynamicAttributes',
-        'adaptive_attributes' => 'adaptiveAttributes'
+        'adaptive_attributes' => 'adaptiveAttributes',
+        'id' => 'id'
     ];
 
     /**
@@ -226,7 +230,8 @@ class Creative implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_attributes' => 'setImageAttributes',
         'html_tag_attributes' => 'setHtmlTagAttributes',
         'dynamic_attributes' => 'setDynamicAttributes',
-        'adaptive_attributes' => 'setAdaptiveAttributes'
+        'adaptive_attributes' => 'setAdaptiveAttributes',
+        'id' => 'setId'
     ];
 
     /**
@@ -245,7 +250,8 @@ class Creative implements ModelInterface, ArrayAccess, \JsonSerializable
         'image_attributes' => 'getImageAttributes',
         'html_tag_attributes' => 'getHtmlTagAttributes',
         'dynamic_attributes' => 'getDynamicAttributes',
-        'adaptive_attributes' => 'getAdaptiveAttributes'
+        'adaptive_attributes' => 'getAdaptiveAttributes',
+        'id' => 'getId'
     ];
 
     /**
@@ -316,6 +322,7 @@ class Creative implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('html_tag_attributes', $data ?? [], null);
         $this->setIfExists('dynamic_attributes', $data ?? [], null);
         $this->setIfExists('adaptive_attributes', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
     }
 
     /**
@@ -686,6 +693,40 @@ class Creative implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable adaptive_attributes cannot be null');
         }
         $this->container['adaptive_attributes'] = $adaptive_attributes;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id Unique identifier (duplicate of the parent id).
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        if (is_null($id)) {
+            array_push($this->openAPINullablesSetToNull, 'id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['id'] = $id;
 
         return $this;
     }
