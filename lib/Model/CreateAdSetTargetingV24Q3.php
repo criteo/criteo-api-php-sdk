@@ -84,7 +84,7 @@ class CreateAdSetTargetingV24Q3 implements ModelInterface, ArrayAccess, \JsonSer
     protected static array $openAPINullables = [
         'delivery_limitations' => false,
 		'geo_location' => false,
-		'frequency_capping' => false
+		'frequency_capping' => true
     ];
 
     /**
@@ -381,7 +381,14 @@ class CreateAdSetTargetingV24Q3 implements ModelInterface, ArrayAccess, \JsonSer
     public function setFrequencyCapping($frequency_capping)
     {
         if (is_null($frequency_capping)) {
-            throw new \InvalidArgumentException('non-nullable frequency_capping cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'frequency_capping');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('frequency_capping', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['frequency_capping'] = $frequency_capping;
 
