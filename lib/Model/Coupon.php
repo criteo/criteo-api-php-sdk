@@ -71,7 +71,8 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
         'images' => '\criteo\api\marketingsolutions\v2024_01\Model\ImageSlide[]',
         'show_every' => 'int',
         'show_duration' => 'int',
-        'rotations_number' => 'int'
+        'rotations_number' => 'int',
+        'id' => 'string'
     ];
 
     /**
@@ -95,7 +96,8 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
         'images' => null,
         'show_every' => 'int32',
         'show_duration' => 'int32',
-        'rotations_number' => 'int32'
+        'rotations_number' => 'int32',
+        'id' => null
     ];
 
     /**
@@ -117,7 +119,8 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
 		'images' => true,
 		'show_every' => true,
 		'show_duration' => true,
-		'rotations_number' => true
+		'rotations_number' => true,
+		'id' => true
     ];
 
     /**
@@ -219,7 +222,8 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
         'images' => 'images',
         'show_every' => 'showEvery',
         'show_duration' => 'showDuration',
-        'rotations_number' => 'rotationsNumber'
+        'rotations_number' => 'rotationsNumber',
+        'id' => 'id'
     ];
 
     /**
@@ -241,7 +245,8 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
         'images' => 'setImages',
         'show_every' => 'setShowEvery',
         'show_duration' => 'setShowDuration',
-        'rotations_number' => 'setRotationsNumber'
+        'rotations_number' => 'setRotationsNumber',
+        'id' => 'setId'
     ];
 
     /**
@@ -263,7 +268,8 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
         'images' => 'getImages',
         'show_every' => 'getShowEvery',
         'show_duration' => 'getShowDuration',
-        'rotations_number' => 'getRotationsNumber'
+        'rotations_number' => 'getRotationsNumber',
+        'id' => 'getId'
     ];
 
     /**
@@ -337,6 +343,7 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('show_every', $data ?? [], null);
         $this->setIfExists('show_duration', $data ?? [], null);
         $this->setIfExists('rotations_number', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
     }
 
     /**
@@ -853,6 +860,40 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['rotations_number'] = $rotations_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id Unique identifier (duplicate of the parent id).
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        if (is_null($id)) {
+            array_push($this->openAPINullablesSetToNull, 'id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['id'] = $id;
 
         return $this;
     }

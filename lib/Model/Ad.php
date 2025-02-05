@@ -64,7 +64,8 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
         'ad_set_id' => 'string',
         'inventory_type' => 'string',
         'start_date' => 'string',
-        'end_date' => 'string'
+        'end_date' => 'string',
+        'id' => 'string'
     ];
 
     /**
@@ -81,7 +82,8 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
         'ad_set_id' => null,
         'inventory_type' => null,
         'start_date' => null,
-        'end_date' => null
+        'end_date' => null,
+        'id' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
 		'ad_set_id' => true,
 		'inventory_type' => true,
 		'start_date' => true,
-		'end_date' => true
+		'end_date' => true,
+		'id' => true
     ];
 
     /**
@@ -191,7 +194,8 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
         'ad_set_id' => 'adSetId',
         'inventory_type' => 'inventoryType',
         'start_date' => 'startDate',
-        'end_date' => 'endDate'
+        'end_date' => 'endDate',
+        'id' => 'id'
     ];
 
     /**
@@ -206,7 +210,8 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
         'ad_set_id' => 'setAdSetId',
         'inventory_type' => 'setInventoryType',
         'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate'
+        'end_date' => 'setEndDate',
+        'id' => 'setId'
     ];
 
     /**
@@ -221,7 +226,8 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
         'ad_set_id' => 'getAdSetId',
         'inventory_type' => 'getInventoryType',
         'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate'
+        'end_date' => 'getEndDate',
+        'id' => 'getId'
     ];
 
     /**
@@ -305,6 +311,7 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('inventory_type', $data ?? [], null);
         $this->setIfExists('start_date', $data ?? [], null);
         $this->setIfExists('end_date', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
     }
 
     /**
@@ -602,6 +609,40 @@ class Ad implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id Unique identifier (duplicate of the parent id).
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        if (is_null($id)) {
+            array_push($this->openAPINullablesSetToNull, 'id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['id'] = $id;
 
         return $this;
     }
