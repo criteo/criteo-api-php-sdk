@@ -1,6 +1,6 @@
 {
     "name": "criteo/criteo-api-marketingsolutions-sdk",
-    "description": "PHP SDK for Criteo API 2025.01.0.250205 version",
+    "description": "PHP SDK for Criteo API 2025.01.0.250211 version",
     "keywords": [
         "criteo",
         "openapi generator",
