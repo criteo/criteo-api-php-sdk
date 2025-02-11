@@ -230,10 +230,10 @@ class NillableLookbackWindowV24Q3 implements ModelInterface, ArrayAccess, \JsonS
     }
 
     public const VALUE_UNKNOWN = 'unknown';
-    public const VALUE_SAME_SESSION = 'sameSession';
-    public const VALUE_TWENTY_FOUR_HOURS = 'twentyFourHours';
-    public const VALUE_SEVEN_DAYS = 'sevenDays';
-    public const VALUE_THIRTY_DAYS = 'thirtyDays';
+    public const VALUE__30_M = '30M';
+    public const VALUE__24_H = '24H';
+    public const VALUE__7_D = '7D';
+    public const VALUE__30_D = '30D';
 
     /**
      * Gets allowable values of the enum
@@ -244,10 +244,10 @@ class NillableLookbackWindowV24Q3 implements ModelInterface, ArrayAccess, \JsonS
     {
         return [
             self::VALUE_UNKNOWN,
-            self::VALUE_SAME_SESSION,
-            self::VALUE_TWENTY_FOUR_HOURS,
-            self::VALUE_SEVEN_DAYS,
-            self::VALUE_THIRTY_DAYS,
+            self::VALUE__30_M,
+            self::VALUE__24_H,
+            self::VALUE__7_D,
+            self::VALUE__30_D,
         ];
     }
 

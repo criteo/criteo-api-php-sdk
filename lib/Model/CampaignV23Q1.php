@@ -61,7 +61,8 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'advertiser_id' => 'string',
         'spend_limit' => '\criteo\api\marketingsolutions\preview\Model\CampaignSpendLimitV23Q1',
-        'goal' => 'string'
+        'goal' => 'string',
+        'id' => 'string'
     ];
 
     /**
@@ -75,7 +76,8 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => null,
         'advertiser_id' => null,
         'spend_limit' => null,
-        'goal' => null
+        'goal' => null,
+        'id' => null
     ];
 
     /**
@@ -87,7 +89,8 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => true,
 		'advertiser_id' => true,
 		'spend_limit' => false,
-		'goal' => true
+		'goal' => true,
+		'id' => true
     ];
 
     /**
@@ -179,7 +182,8 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'name',
         'advertiser_id' => 'advertiserId',
         'spend_limit' => 'spendLimit',
-        'goal' => 'goal'
+        'goal' => 'goal',
+        'id' => 'id'
     ];
 
     /**
@@ -191,7 +195,8 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'setName',
         'advertiser_id' => 'setAdvertiserId',
         'spend_limit' => 'setSpendLimit',
-        'goal' => 'setGoal'
+        'goal' => 'setGoal',
+        'id' => 'setId'
     ];
 
     /**
@@ -203,7 +208,8 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'getName',
         'advertiser_id' => 'getAdvertiserId',
         'spend_limit' => 'getSpendLimit',
-        'goal' => 'getGoal'
+        'goal' => 'getGoal',
+        'id' => 'getId'
     ];
 
     /**
@@ -284,6 +290,7 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('advertiser_id', $data ?? [], null);
         $this->setIfExists('spend_limit', $data ?? [], null);
         $this->setIfExists('goal', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
     }
 
     /**
@@ -472,6 +479,40 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['goal'] = $goal;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id Id of the entity (duplicate of the parent id).
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        if (is_null($id)) {
+            array_push($this->openAPINullablesSetToNull, 'id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['id'] = $id;
 
         return $this;
     }

@@ -242,10 +242,10 @@ class ReadAdSetAttributionConfigurationV24Q3 implements ModelInterface, ArrayAcc
     public const ATTRIBUTION_METHOD_LAST_CLICK = 'lastClick';
     public const ATTRIBUTION_METHOD_POST_CLICK = 'postClick';
     public const LOOKBACK_WINDOW_UNKNOWN = 'unknown';
-    public const LOOKBACK_WINDOW_SAME_SESSION = 'sameSession';
-    public const LOOKBACK_WINDOW_TWENTY_FOUR_HOURS = 'twentyFourHours';
-    public const LOOKBACK_WINDOW_SEVEN_DAYS = 'sevenDays';
-    public const LOOKBACK_WINDOW_THIRTY_DAYS = 'thirtyDays';
+    public const LOOKBACK_WINDOW__30_M = '30M';
+    public const LOOKBACK_WINDOW__24_H = '24H';
+    public const LOOKBACK_WINDOW__7_D = '7D';
+    public const LOOKBACK_WINDOW__30_D = '30D';
 
     /**
      * Gets allowable values of the enum
@@ -273,10 +273,10 @@ class ReadAdSetAttributionConfigurationV24Q3 implements ModelInterface, ArrayAcc
     {
         return [
             self::LOOKBACK_WINDOW_UNKNOWN,
-            self::LOOKBACK_WINDOW_SAME_SESSION,
-            self::LOOKBACK_WINDOW_TWENTY_FOUR_HOURS,
-            self::LOOKBACK_WINDOW_SEVEN_DAYS,
-            self::LOOKBACK_WINDOW_THIRTY_DAYS,
+            self::LOOKBACK_WINDOW__30_M,
+            self::LOOKBACK_WINDOW__24_H,
+            self::LOOKBACK_WINDOW__7_D,
+            self::LOOKBACK_WINDOW__30_D,
         ];
     }
 

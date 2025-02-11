@@ -60,11 +60,13 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'dataset_id' => 'string',
         'name' => 'string',
+        'minimum_number_of_products' => 'int',
         'status' => 'string',
-        'is_enabled' => 'bool',
         'number_of_products' => 'int',
         'creation_date' => 'string',
         'rules' => '\criteo\api\marketingsolutions\preview\Model\ProductSetRule[]',
+        'client_type' => 'string',
+        'keep_variant_products' => 'bool',
         'id' => 'string'
     ];
 
@@ -78,11 +80,13 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'dataset_id' => null,
         'name' => null,
+        'minimum_number_of_products' => 'int32',
         'status' => null,
-        'is_enabled' => null,
         'number_of_products' => 'int32',
         'creation_date' => null,
         'rules' => null,
+        'client_type' => null,
+        'keep_variant_products' => null,
         'id' => null
     ];
 
@@ -92,13 +96,15 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'dataset_id' => true,
-		'name' => true,
-		'status' => true,
-		'is_enabled' => true,
+        'dataset_id' => false,
+		'name' => false,
+		'minimum_number_of_products' => false,
+		'status' => false,
 		'number_of_products' => true,
-		'creation_date' => true,
-		'rules' => true,
+		'creation_date' => false,
+		'rules' => false,
+		'client_type' => false,
+		'keep_variant_products' => false,
 		'id' => true
     ];
 
@@ -190,11 +196,13 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'dataset_id' => 'datasetId',
         'name' => 'name',
+        'minimum_number_of_products' => 'minimumNumberOfProducts',
         'status' => 'status',
-        'is_enabled' => 'isEnabled',
         'number_of_products' => 'numberOfProducts',
         'creation_date' => 'creationDate',
         'rules' => 'rules',
+        'client_type' => 'clientType',
+        'keep_variant_products' => 'keepVariantProducts',
         'id' => 'id'
     ];
 
@@ -206,11 +214,13 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'dataset_id' => 'setDatasetId',
         'name' => 'setName',
+        'minimum_number_of_products' => 'setMinimumNumberOfProducts',
         'status' => 'setStatus',
-        'is_enabled' => 'setIsEnabled',
         'number_of_products' => 'setNumberOfProducts',
         'creation_date' => 'setCreationDate',
         'rules' => 'setRules',
+        'client_type' => 'setClientType',
+        'keep_variant_products' => 'setKeepVariantProducts',
         'id' => 'setId'
     ];
 
@@ -222,11 +232,13 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'dataset_id' => 'getDatasetId',
         'name' => 'getName',
+        'minimum_number_of_products' => 'getMinimumNumberOfProducts',
         'status' => 'getStatus',
-        'is_enabled' => 'getIsEnabled',
         'number_of_products' => 'getNumberOfProducts',
         'creation_date' => 'getCreationDate',
         'rules' => 'getRules',
+        'client_type' => 'getClientType',
+        'keep_variant_products' => 'getKeepVariantProducts',
         'id' => 'getId'
     ];
 
@@ -277,6 +289,9 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     public const STATUS_VALID = 'Valid';
     public const STATUS_INVALID = 'Invalid';
     public const STATUS_DELETED = 'Deleted';
+    public const CLIENT_TYPE_UNKNOWN = 'Unknown';
+    public const CLIENT_TYPE_C_GROWTH = 'CGrowth';
+    public const CLIENT_TYPE_C_MAX = 'CMax';
 
     /**
      * Gets allowable values of the enum
@@ -292,6 +307,20 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
             self::STATUS_VALID,
             self::STATUS_INVALID,
             self::STATUS_DELETED,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getClientTypeAllowableValues()
+    {
+        return [
+            self::CLIENT_TYPE_UNKNOWN,
+            self::CLIENT_TYPE_C_GROWTH,
+            self::CLIENT_TYPE_C_MAX,
         ];
     }
 
@@ -312,11 +341,13 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('dataset_id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('minimum_number_of_products', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('is_enabled', $data ?? [], null);
         $this->setIfExists('number_of_products', $data ?? [], null);
         $this->setIfExists('creation_date', $data ?? [], null);
         $this->setIfExists('rules', $data ?? [], null);
+        $this->setIfExists('client_type', $data ?? [], null);
+        $this->setIfExists('keep_variant_products', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
     }
 
@@ -347,6 +378,18 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['dataset_id'] === null) {
+            $invalidProperties[] = "'dataset_id' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['minimum_number_of_products'] === null) {
+            $invalidProperties[] = "'minimum_number_of_products' can't be null";
+        }
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
+        }
         $allowedValues = $this->getStatusAllowableValues();
         if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -356,6 +399,30 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
+        if ($this->container['number_of_products'] === null) {
+            $invalidProperties[] = "'number_of_products' can't be null";
+        }
+        if ($this->container['creation_date'] === null) {
+            $invalidProperties[] = "'creation_date' can't be null";
+        }
+        if ($this->container['rules'] === null) {
+            $invalidProperties[] = "'rules' can't be null";
+        }
+        if ($this->container['client_type'] === null) {
+            $invalidProperties[] = "'client_type' can't be null";
+        }
+        $allowedValues = $this->getClientTypeAllowableValues();
+        if (!is_null($this->container['client_type']) && !in_array($this->container['client_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'client_type', must be one of '%s'",
+                $this->container['client_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['keep_variant_products'] === null) {
+            $invalidProperties[] = "'keep_variant_products' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -374,7 +441,7 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets dataset_id
      *
-     * @return string|null
+     * @return string
      */
     public function getDatasetId()
     {
@@ -384,21 +451,14 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dataset_id
      *
-     * @param string|null $dataset_id The dataset to which the product set belong
+     * @param string $dataset_id The dataset to which the product set belong
      *
      * @return self
      */
     public function setDatasetId($dataset_id)
     {
         if (is_null($dataset_id)) {
-            array_push($this->openAPINullablesSetToNull, 'dataset_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dataset_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable dataset_id cannot be null');
         }
         $this->container['dataset_id'] = $dataset_id;
 
@@ -408,7 +468,7 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets name
      *
-     * @return string|null
+     * @return string
      */
     public function getName()
     {
@@ -418,21 +478,14 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string|null $name The name of the product set
+     * @param string $name The name of the product set
      *
      * @return self
      */
     public function setName($name)
     {
         if (is_null($name)) {
-            array_push($this->openAPINullablesSetToNull, 'name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
         $this->container['name'] = $name;
 
@@ -440,9 +493,36 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets minimum_number_of_products
+     *
+     * @return int
+     */
+    public function getMinimumNumberOfProducts()
+    {
+        return $this->container['minimum_number_of_products'];
+    }
+
+    /**
+     * Sets minimum_number_of_products
+     *
+     * @param int $minimum_number_of_products Minimum amount of products that should match the product set to consider it valid.  Greater or equal than one.
+     *
+     * @return self
+     */
+    public function setMinimumNumberOfProducts($minimum_number_of_products)
+    {
+        if (is_null($minimum_number_of_products)) {
+            throw new \InvalidArgumentException('non-nullable minimum_number_of_products cannot be null');
+        }
+        $this->container['minimum_number_of_products'] = $minimum_number_of_products;
+
+        return $this;
+    }
+
+    /**
      * Gets status
      *
-     * @return string|null
+     * @return string
      */
     public function getStatus()
     {
@@ -452,24 +532,17 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string|null $status The status of the product set
+     * @param string $status The status of the product set
      *
      * @return self
      */
     public function setStatus($status)
     {
         if (is_null($status)) {
-            array_push($this->openAPINullablesSetToNull, 'status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('status', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
         $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
+        if (!in_array($status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'status', must be one of '%s'",
@@ -484,43 +557,9 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets is_enabled
-     *
-     * @return bool|null
-     */
-    public function getIsEnabled()
-    {
-        return $this->container['is_enabled'];
-    }
-
-    /**
-     * Sets is_enabled
-     *
-     * @param bool|null $is_enabled True if the product set is active
-     *
-     * @return self
-     */
-    public function setIsEnabled($is_enabled)
-    {
-        if (is_null($is_enabled)) {
-            array_push($this->openAPINullablesSetToNull, 'is_enabled');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_enabled', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['is_enabled'] = $is_enabled;
-
-        return $this;
-    }
-
-    /**
      * Gets number_of_products
      *
-     * @return int|null
+     * @return int
      */
     public function getNumberOfProducts()
     {
@@ -530,7 +569,7 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets number_of_products
      *
-     * @param int|null $number_of_products The number of product matching the product set
+     * @param int $number_of_products The number of product matching the product set.  Can be null for newly created product set.
      *
      * @return self
      */
@@ -554,7 +593,7 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets creation_date
      *
-     * @return string|null
+     * @return string
      */
     public function getCreationDate()
     {
@@ -564,21 +603,14 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets creation_date
      *
-     * @param string|null $creation_date Optional: The creation date of the product set (UTC time in ISO8601 format). Example: \"02/25/2022 14:51:26\"  Can be null if the value doesn't exist.
+     * @param string $creation_date The creation date of the product set (UTC time in ISO8601 format). Example: \"02/25/2022 14:51:26\".  Can be null if the value isn't available.
      *
      * @return self
      */
     public function setCreationDate($creation_date)
     {
         if (is_null($creation_date)) {
-            array_push($this->openAPINullablesSetToNull, 'creation_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('creation_date', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable creation_date cannot be null');
         }
         $this->container['creation_date'] = $creation_date;
 
@@ -588,7 +620,7 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets rules
      *
-     * @return \criteo\api\marketingsolutions\preview\Model\ProductSetRule[]|null
+     * @return \criteo\api\marketingsolutions\preview\Model\ProductSetRule[]
      */
     public function getRules()
     {
@@ -598,25 +630,80 @@ class ProductSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets rules
      *
-     * @param \criteo\api\marketingsolutions\preview\Model\ProductSetRule[]|null $rules The rules identifying the product belonging to the set
+     * @param \criteo\api\marketingsolutions\preview\Model\ProductSetRule[] $rules The rules identifying the product belonging to the set
      *
      * @return self
      */
     public function setRules($rules)
     {
         if (is_null($rules)) {
-            array_push($this->openAPINullablesSetToNull, 'rules');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rules', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rules cannot be null');
         }
-
-
         $this->container['rules'] = $rules;
+
+        return $this;
+    }
+
+    /**
+     * Gets client_type
+     *
+     * @return string
+     */
+    public function getClientType()
+    {
+        return $this->container['client_type'];
+    }
+
+    /**
+     * Sets client_type
+     *
+     * @param string $client_type The client type of the product set
+     *
+     * @return self
+     */
+    public function setClientType($client_type)
+    {
+        if (is_null($client_type)) {
+            throw new \InvalidArgumentException('non-nullable client_type cannot be null');
+        }
+        $allowedValues = $this->getClientTypeAllowableValues();
+        if (!in_array($client_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'client_type', must be one of '%s'",
+                    $client_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['client_type'] = $client_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets keep_variant_products
+     *
+     * @return bool
+     */
+    public function getKeepVariantProducts()
+    {
+        return $this->container['keep_variant_products'];
+    }
+
+    /**
+     * Sets keep_variant_products
+     *
+     * @param bool $keep_variant_products keep_variant_products
+     *
+     * @return self
+     */
+    public function setKeepVariantProducts($keep_variant_products)
+    {
+        if (is_null($keep_variant_products)) {
+            throw new \InvalidArgumentException('non-nullable keep_variant_products cannot be null');
+        }
+        $this->container['keep_variant_products'] = $keep_variant_products;
 
         return $this;
     }
