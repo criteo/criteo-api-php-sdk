@@ -423,9 +423,6 @@ class CreateAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['targeting'] === null) {
             $invalidProperties[] = "'targeting' can't be null";
         }
-        if ($this->container['budget'] === null) {
-            $invalidProperties[] = "'budget' can't be null";
-        }
         if ($this->container['tracking_code'] === null) {
             $invalidProperties[] = "'tracking_code' can't be null";
         }
@@ -679,7 +676,7 @@ class CreateAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets budget
      *
-     * @return \criteo\api\marketingsolutions\preview\Model\CreateAdSetBudgetV24Q3
+     * @return \criteo\api\marketingsolutions\preview\Model\CreateAdSetBudgetV24Q3|null
      */
     public function getBudget()
     {
@@ -689,7 +686,7 @@ class CreateAdSetV24Q3 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets budget
      *
-     * @param \criteo\api\marketingsolutions\preview\Model\CreateAdSetBudgetV24Q3 $budget budget
+     * @param \criteo\api\marketingsolutions\preview\Model\CreateAdSetBudgetV24Q3|null $budget budget
      *
      * @return self
      */
