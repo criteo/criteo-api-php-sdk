@@ -1,6 +1,6 @@
 <?php
 /**
- * CampaignV23Q1
+ * CampaignBudgetAutomationV23Q1
  *
  * PHP version 7.4
  *
@@ -32,16 +32,16 @@ use \ArrayAccess;
 use \criteo\api\marketingsolutions\v2024_04\ObjectSerializer;
 
 /**
- * CampaignV23Q1 Class Doc Comment
+ * CampaignBudgetAutomationV23Q1 Class Doc Comment
  *
  * @category Class
- * @description campaign read model
+ * @description The campaign budget automation model
  * @package  criteo\api\marketingsolutions\v2024_04
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
+class CampaignBudgetAutomationV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CampaignV23Q1';
+    protected static $openAPIModelName = 'CampaignBudgetAutomationV23Q1';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,12 +58,8 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'advertiser_id' => 'string',
-        'spend_limit' => '\criteo\api\marketingsolutions\v2024_04\Model\CampaignSpendLimitV23Q1',
-        'goal' => 'string',
-        'budget_automation' => '\criteo\api\marketingsolutions\v2024_04\Model\CampaignBudgetAutomationV23Q1',
-        'id' => 'string'
+        'enabled' => 'bool',
+        'automated_budget_configuration' => '\criteo\api\marketingsolutions\v2024_04\Model\CampaignBudgetAutomationV23Q1AutomatedBudgetConfiguration'
     ];
 
     /**
@@ -74,12 +70,8 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'advertiser_id' => null,
-        'spend_limit' => null,
-        'goal' => null,
-        'budget_automation' => null,
-        'id' => null
+        'enabled' => null,
+        'automated_budget_configuration' => null
     ];
 
     /**
@@ -88,12 +80,8 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'name' => true,
-		'advertiser_id' => true,
-		'spend_limit' => false,
-		'goal' => true,
-		'budget_automation' => false,
-		'id' => true
+        'enabled' => true,
+		'automated_budget_configuration' => true
     ];
 
     /**
@@ -182,12 +170,8 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'advertiser_id' => 'advertiserId',
-        'spend_limit' => 'spendLimit',
-        'goal' => 'goal',
-        'budget_automation' => 'budgetAutomation',
-        'id' => 'id'
+        'enabled' => 'enabled',
+        'automated_budget_configuration' => 'automatedBudgetConfiguration'
     ];
 
     /**
@@ -196,12 +180,8 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'advertiser_id' => 'setAdvertiserId',
-        'spend_limit' => 'setSpendLimit',
-        'goal' => 'setGoal',
-        'budget_automation' => 'setBudgetAutomation',
-        'id' => 'setId'
+        'enabled' => 'setEnabled',
+        'automated_budget_configuration' => 'setAutomatedBudgetConfiguration'
     ];
 
     /**
@@ -210,12 +190,8 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'advertiser_id' => 'getAdvertiserId',
-        'spend_limit' => 'getSpendLimit',
-        'goal' => 'getGoal',
-        'budget_automation' => 'getBudgetAutomation',
-        'id' => 'getId'
+        'enabled' => 'getEnabled',
+        'automated_budget_configuration' => 'getAutomatedBudgetConfiguration'
     ];
 
     /**
@@ -259,23 +235,6 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    public const GOAL_UNSPECIFIED = 'unspecified';
-    public const GOAL_ACQUISITION = 'acquisition';
-    public const GOAL_RETENTION = 'retention';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getGoalAllowableValues()
-    {
-        return [
-            self::GOAL_UNSPECIFIED,
-            self::GOAL_ACQUISITION,
-            self::GOAL_RETENTION,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -292,12 +251,8 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('advertiser_id', $data ?? [], null);
-        $this->setIfExists('spend_limit', $data ?? [], null);
-        $this->setIfExists('goal', $data ?? [], null);
-        $this->setIfExists('budget_automation', $data ?? [], null);
-        $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('enabled', $data ?? [], null);
+        $this->setIfExists('automated_budget_configuration', $data ?? [], null);
     }
 
     /**
@@ -327,15 +282,6 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getGoalAllowableValues();
-        if (!is_null($this->container['goal']) && !in_array($this->container['goal'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'goal', must be one of '%s'",
-                $this->container['goal'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -352,201 +298,69 @@ class CampaignV23Q1 implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets name
+     * Gets enabled
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getName()
+    public function getEnabled()
     {
-        return $this->container['name'];
+        return $this->container['enabled'];
     }
 
     /**
-     * Sets name
+     * Sets enabled
      *
-     * @param string|null $name name
+     * @param bool|null $enabled enabled
      *
      * @return self
      */
-    public function setName($name)
+    public function setEnabled($enabled)
     {
-        if (is_null($name)) {
-            array_push($this->openAPINullablesSetToNull, 'name');
+        if (is_null($enabled)) {
+            array_push($this->openAPINullablesSetToNull, 'enabled');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('name', $nullablesSetToNull);
+            $index = array_search('enabled', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['name'] = $name;
+        $this->container['enabled'] = $enabled;
 
         return $this;
     }
 
     /**
-     * Gets advertiser_id
+     * Gets automated_budget_configuration
      *
-     * @return string|null
+     * @return \criteo\api\marketingsolutions\v2024_04\Model\CampaignBudgetAutomationV23Q1AutomatedBudgetConfiguration|null
      */
-    public function getAdvertiserId()
+    public function getAutomatedBudgetConfiguration()
     {
-        return $this->container['advertiser_id'];
+        return $this->container['automated_budget_configuration'];
     }
 
     /**
-     * Sets advertiser_id
+     * Sets automated_budget_configuration
      *
-     * @param string|null $advertiser_id advertiser_id
+     * @param \criteo\api\marketingsolutions\v2024_04\Model\CampaignBudgetAutomationV23Q1AutomatedBudgetConfiguration|null $automated_budget_configuration automated_budget_configuration
      *
      * @return self
      */
-    public function setAdvertiserId($advertiser_id)
+    public function setAutomatedBudgetConfiguration($automated_budget_configuration)
     {
-        if (is_null($advertiser_id)) {
-            array_push($this->openAPINullablesSetToNull, 'advertiser_id');
+        if (is_null($automated_budget_configuration)) {
+            array_push($this->openAPINullablesSetToNull, 'automated_budget_configuration');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('advertiser_id', $nullablesSetToNull);
+            $index = array_search('automated_budget_configuration', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['advertiser_id'] = $advertiser_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets spend_limit
-     *
-     * @return \criteo\api\marketingsolutions\v2024_04\Model\CampaignSpendLimitV23Q1|null
-     */
-    public function getSpendLimit()
-    {
-        return $this->container['spend_limit'];
-    }
-
-    /**
-     * Sets spend_limit
-     *
-     * @param \criteo\api\marketingsolutions\v2024_04\Model\CampaignSpendLimitV23Q1|null $spend_limit spend_limit
-     *
-     * @return self
-     */
-    public function setSpendLimit($spend_limit)
-    {
-        if (is_null($spend_limit)) {
-            throw new \InvalidArgumentException('non-nullable spend_limit cannot be null');
-        }
-        $this->container['spend_limit'] = $spend_limit;
-
-        return $this;
-    }
-
-    /**
-     * Gets goal
-     *
-     * @return string|null
-     */
-    public function getGoal()
-    {
-        return $this->container['goal'];
-    }
-
-    /**
-     * Sets goal
-     *
-     * @param string|null $goal goal
-     *
-     * @return self
-     */
-    public function setGoal($goal)
-    {
-        if (is_null($goal)) {
-            array_push($this->openAPINullablesSetToNull, 'goal');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('goal', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $allowedValues = $this->getGoalAllowableValues();
-        if (!is_null($goal) && !in_array($goal, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'goal', must be one of '%s'",
-                    $goal,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['goal'] = $goal;
-
-        return $this;
-    }
-
-    /**
-     * Gets budget_automation
-     *
-     * @return \criteo\api\marketingsolutions\v2024_04\Model\CampaignBudgetAutomationV23Q1|null
-     */
-    public function getBudgetAutomation()
-    {
-        return $this->container['budget_automation'];
-    }
-
-    /**
-     * Sets budget_automation
-     *
-     * @param \criteo\api\marketingsolutions\v2024_04\Model\CampaignBudgetAutomationV23Q1|null $budget_automation budget_automation
-     *
-     * @return self
-     */
-    public function setBudgetAutomation($budget_automation)
-    {
-        if (is_null($budget_automation)) {
-            throw new \InvalidArgumentException('non-nullable budget_automation cannot be null');
-        }
-        $this->container['budget_automation'] = $budget_automation;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string|null $id Id of the entity (duplicate of the parent id).
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        if (is_null($id)) {
-            array_push($this->openAPINullablesSetToNull, 'id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['id'] = $id;
+        $this->container['automated_budget_configuration'] = $automated_budget_configuration;
 
         return $this;
     }

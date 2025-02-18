@@ -104,6 +104,8 @@ docs/Model/AudienceUpdateEntityV1Resource.md
 docs/Model/AudienceWarning.md
 docs/Model/BasicAudienceDefinition.md
 docs/Model/BehavioralV1.md
+docs/Model/CampaignBudgetAutomationV23Q1.md
+docs/Model/CampaignBudgetAutomationV23Q1AutomatedBudgetConfiguration.md
 docs/Model/CampaignSearchFiltersV23Q1.md
 docs/Model/CampaignSearchRequestV23Q1.md
 docs/Model/CampaignSpendLimitV23Q1.md
@@ -371,6 +373,8 @@ lib/Model/AudienceUpdateEntityV1Resource.php
 lib/Model/AudienceWarning.php
 lib/Model/BasicAudienceDefinition.php
 lib/Model/BehavioralV1.php
+lib/Model/CampaignBudgetAutomationV23Q1.php
+lib/Model/CampaignBudgetAutomationV23Q1AutomatedBudgetConfiguration.php
 lib/Model/CampaignSearchFiltersV23Q1.php
 lib/Model/CampaignSearchRequestV23Q1.php
 lib/Model/CampaignSpendLimitV23Q1.php
