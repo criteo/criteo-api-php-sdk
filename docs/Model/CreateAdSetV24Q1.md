@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **schedule** | [**\criteo\api\marketingsolutions\v2024_10\Model\CreateAdSetScheduleV24Q1**](CreateAdSetScheduleV24Q1.md) |  |
 **bidding** | [**\criteo\api\marketingsolutions\v2024_10\Model\CreateAdSetBiddingV24Q1**](CreateAdSetBiddingV24Q1.md) |  |
 **targeting** | [**\criteo\api\marketingsolutions\v2024_10\Model\CreateAdSetTargetingV24Q1**](CreateAdSetTargetingV24Q1.md) |  |
-**budget** | [**\criteo\api\marketingsolutions\v2024_10\Model\CreateAdSetBudgetV24Q1**](CreateAdSetBudgetV24Q1.md) |  |
+**budget** | [**\criteo\api\marketingsolutions\v2024_10\Model\CreateAdSetBudgetV24Q1**](CreateAdSetBudgetV24Q1.md) |  | [optional]
 **tracking_code** | **string** | The click tracking code associated to this Ad Set. |
 **media_type** | **string** | Media type for the ad set |
 
